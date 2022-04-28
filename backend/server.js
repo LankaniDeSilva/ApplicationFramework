@@ -8,13 +8,23 @@ const multer = require('multer');
 const app = express();
 
 //import route
-
+const NoticeRoutes = require('./Routes/AdminNotice');
+const PDFRoutes = require('./Routes/AdminPDF');
+const MarksRoutes = require('./Routes/AdminMark');
+const FeedbackRoutes = require('./Routes/AdminFeedback');
 
 
 //app middleware
 app.use(bodyParser.json());
 app.use(cors());
 //app.use(multer());
+
+app.use(NoticeRoutes);
+app.use(PDFRoutes);
+app.use(MarksRoutes);
+app.use(FeedbackRoutes);
+
+
 
 const PORT = 8001;
 const DB_URL = 'mongodb+srv://pamitha:pamitha@database1.gqpga.mongodb.net/AFPROJECT?retryWrites=true&w=majority';
