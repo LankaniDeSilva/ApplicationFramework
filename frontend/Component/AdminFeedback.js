@@ -32,7 +32,7 @@ function Feedback(){
     return(
         <div>
             <center>
-            <img src="../images/feedback.png"/>
+            <img src="images/feedback.png"/>
             </center>
             <br/>
              <form onSubmit={passData} style={{width:"1000px", marginLeft:"20%", border:"1px solid black", padding:"50px"}}>
