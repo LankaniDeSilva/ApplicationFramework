@@ -2,7 +2,7 @@
 
 import React,{useState, useEffect} from "react";
 import axios from "axios";
-//import swal from 'sweetalert';
+import swal from 'sweetalert';
 
 function Feedbackview(){
 
@@ -19,7 +19,7 @@ function Feedbackview(){
       getStudents();
    }, [])
 
-  /* function deleteDoctor(_id) {
+   function deleteDoctor(_id) {
     swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this data!",
@@ -35,33 +35,22 @@ function Feedbackview(){
                 fetch(`http://localhost:8001/deletefeedback/${_id}`, {
                     method: 'DELETE'
                 }).then((response) => {
-                    <a href="#">
+                    
                     response.json();
                     swal("Good job!", "Your data has been successfully Deleted", "success");
-                    </a>
+                
                 }).catch(error => {
                     swal("Sorry!", "Something Error...", "error");
                 })
             }
         });
 }
-*/
+
     return(
         <div>
             <center>
-             <table  class="table" style={{width:"1200px"}}> 
-               <thead> 
-                <tr>
-            
-                <th>Center</th>
-                <th>Email</th>
-                <th>Date</th>
-                <th>Feedback</th>
-                <th>Solution</th>
-             
-                </tr>
-                </thead>
-       
+                <h2>Feedbacks</h2>
+             <table style={{width:"1000px"}}> 
             {
                     Feedback.map((json) => {
                     const {center, email, date, details, outcome,_id} = json
@@ -69,20 +58,19 @@ function Feedbackview(){
                
                 <tbody>
                 <tr>
-                <td>{center}</td>
-                <td>{email}</td>
-                <td>{date}</td>
-                <td>{details}</td>
-                <td>{outcome}</td>
+                <tr><i class="fa-solid fa-note-sticky"></i>   Center : {center}</tr>
+                <tr>Email : {email}</tr>
+                <tr>Date : {date}</tr>
+                <tr>Details : {details}</tr>
+                <tr>Solution : {outcome}</tr>
               
-
-                <th>
-                   
-                    <button  className="btn btn-warning"  >Delete</button>
-                    
-                </th>  
+                <center>
+                  <tr>
+                    <button  className="btn btn-warning" onClick={() => deleteDoctor(_id)} >Delete <i className="fas fa-trash-alt"></i></button>
+                  </tr>  
+                </center>
                </tr>
-              
+               <hr style={{border:"2px solid blue"}}/>
               </tbody>
               
              )

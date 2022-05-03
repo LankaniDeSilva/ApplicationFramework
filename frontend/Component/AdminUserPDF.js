@@ -1,6 +1,4 @@
-import { Component} from "react";
-
-
+import React, { Component } from 'react';
 import axios from "axios";
 
 
@@ -31,7 +29,7 @@ import axios from "axios";
          })
      }
 
-   filterData(pdfs,searchKey){
+     filterData(pdfs,searchKey){
 
         const result=pdfs.filter((pdf) =>
             pdf.select.includes(searchKey)||
@@ -53,7 +51,12 @@ import axios from "axios";
          });
      }
 
-    
+     onDelete = (id) => {
+        axios.delete(`http://localhost:8001/pdf/delete/${id}`).then((res) => {
+          alert("Delete Successfully");
+          this.retrivePosts();
+        });
+      };
 
     
  
@@ -73,14 +76,20 @@ import axios from "axios";
                />
          </div>
          <br/>
-         <select class="form-select" aria-label="Default select example" name="searchQuary"
-           onChange={this.handleSearchArea} >
-                <option selected>Select Document type</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                </select>
-      <br/>
+
+         <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="searchQuary"
+                    onChange={this.handleSearchArea}
+                  >
+                    <option selected>Select Document Type</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <br/>
+        
       <table className="table" style={{background:"#f3d8f3"}}>
           <thead>
               <tr>
@@ -102,21 +111,18 @@ import axios from "axios";
                       <td>{pdfs.comment}</td>
                       <td><i class="fa-solid fa-file-lines"></i> &nbsp;{pdfs.files}</td>
                    
-                        
                       <td>
-                          &nbsp;
-       
-                          <a className='btn btn-primary' rel="noreferrer" target="_blank" href={process.env.PUBLIC_URL + `/uploads/${pdfs.files}`}>View <i class="fa-solid fa-eye"></i></a>
-                          &nbsp;
-                          <a   onClick={() =>this.onDelete(pdfs._id)}>
-                          <button type="submit" class="btn btn-success" >Download  <i class="fa-solid fa-download"></i></button>
-                          </a>
-                      
-                          &nbsp;
-                          <a   onClick={() =>this.onDelete(pdfs._id)}>
-                          <button type="submit" class="btn btn-danger" >Delete  <i className="fas fa-trash-alt"></i></button>
-                          </a>
-                      </td>
+                        <a className='btn btn-success' rel="noreferrer" target="_blank" href={process.env.PUBLIC_URL + `/public/uploads/${pdfs.files}`}><i class="fa-solid fa-eye"></i> View</a>
+                        &nbsp;
+                       <button
+                         type="button"
+                        className="btn btn-warning"
+                        onClick={() => this.onDelete(pdfs._id)}
+                  >
+                    <i className="fas fa-trash-alt"></i> Delete
+                  </button>
+                    </td>  
+                     
                   </tr>
               ))}
           </tbody>

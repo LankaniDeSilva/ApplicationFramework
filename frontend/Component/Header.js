@@ -1,10 +1,24 @@
 import React from "react"
+import sliit from "../public/images/SLIIT.png"
 
 function Header(){
 
     return(
          <div >
-           <img src="../images/SLIIT.png" style={{width:"300px", height:"90px", marginLeft:"70px",marginTop:"20px", marginBottom:"20px"}}/>
+           <table>
+             <tr>
+               <td>
+             <img src={sliit} style={{width:"300px", height:"90px", marginLeft:"70px",marginTop:"20px", marginBottom:"20px"}}/>
+             </td>
+             <td>
+             <div >
+             
+             <button class="btn btn-outline-primary">Sign In</button >&nbsp; <button class="btn btn-outline-primary">Sign Up</button>
+           
+             </div>
+             </td>
+             </tr>
+             </table>
               <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style={{marginLeft:"60px", marginRight:"60px", borderBottom:"4px solid orange"}}>
                 <div class="container-fluid">
                  
@@ -36,6 +50,7 @@ function Header(){
                    
                     </ul>
                    <form class="d-flex">
+                   
                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                        <button class="btn btn-outline-success" type="submit">Search</button>
                    </form>
