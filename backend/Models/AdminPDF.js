@@ -17,11 +17,6 @@ const pdfSchema = new mongoose.Schema({
     files:{
         type:String,
         required:true
-    },
-    mark:{
-        type:String,
-        required:true
-      
     }
   
 });

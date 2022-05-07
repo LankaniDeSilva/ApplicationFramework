@@ -51,7 +51,7 @@ router.post('/Notice/save', (req,res) =>{
 
 //get posts
 
-router.get('/notice', (req,res) =>{
+/*router.get('/notice', (req,res) =>{
     Notices.find().exec((err,Notices)=>{
         if(err){
             return res.status(400).json({
@@ -63,9 +63,16 @@ router.get('/notice', (req,res) =>{
             existingPosts:Notices
         });
     });
-});
+}); */
 
+router.route("/notice").get((req,res)=>{
 
+    Notices.find().then((notice)=>{
+         res.json(notice)
+    }).catch((err)=>{
+         console.log(err)
+    })
+})
 //delete
 
 router.delete('/notice/delete/:id',(req,res)=>{

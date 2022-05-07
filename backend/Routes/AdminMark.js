@@ -39,7 +39,7 @@ router.post("/marksave", (req, res) => {
 
 //get 
 
-/*router.get('/getmark', (req,res) =>{
+router.get('/getmark', (req,res) =>{
     Mark.find().exec((err,Mark)=>{
         if(err){
             return res.status(400).json({
@@ -51,15 +51,48 @@ router.post("/marksave", (req, res) => {
             existingPosts:Mark
         });
     });
-});  */
+}); 
 
-router.route("/getmark").get((req,res)=>{
+/*router.route("/getmark").get((req,res)=>{
 
     Mark.find().then((Mark)=>{
          res.json(Mark)
     }).catch((err)=>{
          console.log(err)
     })
+})*/
+
+
+router.route("/getmark/:id").get(async (req,res) => {
+    let userId = req.params.id;
+    const user = await Mark.findOne(userId)
+    .then(() => {
+        res.status(200).send({status: "User fetched", user: user})
+    }).catch(() => {
+        console.log(err.message);
+        res.status(500).send({status: "Error with get user", error: err.message});
+    })
+})
+
+router.route("/mark/update/:id").put(async (req, res)=> {
+    let userId = req.params.id;
+
+    const {groupid, marka, markb, markc, markd} = req.body;
+
+    const updatemark = {
+        groupid,
+        marka,
+        markb,
+        markc,
+        markd
+    }
+
+    const update = await Mark.findByIdAndUpdate(userId, updatemark).then(()=>{
+        res.status(200).send({status: "User Updated"})
+    }).catch((err)=>{
+        console.log(err);
+        res.status(500).send({status: "Error with Updating data", error: err.message});
+    })  
 })
 
 router.route("/deletemark/:id").delete(async (req, res) =>{

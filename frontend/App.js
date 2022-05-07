@@ -1,39 +1,65 @@
 import React, {Component} from "react";
 //import "../bootstrap.min.css";
-  import { BrowserRouter, Route ,Routes} from "react-router-dom";
+import {BrowserRouter,Route } from "react-router-dom";
 
-  import Nav from "./Component/Header";
-  import AdminSubmition from "./Component/AdminSubmition";
-  import UserNoticeView from "./Component/UserNoticeView";
-  import FeedbackView from "./Component/FeedbackView";
-  import AdminNoticeView from "./Component/AdminNoticeView";
-  import AdminUserPDF from "./Component/AdminUserPDF";
-  import AdminNoticeAdd from "./Component/AdminNoticeAdd";
-  import AdminNoticePDF from "./Component/AdminNoticePDF";
-  import AdminMark from "./Component/AdminMarks";
-  import AdminMarkUpdate from "./Component/AdminUpdatemark";
-  import AdminMarkView from "./Component/AdminMarkView";
-  import StudentMark from "./Component/StudentMark";
-  import AdminFeedback from "./Component/AdminFeedback";
+  import Nav from "./Component/Pamitha/Header";
+  import AdminSubmition from "./Component/Pamitha/AdminSubmition";
+  import UserNoticeView from "./Component/Pamitha/UserNoticeView";
+  import FeedbackView from "./Component/Pamitha/FeedbackView";
+  import AdminNoticeView from "./Component/Pamitha/AdminNoticeView";
+  import AdminUserPDF from "./Component/Pamitha/AdminUserPDF";
+  import AdminNoticeAdd from "./Component/Pamitha/AdminNoticeAdd";
+  import AdminNoticePDF from "./Component/Pamitha/AdminNoticePDF";
+  import AdminMark from "./Component/Pamitha/AdminMarks";
+  import AdminMarkUpdate from "./Component/Pamitha/AdminUpdatemark";
+  import AdminMarkView from "./Component/Pamitha/AdminMarkView";
+  import StudentMark from "./Component/Pamitha/StudentMark";
+  import AdminFeedback from "./Component/Pamitha/AdminFeedback";
   
+
 
 export default class App extends Component{
-//const App = () => {
-  render(){
+   render(){
     return (
-    
-       <div className="container">
-       <Nav/>
-       <AdminSubmition/>
-       <AdminUserPDF/>
+      <BrowserRouter>
+        <div>
          
+             <Nav/>
+
+            {/*pamitha */}
+
+             <Route path="/Admin"  exact component={AdminNoticeAdd}></Route>
+             <Route path="/mark"  exact component={AdminMark}></Route>
+             <Route path="/mark"  exact component={AdminMarkView}></Route>
+             <Route path="/markupdate"  exact component={AdminMarkUpdate}></Route>
+             <Route path="/admindocument"  exact component={AdminUserPDF}></Route>
+             <Route path="/feedback"  exact component={FeedbackView}></Route>
+             <Route path="/noticepdf"  exact component={AdminNoticePDF}></Route>
+             <Route path="/viewnotice"  exact component={AdminNoticeView}></Route>
+
+
+
+            {/*Lankani */}
+
+
+
+
+
+            {/*Ayeshi */}
+
+
+
+
+            {/*Akeel */}
+         
+      
+
+        
   
          
-     
-    
-      </div>
-     
-  );
+         </div>
+      </BrowserRouter> 
+     );
+    }
  }
-}
-//<Route path="/" exact component={AdminNoticeAdd}></Route>
+

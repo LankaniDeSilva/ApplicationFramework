@@ -69,7 +69,7 @@ router.route("/student/pdf").get((req,res)=>{
     })
 })
 
-router.post('/select/save', (req,res) =>{
+/*router.post('/select/save', (req,res) =>{
 
     let select = new files(req.body);
 
@@ -84,7 +84,7 @@ router.post('/select/save', (req,res) =>{
         });
     });
 });
-
+*/
 
 router.route("/select/pdf/:id").put(async (req, res)=> {
     let userId = req.params.id;
