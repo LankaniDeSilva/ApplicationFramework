@@ -15,6 +15,8 @@ import {BrowserRouter,Route } from "react-router-dom";
   import AdminMarkView from "./Component/Pamitha/AdminMarkView";
   import StudentMark from "./Component/Pamitha/StudentMark";
   import AdminFeedback from "./Component/Pamitha/AdminFeedback";
+  import StudentAdd from "./Component/Lankani/StudentAdd";
+  
   
 
 
@@ -36,14 +38,15 @@ export default class App extends Component{
              <Route path="/feedback"  exact component={FeedbackView}></Route>
              <Route path="/noticepdf"  exact component={AdminNoticePDF}></Route>
              <Route path="/viewnotice"  exact component={AdminNoticeView}></Route>
+             
 
 
 
             {/*Lankani */}
 
-
-
-
+            {/* <Route path="/Student" exact component={StudentAdd}></Route> */}
+          
+            
 
             {/*Ayeshi */}
 

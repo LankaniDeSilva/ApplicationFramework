@@ -12,6 +12,7 @@ const NoticeRoutes = require('./Routes/AdminNotice');
 const PDFRoutes = require('./Routes/AdminPDF');
 const MarksRoutes = require('./Routes/AdminMark');
 const FeedbackRoutes = require('./Routes/AdminFeedback');
+const StudentRoute = require('./Routes/StudentRoute');
 
 
 //app middleware
@@ -23,7 +24,7 @@ app.use(NoticeRoutes);
 app.use(PDFRoutes);
 app.use(MarksRoutes);
 app.use(FeedbackRoutes);
-
+app.use(StudentRoute);
 
 
 const PORT = 8001;
