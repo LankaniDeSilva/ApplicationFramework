@@ -16,6 +16,7 @@ import {BrowserRouter,Route } from "react-router-dom";
   import StudentMark from "./Component/Pamitha/StudentMark";
   import AdminFeedback from "./Component/Pamitha/AdminFeedback";
   import StudentAdd from "./Component/Lankani/StudentAdd";
+  import StudentList from "./Component/Lankani/StudentList";
   
   
 
@@ -45,7 +46,8 @@ export default class App extends Component{
             {/*Lankani */}
 
             {/* <Route path="/Student" exact component={StudentAdd}></Route> */}
-          
+            {/* <Route path="/viewstudent" exact component={StudentList}></Route> */}
+            <StudentList/>
             
 
             {/*Ayeshi */}

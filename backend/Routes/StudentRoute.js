@@ -18,57 +18,50 @@ srouter.post("/Student/save", (req, res) => {
   });
 });
 
-// srouter.route("/student/update/:id").put(async (req, res)=> {
-//   let studentId = req.params.id;
 
-//   const {itNumber, name, email, phoneNumber, password} = req.body;
+srouter.route("/student").get((req,res)=>{
 
-//   const updatestudent = {
-//     itNumber,
-//     name,
-//     email,
-//     phoneNumber,
-//     password
-//   }
+  Student.find().then((student)=>{
+       res.json(student)
+  }).catch((err)=>{
+       console.log(err)
+  })
+})
+//delete
 
-//   const update = await Student.findByIdAndUpdate(studentId, updatestudent).then(()=>{
-//       res.status(200).send({status: "Student Updated"})
-//   }).catch((err)=>{
-//       console.log(err);
-//       res.status(500).send({status: "Error with Updating data", error: err.message});
-//   })  
-// })
+srouter.delete('/student/delete/:id',(req,res)=>{
+  Student.findByIdAndRemove(req.params.id).exec((err,deletedStudent) =>{
 
-
-
-//Get Single Student
-srouter.route("/edit-student/:id").get((req, res) => {
-  Student.findById(req.params.id, (error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      res.json(data);
-    }
+      if(err) return res.status(400).json({
+          message:"Delete unsuccessful",err
+      });
+      return res.json({
+          message:"Delete Successfull",deletedStudent
+      });
   });
 });
 
-//update Student
-srouter.route("/update-student/:id").put((req, res, next) => {
-    Student.findByIdAndUpdate(
-    req.params.id,
-    {
-      $set: req.body,
-    },
-    (error, data) => {
-      if (error) {
-        return next(error);
-        }else {
-        res.json(data);
-        console.log("Student updated successfully !");
-      }
-    }
-  );
-});
+srouter.route("/student/update/:id").put(async (req, res)=> {
+  let studentId = req.params.id;
+
+  const {itNumber, name, email, phoneNumber, password} = req.body;
+
+  const updatestudent = {
+    itNumber,
+    name,
+    email,
+    phoneNumber,
+    password
+  }
+
+  const update = await Student.findByIdAndUpdate(studentId, updatestudent).then(()=>{
+      res.status(200).send({status: "Student Updated"})
+  }).catch((err)=>{
+      console.log(err);
+      res.status(500).send({status: "Error with Updating data", error: err.message});
+  })  
+})
+
 
 
 module.exports = srouter;
