@@ -66,7 +66,7 @@ export default class GetStudents extends Component {
 
                 <td>
                   <a href="#">
-                  <button type="button" className="btn btn-success">
+                  <button type="button" className="btn btn-warning">
                      Update
                   </button>
                   </a>
@@ -74,7 +74,7 @@ export default class GetStudents extends Component {
                 <td>
                   <button
                     type="button"
-                    className="btn btn-warning"
+                    className="btn btn-danger"
                     onClick={() => this.onDelete(students._id)}
                   >
                      Delete

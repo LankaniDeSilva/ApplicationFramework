@@ -43896,10 +43896,10 @@ var GetStudents = /*#__PURE__*/function (_Component) {
           href: "#"
         }, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
-          className: "btn btn-success"
+          className: "btn btn-warning"
         }, "Update"))), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
-          className: "btn btn-warning",
+          className: "btn btn-danger",
           onClick: function onClick() {
             return _this3.onDelete(students._id);
           }
