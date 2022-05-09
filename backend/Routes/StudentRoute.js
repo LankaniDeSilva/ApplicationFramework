@@ -18,15 +18,19 @@ srouter.post("/Student/save", (req, res) => {
   });
 });
 
-
-srouter.route("/student").get((req,res)=>{
-
-  Student.find().then((student)=>{
-       res.json(student)
-  }).catch((err)=>{
-       console.log(err)
-  })
-})
+srouter.get("/student", (req,res)=>{
+    Student.find().exec((err,Student) =>{
+      if(err){
+        return res.status(400).json({
+          error:err
+      });
+    }
+    return res.status(200).json({
+      success:true,
+      existingStudents:Student
+    });
+  });
+});
 //delete
 
 srouter.delete('/student/delete/:id',(req,res)=>{
