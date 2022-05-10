@@ -18,6 +18,8 @@ import {BrowserRouter,Route } from "react-router-dom";
   import StudentAdd from "./Component/Lankani/StudentAdd";
   import StudentList from "./Component/Lankani/StudentList";
   import ViewStudents from "./Component/Lankani/ViewStudents";
+  import StudentHome from "./Component/Lankani/StudentHome";
+  import ResarchTopicAdd from "./Component/Lankani/ResearchTopicAdd";
   
   
 
@@ -46,10 +48,10 @@ export default class App extends Component{
 
             {/*Lankani */}
 
-            {/* <Route path="/Student" exact component={StudentAdd}></Route> */}
-            {/* <Route path="/viewstudent" exact component={StudentList}></Route> */}
-            
+            {/* <Route path="/Student" exact component={StudentAdd}></Route> */}          
             <Route path="/viewstudent" exact component={ViewStudents}></Route>
+            <Route path="/studenthome" exact component={StudentHome}></Route>
+            <Route path="/researchtopic" exact component={ResarchTopicAdd}></Route>
             
 
             {/*Ayeshi */}

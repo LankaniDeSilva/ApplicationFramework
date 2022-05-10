@@ -43912,6 +43912,192 @@ var GetStudents = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = GetStudents;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/CSS/StudentHome.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Component/Lankani/StudentHome.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = StudentHome;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _SLIIT = _interopRequireDefault(require("../Pamitha/images/SLIIT.png"));
+
+require("./CSS/StudentHome.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function StudentHome() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _SLIIT.default,
+    style: {
+      width: "300px",
+      height: "90px",
+      marginLeft: "70px",
+      marginTop: "20px",
+      marginBottom: "20px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn btn-outline-primary"
+  }, "Sign Out"), "\xA0")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Group Registration"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Register Research Topic")), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/researchtopic"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Request Supervisor"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Request Co-Supervisor"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Download Document"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Submit Document"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Evaluation Panel Feedback"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Download Template"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Submit Presentation"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Submit Final Thesis"))), /*#__PURE__*/_react.default.createElement("br", null)));
+}
+},{"react":"node_modules/react/index.js","../Pamitha/images/SLIIT.png":"Component/Pamitha/images/SLIIT.png","./CSS/StudentHome.css":"Component/Lankani/CSS/StudentHome.css"}],"Component/Lankani/ResearchTopicAdd.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = ResearchTopic;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ResearchTopic() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      groupNumber = _useState2[0],
+      setGroupNumber = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      topic = _useState4[0],
+      setTopic = _useState4[1];
+
+  function sendData(e) {
+    e.preventDefault();
+    var newResearchTopic = {
+      groupNumber: groupNumber,
+      topic: topic
+    };
+
+    _axios.default.post("http://localhost:8001/ResearchTopic/save", newResearchTopic).then(function () {
+      alert("Add Topic");
+      console.log(newResearchTopic);
+    }).catch(function (err) {
+      alert(err);
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Research Topic Registration Form"), /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: sendData
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "gnumber"
+  }, "Group Number : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "gnumber",
+    placeholder: "Enter Group Number",
+    onChange: function onChange(e) {
+      setGroupNumber(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "topic"
+  }, "Topic : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "topic",
+    placeholder: "Enter Topic",
+    onChange: function onChange(e) {
+      setTopic(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
@@ -43955,6 +44141,10 @@ var _StudentAdd = _interopRequireDefault(require("./Component/Lankani/StudentAdd
 var _StudentList = _interopRequireDefault(require("./Component/Lankani/StudentList"));
 
 var _ViewStudents = _interopRequireDefault(require("./Component/Lankani/ViewStudents"));
+
+var _StudentHome = _interopRequireDefault(require("./Component/Lankani/StudentHome"));
+
+var _ResearchTopicAdd = _interopRequireDefault(require("./Component/Lankani/ResearchTopicAdd"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44034,6 +44224,14 @@ var App = /*#__PURE__*/function (_Component) {
         path: "/viewstudent",
         exact: true,
         component: _ViewStudents.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/studenthome",
+        exact: true,
+        component: _StudentHome.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/researchtopic",
+        exact: true,
+        component: _ResearchTopicAdd.default
       })));
     }
   }]);
@@ -44042,7 +44240,7 @@ var App = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Header":"Component/Pamitha/Header.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Header":"Component/Pamitha/Header.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -44083,7 +44281,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1084" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49401" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
