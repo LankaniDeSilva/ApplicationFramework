@@ -21,6 +21,7 @@ import {BrowserRouter,Route } from "react-router-dom";
   import StudentHome from "./Component/Lankani/StudentHome";
   import ResarchTopicAdd from "./Component/Lankani/ResearchTopicAdd";
   import StudentFileAdd from "./Component/Lankani/StudentFileAdd";
+  import StudentPresentationSubmission from "./Component/Lankani/StudentPresentation";
   
   
 
@@ -54,6 +55,8 @@ export default class App extends Component{
             <Route path="/studenthome" exact component={StudentHome}></Route>
             <Route path="/researchtopic" exact component={ResarchTopicAdd}></Route>
             <Route path="/studentsub" exact component={StudentFileAdd}></Route>
+            <Route path="/studentpresentation" exact component={StudentPresentationSubmission}></Route>
+
             
 
             {/*Ayeshi */}
