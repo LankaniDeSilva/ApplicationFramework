@@ -44003,13 +44003,17 @@ function StudentHome() {
     class: "container"
   }, /*#__PURE__*/_react.default.createElement("h3", {
     class: "display-4"
-  }, "Submit Presentation"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Submit Presentation")), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/studentsub"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
   }, /*#__PURE__*/_react.default.createElement("h3", {
     class: "display-4"
-  }, "Submit Final Thesis"))), /*#__PURE__*/_react.default.createElement("br", null)));
+  }, "Submit Final Thesis")), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/studentsub"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null)));
 }
 },{"react":"node_modules/react/index.js","../Pamitha/images/SLIIT.png":"Component/Pamitha/images/SLIIT.png","./CSS/StudentHome.css":"Component/Lankani/CSS/StudentHome.css"}],"Component/Lankani/ResearchTopicAdd.js":[function(require,module,exports) {
 "use strict";
@@ -44100,7 +44104,35 @@ function ResearchTopic() {
     className: "btn btn-primary"
   }, "Submit"))));
 }
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/StudentFileAdd.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/SubmissionForm.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SubmissionForm;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function SubmissionForm(props) {
+  var label = props.label,
+      _props$type = props.type,
+      type = _props$type === void 0 ? "text" : _props$type,
+      name = props.name,
+      onChange = props.onChange;
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "FormInput"
+  }, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
+    type: type,
+    name: name,
+    onChange: onChange
+  }));
+}
+},{"react":"node_modules/react/index.js"}],"Component/Lankani/StudentFileAdd.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44111,6 +44143,8 @@ exports.default = StudentFileSubmission;
 var _react = _interopRequireWildcard(require("react"));
 
 var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44141,6 +44175,10 @@ function StudentFileSubmission() {
       file = _useState4[0],
       setfile = _useState4[1];
 
+  var onChangeGroupId = function onChangeGroupId(e) {
+    setgroupid(e.target.value);
+  };
+
   var onChangeFile = function onChangeFile(e) {
     setfile(e.target.files[0]);
   };
@@ -44160,39 +44198,34 @@ function StudentFileSubmission() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Submit Document"), /*#__PURE__*/_react.default.createElement("form", {
-    onSubmit: onChangeClick,
-    encType: "multipart/form-data"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/_react.default.createElement("label", {
-    for: "groupid"
-  }, "Group ID : "), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    className: "form-control",
-    id: "groupid",
-    placeholder: "Enter Group ID",
-    onChange: function onChange(e) {
-      setgroupid(e.target.value);
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
     }
-  })), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Document Submission Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     className: "form-group"
-  }, /*#__PURE__*/_react.default.createElement("label", {
-    for: "filesub"
-  }, "File Submission : "), /*#__PURE__*/_react.default.createElement("input", {
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "groupid",
+    type: "text",
+    onChange: onChangeGroupId
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "File Submission : ",
+    name: "filesub",
     type: "file",
-    className: "form-control",
-    id: "filesub",
-    filename: "file",
     onChange: onChangeFile
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
+    onClick: onChangeClick,
     className: "btn btn-primary"
   }, "Submit"))));
 }
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
