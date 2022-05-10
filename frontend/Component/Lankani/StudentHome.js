@@ -78,7 +78,7 @@ export default function StudentHome(){
                     <div class="container">
                         <h3 class="display-4">Submit Presentation</h3>
                     </div>
-                    <p><a href="/studentsub">Click here</a></p>
+                    <p><a href="/studentpresentation">Click here</a></p>
                 </div>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">

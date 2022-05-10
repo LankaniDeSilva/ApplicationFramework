@@ -15,6 +15,7 @@ const FeedbackRoutes = require('./Routes/AdminFeedback');
 const StudentRoute = require('./Routes/StudentRoute');
 const ResearchTopic = require('./Routes/ResearchTopicRouter');
 const StudentFileSubmission = require("./Routes/StudentFileSubmission");
+const StudentPresentationSubmission = require("./Routes/StudentPresentationRoutes");
 
 
 //app middleware
@@ -29,6 +30,7 @@ app.use(FeedbackRoutes);
 app.use(StudentRoute);
 app.use(ResearchTopic);
 app.use(StudentFileSubmission);
+app.use(StudentPresentationSubmission);
 
 
 const PORT = 8001;
