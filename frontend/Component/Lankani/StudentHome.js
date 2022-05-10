@@ -52,12 +52,14 @@ export default function StudentHome(){
                     <div class="container">
                         <h3 class="display-4">Download Document</h3>
                     </div>
+                    
                 </div>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Submit Document</h3>
                     </div>
+                    <p><a href="/studentsub">Click here</a></p>
                 </div>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
