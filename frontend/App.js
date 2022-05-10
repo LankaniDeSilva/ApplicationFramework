@@ -22,6 +22,7 @@ import {BrowserRouter,Route } from "react-router-dom";
   import ResarchTopicAdd from "./Component/Lankani/ResearchTopicAdd";
   import StudentFileAdd from "./Component/Lankani/StudentFileAdd";
   import StudentPresentationSubmission from "./Component/Lankani/StudentPresentation";
+  import StudentThesisSubmission from "./Component/Lankani/StudentThesisSubmission";
   
   
 
@@ -56,6 +57,7 @@ export default class App extends Component{
             <Route path="/researchtopic" exact component={ResarchTopicAdd}></Route>
             <Route path="/studentsub" exact component={StudentFileAdd}></Route>
             <Route path="/studentpresentation" exact component={StudentPresentationSubmission}></Route>
+            <Route path="/thesis" exact component={StudentThesisSubmission}></Route>
 
             
 

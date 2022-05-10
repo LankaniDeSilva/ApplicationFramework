@@ -16,6 +16,7 @@ const StudentRoute = require('./Routes/StudentRoute');
 const ResearchTopic = require('./Routes/ResearchTopicRouter');
 const StudentFileSubmission = require("./Routes/StudentFileSubmission");
 const StudentPresentationSubmission = require("./Routes/StudentPresentationRoutes");
+const StudentThesisSubmission = require("./Routes/StudentThesisSubmission");
 
 
 //app middleware
@@ -31,7 +32,7 @@ app.use(StudentRoute);
 app.use(ResearchTopic);
 app.use(StudentFileSubmission);
 app.use(StudentPresentationSubmission);
-
+app.use(StudentThesisSubmission);
 
 const PORT = 8001;
 const DB_URL = 'mongodb+srv://pamitha:pamitha@database1.gqpga.mongodb.net/AFPROJECT?retryWrites=true&w=majority';

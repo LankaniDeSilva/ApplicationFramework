@@ -85,7 +85,7 @@ export default function StudentHome(){
                     <div class="container">
                         <h3 class="display-4">Submit Final Thesis</h3>
                     </div>
-                    <p><a href="/studentsub">Click here</a></p>
+                    <p><a href="/thesis">Click here</a></p>
                 </div>
                 <br/>
             </div>
