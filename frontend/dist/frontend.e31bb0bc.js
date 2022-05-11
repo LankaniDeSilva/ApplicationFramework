@@ -43965,13 +43965,17 @@ function StudentHome() {
     class: "container"
   }, /*#__PURE__*/_react.default.createElement("h3", {
     class: "display-4"
-  }, "Request Supervisor"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Request Supervisor")), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/requestsupervisor"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
   }, /*#__PURE__*/_react.default.createElement("h3", {
     class: "display-4"
-  }, "Request Co-Supervisor"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Request Co-Supervisor")), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/requestcosupervisor"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -44412,6 +44416,190 @@ function StudentThesisSubmission() {
     className: "btn btn-primary"
   }, "Submit"))));
 }
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestSupervisor.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = RequestSepervisor;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function RequestSepervisor() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      studentgroup = _useState2[0],
+      setstudentgroup = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      supervisor = _useState4[0],
+      setSupervisor = _useState4[1];
+
+  var onChangestudentgroup = function onChangestudentgroup(e) {
+    setstudentgroup(e.target.value);
+  };
+
+  var onChangeSupervisor = function onChangeSupervisor(e) {
+    setSupervisor(e.target.value);
+  };
+
+  var onChangeClick = function onChangeClick(e) {
+    e.preventDefault();
+    var newRequest = {
+      studentgroup: studentgroup,
+      supervisor: supervisor
+    };
+
+    _axios.default.post("http://localhost:8001/Supervisor/save", newRequest).then(function () {
+      alert("Request inserted successfully");
+    }).catch(function (err) {
+      alert(err);
+    });
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "studentgroup",
+    type: "text",
+    onChange: onChangestudentgroup
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Supervisor Name : ",
+    name: "supervisor",
+    type: "text",
+    onChange: onChangeSupervisor
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    onClick: onChangeClick,
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestCoSupervisor.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = RequestSepervisor;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function RequestSepervisor() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      studentgroup = _useState2[0],
+      setstudentgroup = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      supervisor = _useState4[0],
+      setSupervisor = _useState4[1];
+
+  var onChangestudentgroup = function onChangestudentgroup(e) {
+    setstudentgroup(e.target.value);
+  };
+
+  var onChangeSupervisor = function onChangeSupervisor(e) {
+    setSupervisor(e.target.value);
+  };
+
+  var onChangeClick = function onChangeClick(e) {
+    e.preventDefault();
+    var newRequest = {
+      studentgroup: studentgroup,
+      supervisor: supervisor
+    };
+
+    _axios.default.post("http://localhost:8001/CoSupervisor/save", newRequest).then(function () {
+      alert("Request inserted successfully");
+    }).catch(function (err) {
+      alert(err);
+    });
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "studentgroup",
+    type: "text",
+    onChange: onChangestudentgroup
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Co-Supervisor Name : ",
+    name: "supervisor",
+    type: "text",
+    onChange: onChangeSupervisor
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    onClick: onChangeClick,
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
@@ -44465,6 +44653,10 @@ var _StudentFileAdd = _interopRequireDefault(require("./Component/Lankani/Studen
 var _StudentPresentation = _interopRequireDefault(require("./Component/Lankani/StudentPresentation"));
 
 var _StudentThesisSubmission = _interopRequireDefault(require("./Component/Lankani/StudentThesisSubmission"));
+
+var _RequestSupervisor = _interopRequireDefault(require("./Component/Lankani/RequestSupervisor"));
+
+var _RequestCoSupervisor = _interopRequireDefault(require("./Component/Lankani/RequestCoSupervisor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44564,6 +44756,14 @@ var App = /*#__PURE__*/function (_Component) {
         path: "/thesis",
         exact: true,
         component: _StudentThesisSubmission.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/requestsupervisor",
+        exact: true,
+        component: _RequestSupervisor.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/requestcosupervisor",
+        exact: true,
+        component: _RequestCoSupervisor.default
       })));
     }
   }]);
@@ -44572,7 +44772,7 @@ var App = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Header":"Component/Pamitha/Header.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js","./Component/Lankani/StudentFileAdd":"Component/Lankani/StudentFileAdd.js","./Component/Lankani/StudentPresentation":"Component/Lankani/StudentPresentation.js","./Component/Lankani/StudentThesisSubmission":"Component/Lankani/StudentThesisSubmission.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Header":"Component/Pamitha/Header.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js","./Component/Lankani/StudentFileAdd":"Component/Lankani/StudentFileAdd.js","./Component/Lankani/StudentPresentation":"Component/Lankani/StudentPresentation.js","./Component/Lankani/StudentThesisSubmission":"Component/Lankani/StudentThesisSubmission.js","./Component/Lankani/RequestSupervisor":"Component/Lankani/RequestSupervisor.js","./Component/Lankani/RequestCoSupervisor":"Component/Lankani/RequestCoSupervisor.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -44613,7 +44813,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49401" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64049" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

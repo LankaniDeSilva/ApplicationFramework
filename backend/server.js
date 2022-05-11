@@ -17,6 +17,8 @@ const ResearchTopic = require('./Routes/ResearchTopicRouter');
 const StudentFileSubmission = require("./Routes/StudentFileSubmission");
 const StudentPresentationSubmission = require("./Routes/StudentPresentationRoutes");
 const StudentThesisSubmission = require("./Routes/StudentThesisSubmission");
+const RequestSupervisor = require("./Routes/RequestSupervisorRouter");
+const RequestCoSupervisor = require("./Routes/RequestCoSupervisor");
 
 
 //app middleware
@@ -33,6 +35,9 @@ app.use(ResearchTopic);
 app.use(StudentFileSubmission);
 app.use(StudentPresentationSubmission);
 app.use(StudentThesisSubmission);
+app.use(RequestSupervisor);
+app.use(RequestCoSupervisor);
+
 
 const PORT = 8001;
 const DB_URL = 'mongodb+srv://pamitha:pamitha@database1.gqpga.mongodb.net/AFPROJECT?retryWrites=true&w=majority';
