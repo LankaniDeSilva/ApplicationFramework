@@ -23,7 +23,9 @@ import {BrowserRouter,Route } from "react-router-dom";
   import StudentFileAdd from "./Component/Lankani/StudentFileAdd";
   import StudentPresentationSubmission from "./Component/Lankani/StudentPresentation";
   import StudentThesisSubmission from "./Component/Lankani/StudentThesisSubmission";
-  
+  import RequestSupervisor from "./Component/Lankani/RequestSupervisor";
+  import RequestCoSupervisor from "./Component/Lankani/RequestCoSupervisor";
+
   
 
 
@@ -58,6 +60,9 @@ export default class App extends Component{
             <Route path="/studentsub" exact component={StudentFileAdd}></Route>
             <Route path="/studentpresentation" exact component={StudentPresentationSubmission}></Route>
             <Route path="/thesis" exact component={StudentThesisSubmission}></Route>
+            <Route path="/requestsupervisor" exact component={RequestSupervisor}></Route>
+            <Route path="/requestcosupervisor" exact component={RequestCoSupervisor}></Route>
+
 
             
 

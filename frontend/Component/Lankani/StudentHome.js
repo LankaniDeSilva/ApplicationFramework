@@ -40,12 +40,14 @@ export default function StudentHome(){
                     <div class="container">
                         <h3 class="display-4">Request Supervisor</h3>
                     </div>
+                    <p><a href="/requestsupervisor">Click here</a></p>
                 </div>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Request Co-Supervisor</h3>
                     </div>
+                    <p><a href="/requestcosupervisor">Click Here</a></p>
                 </div>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
