@@ -12,7 +12,8 @@ const NoticeRoutes = require('./Routes/AdminNotice');
 const PDFRoutes = require('./Routes/AdminPDF');
 const MarksRoutes = require('./Routes/AdminMark');
 const FeedbackRoutes = require('./Routes/AdminFeedback');
-
+const GroupRoutes = require('./Routes/GroupRegister');
+const PanelRoutes = require('./Routes/PanelMember');
 
 //app middleware
 app.use(bodyParser.json());
@@ -23,6 +24,8 @@ app.use(NoticeRoutes);
 app.use(PDFRoutes);
 app.use(MarksRoutes);
 app.use(FeedbackRoutes);
+app.use(GroupRoutes);
+app.use(PanelRoutes);
 
 
 

@@ -94,7 +94,7 @@ import axios from "axios";
           <thead>
               <tr>
                   <th scope="col">#</th>
-                  <th scope="col">GROUP ID</th>
+                  <th scope="col">GROUP Name</th>
                   <th scope="col">Document Type</th>
                   <th scope="col">Comment</th>
                   <th scope="col">Document</th>
@@ -121,6 +121,15 @@ import axios from "axios";
                   >
                     <i className="fas fa-trash-alt"></i> Delete
                   </button>
+                  &nbsp;
+                  <a href={`/mark/${pdfs._id}`}>
+                  <button
+                         type="button"
+                        className="btn btn-primary"
+                  >
+                    <i className="fas fa-trash-alt"></i> Add Marks
+                  </button>
+                  </a>
                     </td>  
                      
                   </tr>

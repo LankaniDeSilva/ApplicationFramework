@@ -85,9 +85,10 @@ function Addfile() {
                     }}
                   >
                     <option selected>Open this select menu</option>
-                    <option value="one">One</option>
-                    <option value="two">Two</option>
-                    <option value="3">Three</option>
+                    <option value="Project Proposal report(draft)">Project Proposal report(draft)</option>
+                    <option value="Project Status Document">Project Status Document</option>
+                    <option value="Research Paper ">Research Paper</option>
+                    <option value="Final Report ">Final Report</option>
                   </select>
 
                   <div class="mb-3">

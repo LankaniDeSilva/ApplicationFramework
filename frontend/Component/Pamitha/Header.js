@@ -14,7 +14,7 @@ function Header(){
              <td>
              <div >
              
-             <button class="btn btn-outline-primary">Sign In</button >&nbsp; <button class="btn btn-outline-primary">Sign Up</button>
+            
            
              </div>
              </td>
@@ -39,6 +39,12 @@ function Header(){
                      <li class="nav-item">
                        <a class="nav-link" href="/Admin">Admin Dashboard</a>
                      </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="/register">Group Register</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="/panel">Panel</a>
+                     </li>
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
@@ -52,16 +58,19 @@ function Header(){
                     </li>
                    
                     </ul>
+                    <button class="btn btn-outline-primary">Sign In</button >&nbsp; <button class="btn btn-outline-primary">Sign Up</button>&nbsp;
                    <form class="d-flex">
-                   
+                       
                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                        <button class="btn btn-outline-success" type="submit">Search</button>
                    </form>
              </div>
           </div>
        </nav>
-<br/>
-<br/>
+
+
+
+  
          </div>
     )
 }

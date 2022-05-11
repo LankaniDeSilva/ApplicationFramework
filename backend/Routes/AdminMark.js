@@ -2,10 +2,11 @@ const express = require('express');
 const Mark = require("../Models/AdminMark");
 const router = express.Router();
 const multer = require("multer");
+const files = require("../Models/AdminPDF");
 
 
 
-/*router.post("/marksave", (req,res) =>{
+router.post("/savemark", (req,res) =>{
 
     let newMark = new Mark(req.body);
 
@@ -19,8 +20,8 @@ const multer = require("multer");
             success:"Mark saved successfully"
         });
     });
-}); */
-
+}); 
+/*
 router.post("/marksave", (req, res) => {
     const mark = new Mark({
         groupid: req.body.id,
@@ -36,7 +37,7 @@ router.post("/marksave", (req, res) => {
      .then(()=> res.json("success"))
      .catch((err) => res.status(400).json(`Error: ${err}`));
 });
-
+*/
 //get 
 
 router.get('/getmark', (req,res) =>{
@@ -51,7 +52,55 @@ router.get('/getmark', (req,res) =>{
             existingPosts:Mark
         });
     });
-}); 
+});
+
+//get a specipic post
+router.get("/getmark/:id",(req,res) =>{
+    let postId = req.params.id;
+
+    files.findById(postId,(err,post)=>{
+        if(err){
+            return res.status(400).json({success:false, err});
+        }
+        return res.status(200).json({
+            success:true,
+            post
+        });
+    });
+});
+
+//get a specipic post
+router.get("/marks/:id",(req,res) =>{
+    let postId = req.params.id;
+
+    Mark.findById(postId,(err,post)=>{
+        if(err){
+            return res.status(400).json({success:false, err});
+        }
+        return res.status(200).json({
+            success:true,
+            post
+        });
+    });
+});
+
+//update post
+router.put('/markupdate/:id',(req,res)=>{
+    Mark.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set:req.body
+        },
+        (err,post)=>{
+            if(err){
+                return res.status(400).json({error:err});
+            }
+            return res.status(200).json({
+                success:"Update Successfully"
+            });
+        }
+    );
+});
 
 /*router.route("/getmark").get((req,res)=>{
 
@@ -63,7 +112,7 @@ router.get('/getmark', (req,res) =>{
 })*/
 
 
-router.route("/getmark/:id").get(async (req,res) => {
+/*router.route("/getmark/:id").get(async (req,res) => {
     let userId = req.params.id;
     const user = await Mark.findOne(userId)
     .then(() => {
@@ -72,9 +121,9 @@ router.route("/getmark/:id").get(async (req,res) => {
         console.log(err.message);
         res.status(500).send({status: "Error with get user", error: err.message});
     })
-})
+})*/
 
-router.route("/mark/update/:id").put(async (req, res)=> {
+/*router.route("/mark/update/:id").put(async (req, res)=> {
     let userId = req.params.id;
 
     const {groupid, marka, markb, markc, markd} = req.body;
@@ -94,7 +143,7 @@ router.route("/mark/update/:id").put(async (req, res)=> {
         res.status(500).send({status: "Error with Updating data", error: err.message});
     })  
 })
-
+*/
 router.route("/deletemark/:id").delete(async (req, res) =>{
 
     let userId = req.params.id;

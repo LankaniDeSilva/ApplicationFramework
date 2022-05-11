@@ -52,15 +52,17 @@ function AddNotice() {
                 </center>
               </div>
               <br />
-              <div className="icone" >
+              <div className="icone">
                 <center>
-               <a href="/mark">
+                
+              <a href="/mark">
                   <img
                     src={mark}
                     style={{ width: "200px", height: "200px", padding: "10px" }}
                   />
-                  <h3>Add marks</h3>
-                  </a>
+                 <h3>Add Mark</h3>
+             </a>  
+                  
                 </center>
               </div>
             </td>
@@ -139,6 +141,13 @@ function AddNotice() {
                         <center>
                           <table>
                             <tr>
+                            <td>
+                        <a href="/group">
+                           <button type="submit" class="btn btn-success" >
+                              View Groups
+                            </button>
+                            </a>
+                            </td>
                               <td>
                         <a href="/noticepdf">
                            <button type="submit" class="btn btn-success" >
@@ -150,6 +159,13 @@ function AddNotice() {
                         <a href="/viewnotice">
                            <button type="submit" class="btn btn-success" >
                            <i class="fa-solid fa-eye"></i> Notice View
+                            </button>
+                            </a>
+                            </td>
+                            <td>
+                        <a href="/viewpanel">
+                           <button type="submit" class="btn btn-success" >
+                           <i class="fa-solid fa-eye"></i> Panel View
                             </button>
                             </a>
                             </td>

@@ -75,18 +75,17 @@ router.route("/notice").get((req,res)=>{
 })
 //delete
 
-router.delete('/notice/delete/:id',(req,res)=>{
-    Notices.findByIdAndRemove(req.params.id).exec((err,deletedNotice) =>{
+router.route("/deletenotice/:id").delete(async (req, res) =>{
 
-        if(err) return res.status(400).json({
-            message:"Delete unsuccessful",err
-        });
-        return res.json({
-            message:"Delete Successfull",deletedNotice
-        });
-    });
-});
+    let userId = req.params.id;
 
+    await Notices.findByIdAndDelete(userId).then(()=>{
+        res.status(200).send({status: "User Delete"});
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status: "Error with delete user", error: err.message});
+    })
+})
 
 
 

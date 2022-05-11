@@ -1,154 +1,179 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
-function Marks() {
-  const [id, setid] = useState("");
-  const [groupid, setgid] = useState("");
-  const [marka, setmarko] = useState("");
-  const [markb, setmarkt] = useState("");
-  const [markc, setmarkth] = useState("");
-  const [markd, setmarkf] = useState("");
-
-  function sendData(_id) {
-    const newMark = {
-      id,
-      groupid,
-      marka,
-      markb,
-      markc,
-      markd,
+export default class EditMark extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      topic: "",
+      mark1: "",
+      mark2: "",
+      mark3: "",
+      mark4: "",
     };
-
-    axios
-      .put(`http://localhost:8001/mark/update/${_id}`, newMark)
-      .then(() => {
-        alert("Update Mark");
-      
-      })
-      .catch((err) => {
-        alert(err);
-      });
   }
 
-  return (
-    <div>
-     
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
 
-      <center>
-        <form
-          style={{
-            width: "550px",
-            padding: "20px",
-            border: "2px solid green",
-            borderRadius: "10px",
-            borderLeft: "6px solid green",
-            borderBottom: "6px solid green",
-          }}
-        >
-          <table>
-          <tr><center><h1 style={{ fontFamily: "Abel" }}>Update Mark</h1></center></tr>
-            <tr>
-            
-              
-              <td>
-              <label style={{ fontSize: "20px" }}>id : </label>
-              <br />
-              <input
-                type="text"
-                class="form-control"
-                value={id}
-                id="id"
-                onChange={(e) => {
-                  setid(e.target.value);
-                }}
-              />
-             </td>
-             <td>
-              <label style={{ fontSize: "20px" }}>Enter Topic : </label>
-              <br />
-              <input
-                class="form-control"
-                id="gid"
-                type="text"
-                onChange={(e) => {
-                  setgid(e.target.value);
-                }}
-              />
-              </td>
-             
-            </tr>
-           
-            <tr>
-              <td>
-                <label style={{ fontSize: "20px" }}>Select date : </label>
-                <br />
-                <input
-                  class="form-control"
-                  id="mark1"
-                  type="number"
-                  onChange={(e) => {
-                    setmarko(e.target.value);
-                  }}
-                />
-                <br />
-              </td>
-              <td>
-                <label style={{ fontSize: "20px" }}>Enter Notice : </label>
-                <br />
-                <input
-                  class="form-control"
-                  id="mark2"
-                  type="number"
-                  onChange={(e) => {
-                    setmarkt(e.target.value);
-                  }}
-                />
-                <br />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label style={{ fontSize: "20px" }}>Enter Notice : </label>
-                <br />
-                <input
-                  class="form-control"
-                  id="mark3"
-                  type="number"
-                  onChange={(e) => {
-                    setmarkth(e.target.value);
-                  }}
-                />
-                <br />
-              </td>
-              <td>
-                <label style={{ fontSize: "20px" }}>Enter Notice : </label>
-                <br />
-                <input
-                  class="form-control"
-                  id="mark4"
-                  type="number"
-                  onChange={(e) => {
-                    setmarkf(e.target.value);
-                  }}
-                />
-                <br />
-              </td>
-            </tr>
-          </table>
-          <center>
-            <button
-              type="submit"
-              onClick={() => sendData(id)}
-              class="btn btn-primary"
-              
-            >
-              Submit
-            </button>
-          </center>
-        </form>
-      </center>
-    </div>
-  );
+    this.setState({
+      ...this.state,
+      [name]: value,
+    });
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    const id = this.props.match.params.id;
+    const { groupid, mark1,mark2,mark3,mark4 } = this.state;
+
+    const data = {
+      grupid: groupid,
+      marka: mark1,
+      markb: mark2,
+      markc: mark3,
+      markd: mark4
+    };
+    console.log(data);
+
+    axios.put(`http://localhost:8001/markupdate/${id}`, data).then((res) => {
+      if (res.data.success) {
+        alert("Marks Updated Successfully");
+        this.setState({
+          groupid: "",
+          mark1: "",
+          mark2: "",
+          mark3: "",
+          mark4: "",
+        });
+      }
+    }); 
+  };
+
+  componentDidMount(){
+  
+    const id = this.props.match.params.id ;
+
+    axios.get(`http://localhost:8001/marks/${id}`).then((res) =>{
+      if(res.data.success){
+        this.setState({
+          groupid:res.data.post.groupid,
+          mark1:res.data.post.marka,
+          mark2:res.data.post.markb,
+          mark3:res.data.post.markc,
+          mark4:res.data.post.markd
+          
+        });
+        console.log(this.state);
+      }
+    }); 
 }
 
-export default Marks;
+  render() {
+    return (
+      <div>
+        <center>
+          <form
+            style={{
+              width: "550px",
+              padding: "20px",
+              border: "2px solid #00ff00",
+              borderRadius: "10px",
+              borderLeft: "6px solid #00ff00",
+              borderBottom: "6px solid #00ff00",
+            }}
+          >
+            <table>
+              <tr>
+                <center>
+                  <h1 style={{ fontFamily: "Abel" }}>Update Mark</h1>
+                </center>
+              </tr>
+              <tr>
+               
+                <td>
+                  <label style={{ fontSize: "20px" }}>Enter Topic : </label>
+                  <br />
+                  <input
+                    class="form-control"
+                    id="gid"
+                    type="text"
+                    name='groupid'
+                    value={this.state.groupid}
+                    onChange={this.handleInputChange}
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label style={{ fontSize: "20px" }}>Enter Mark : </label>
+                  <br />
+                  <input
+                    class="form-control"
+                    id="mark1"
+                    type="number"
+                    name='mark1'
+                    value={this.state.mark1}
+                    onChange={this.handleInputChange}
+                  />
+                  <br />
+                </td>
+                <td>
+                  <label style={{ fontSize: "20px" }}>Enter Mark :</label>
+                  <br />
+                  <input
+                    class="form-control"
+                    id="mark2"
+                    type="number"
+                    name='mark2'
+                    value={this.state.mark2}
+                    onChange={this.handleInputChange}
+                  />
+                  <br />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label style={{ fontSize: "20px" }}>Enter Mark :</label>
+                  <br />
+                  <input
+                    class="form-control"
+                    id="mark3"
+                    type="number"
+                    name='mark3'
+                    value={this.state.mark3}
+                    onChange={this.handleInputChange}
+                  />
+                  <br />
+                </td>
+                <td>
+                  <label style={{ fontSize: "20px" }}>Enter Mark :</label>
+                  <br />
+                  <input
+                    class="form-control"
+                    id="mark4"
+                    type="number"
+                    name='mark4'
+                    value={this.state.mark4}
+                    onChange={this.handleInputChange}
+                  />
+                  <br />
+                </td>
+              </tr>
+            </table>
+            <center>
+              <button
+                type="submit"
+                onClick={this.onSubmit}
+                class="btn btn-primary"
+              >
+                Submit
+              </button>
+            </center>
+          </form>
+        </center>
+      </div>
+    );
+  }
+}

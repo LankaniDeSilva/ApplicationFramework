@@ -15,7 +15,7 @@ export default class GetMark extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getmark").then((res) => {
+    axios.get("http://localhost:8001/getpanel").then((res) => {
       if (res.data.success) {
         this.setState({
           marks: res.data.existingPosts,
@@ -25,7 +25,7 @@ export default class GetMark extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deletemark/${id}`).then((res) => {
+    axios.delete(`http://localhost:8001/deletepanel/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });
@@ -43,12 +43,10 @@ export default class GetMark extends Component {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">GROUP Name</th>
-              <th scope="col">MarkA</th>
-              <th scope="col">MarkB</th>
-              <th scope="col">MarkC</th>
-              <th scope="col">MarkD</th>
-              <th scope="col">Total</th>
+              <th scope="col">GROUP NAME</th>
+              <th scope="col">PANELMEMBER</th>
+              <th scope="col">PANELMEMBER EMAIL</th>
+             
             </tr>
           </thead>
           <tbody>
@@ -56,19 +54,13 @@ export default class GetMark extends Component {
               <tr>
                 <th scope="row">{index + 1}</th>
                 
-                <td>{marks.groupid}</td>
-                <td>{marks.marka}</td>
-                <td>{marks.markb}</td>
-                <td>{marks.markc}</td>
-                <td>{marks.markd}</td>
-                <td>{marks.marka + marks.markb + marks.markc + marks.markd}</td>
+                <td>{marks.name}</td>
+                <td>{marks.panelmember}</td>
+                <td>{marks.email}</td>
+               
 
                 <td>
-                  <a href={`/markupdate/${marks._id}`}>
-                  <button type="button" className="btn btn-success">
-                    <i className="fas fa-edit"></i> Update
-                  </button>
-                  </a>
+                 
                   &nbsp;
                   <button
                     type="button"

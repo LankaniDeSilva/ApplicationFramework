@@ -1,38 +1,78 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import swal from "sweetalert";
 
-function Marks() {
-  const [id, setgid] = useState("");
-  const [markone, setmarko] = useState("");
-  const [marktwo, setmarkt] = useState("");
-  const [markthree, setmarkth] = useState("");
-  const [markfour, setmarkf] = useState("");
+export default class AddMark extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          name: "",
+          mark1:"",
+          mark2:"",
+          mark3:"",
+          mark4:"",
+          
+        };
+      }
+    
+      handleInputChange = (e) => {
+        const { name, value } = e.target;
+    
+        this.setState({
+          ...this.state,
+          [name]: value,
+        });
+      };
+    
+      onSubmit = (e) => {
+        e.preventDefault();
+      
+        const { name, mark1, mark2, mark3, mark4 } = this.state;
+    
+        const data = {
+          groupid:name,
+          marka:mark1,
+          markb:mark2,
+          markc:mark3,
+          markd:mark4
+        };
+        console.log(data);
+    
+        axios.post("http://localhost:8001/savemark", data).then((res) => {
+          if (res.data.success) {
+            alert("Save Marks Successfully");
+            this.setState({
+              name: "",
+              mark1: "",
+              mark2:"",
+              mark3:"",
+              mark4:"",
+            });
+          }
+        }); 
+      };
+    
 
-  function passData() {
-    const newMark = {
-      id,
-      markone,
-      marktwo,
-      markthree,
-      markfour,
-    };
+  componentDidMount(){
+  
+    const id = this.props.match.params.id ;
 
-    axios
-      .post("http://localhost:8001/marksave", newMark)
-      .then(() => {
-        alert("Add Notice");
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  }
-
+    axios.get(`http://localhost:8001/getmark/${id}`).then((res) =>{
+      if(res.data.success){
+        this.setState({
+          name:res.data.post.groupid
+         
+          
+        });
+        console.log(this.state);
+      }
+    }); 
+}
+render(){
   return (
     <div>
       <center>
         <form
-          onSubmit={passData}
+         
           style={{
             width: "550px",
             padding: "20px",
@@ -46,15 +86,15 @@ function Marks() {
             <tr>
               <h1 style={{ fontFamily: "Abel" }}>Add Mark</h1>
 
-              <label style={{ fontSize: "20px" }}>Enter Topic : </label>
+              <label style={{ fontSize: "20px" }}>Group Name : </label>
               <br />
               <input
                 class="form-control"
-                id="gid"
+                id="name"
                 type="text"
-                onChange={(e) => {
-                  setgid(e.target.value);
-                }}
+                name='name'
+                value={this.state.name}
+                onChange={this.handleInputChange}
               />
               <br />
             </tr>
@@ -67,9 +107,9 @@ function Marks() {
                   class="form-control"
                   id="mark1"
                   type="text"
-                  onChange={(e) => {
-                    setmarko(e.target.value);
-                  }}
+                  name='mark1'
+                  value={this.state.mark1}
+                  onChange={this.handleInputChange}
                 />
                 <br />
               </td>
@@ -80,9 +120,9 @@ function Marks() {
                   class="form-control"
                   id="mark2"
                   type="text"
-                  onChange={(e) => {
-                    setmarkt(e.target.value);
-                  }}
+                  name='mark2'
+                  value={this.state.mark2}
+                  onChange={this.handleInputChange}
                 />
                 <br />
               </td>
@@ -95,9 +135,9 @@ function Marks() {
                   class="form-control"
                   id="mark3"
                   type="text"
-                  onChange={(e) => {
-                    setmarkth(e.target.value);
-                  }}
+                  name='mark3'
+                  value={this.state.mark3}
+                  onChange={this.handleInputChange}
                 />
                 <br />
               </td>
@@ -108,16 +148,16 @@ function Marks() {
                   class="form-control"
                   id="mark4"
                   type="text"
-                  onChange={(e) => {
-                    setmarkf(e.target.value);
-                  }}
+                  name='mark4'
+                  value={this.state.mark4}
+                  onChange={this.handleInputChange}
                 />
                 <br />
               </td>
             </tr>
           </table>
           <center>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary"  onClick={this.onSubmit}>
               Submit
             </button>
           </center>
@@ -126,5 +166,5 @@ function Marks() {
     </div>
   );
 }
+}
 
-export default Marks;
