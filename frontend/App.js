@@ -53,7 +53,7 @@ export default class App extends Component{
 
             {/*Lankani */}
 
-            {/* <Route path="/Student" exact component={StudentAdd}></Route> */}          
+            <Route path="/Student" exact component={StudentAdd}></Route>          
             <Route path="/viewstudent" exact component={ViewStudents}></Route>
             <Route path="/studenthome" exact component={StudentHome}></Route>
             <Route path="/researchtopic" exact component={ResarchTopicAdd}></Route>
