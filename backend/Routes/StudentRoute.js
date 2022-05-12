@@ -86,7 +86,7 @@ srouter.put('/studentupdate/:id',(req,res)=>{
 srouter.get("/student/:id",(req,res) =>{
   let studentId = req.params.id;
 
-  Mark.findById(studentId,(err,post)=>{
+  Student.findById(studentId,(err,student)=>{
       if(err){
           return res.status(400).json({success:false, err});
       }

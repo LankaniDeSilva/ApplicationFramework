@@ -65,7 +65,7 @@ export default class GetStudents extends Component {
                 
 
                 <td>
-                  <a href="#">
+                  <a href={`/studentupdate/${students._id}`}>
                   <button type="button" className="btn btn-warning">
                      Update
                   </button>
