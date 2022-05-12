@@ -90,7 +90,7 @@ import axios from "axios";
                   </select>
                   <br/>
         
-      <table className="table" style={{background:"#f3d8f3"}}>
+      <table className="table" style={{background:"#ccffcc", borderRadius:"30px"}}>
           <thead>
               <tr>
                   <th scope="col">#</th>

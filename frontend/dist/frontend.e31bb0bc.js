@@ -37276,7 +37276,7 @@ function Header() {
     "aria-labelledby": "navbarDropdown"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     class: "dropdown-item",
-    href: "#"
+    href: "/viewstudent"
   }, "Action")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     class: "dropdown-item",
     href: "#"
@@ -41937,8 +41937,10 @@ function Registration() {
     onSubmit: sendData,
     style: {
       width: "800px",
-      border: "2px solid black",
-      padding: "30px"
+      borderRadius: "40px",
+      padding: "30px",
+      background: " #eee6ff",
+      borderLeft: "5px solid #a880ff"
     }
   }, /*#__PURE__*/_react.default.createElement("h2", null, "Group Registration"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
     style: {
@@ -41958,28 +41960,28 @@ function Registration() {
   }, "Enter Group Details : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("textarea", {
     class: "form-control",
     id: "details",
-    placeholder: " 1. Name             --------------           ID Number               -------------            Email",
+    placeholder: " Member one (Leader)         --------------           ID Number               -------------            Email",
     onChange: function onChange(e) {
       setleader(e.target.value);
     }
   }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("textarea", {
     class: "form-control",
     id: "details",
-    placeholder: " 2. Name             --------------           ID Number               -------------            Email",
+    placeholder: " member two             --------------           ID Number               -------------            Email",
     onChange: function onChange(e) {
       setmember2(e.target.value);
     }
   }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("textarea", {
     class: "form-control",
     id: "details",
-    placeholder: " 3. Name             --------------           ID Number               -------------            Email",
+    placeholder: " Member three            --------------           ID Number               -------------            Email",
     onChange: function onChange(e) {
       setmember3(e.target.value);
     }
   }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("textarea", {
     class: "form-control",
     id: "details",
-    placeholder: " 4. Name             --------------           ID Number               -------------            Email",
+    placeholder: " Member four             --------------           ID Number               -------------            Email",
     onChange: function onChange(e) {
       setmember4(e.target.value);
     }
@@ -42117,8 +42119,9 @@ var GetMark = /*#__PURE__*/function (_Component) {
       })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
         className: "table",
         style: {
-          background: "#f3d8f3",
-          width: "1400px"
+          background: "#ccffcc",
+          width: "1400px",
+          borderRadius: "30px"
         }
       }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
@@ -42749,7 +42752,8 @@ var Getnotice = /*#__PURE__*/function (_Component) {
       }, "Three")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", {
         className: "table",
         style: {
-          background: "#f3d8f3"
+          background: "#ccffcc",
+          borderRadius: "30px"
         }
       }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
@@ -42891,14 +42895,16 @@ function AddNotice() {
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "icone"
-  }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/viewstudent"
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _members.default,
     style: {
       width: "200px",
       height: "200px",
       padding: "10px"
     }
-  }), /*#__PURE__*/_react.default.createElement("h3", null, "Members"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("h3", null, "Members")))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     className: "icone"
   }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("a", {
     href: "/mark"
@@ -43102,11 +43108,9 @@ function AddNoticefile() {
     style: {
       margin: "0%",
       padding: "50px",
-      backgroundColor: "",
-      border: "2px solid blue",
-      borderRadius: "10px",
-      borderLeft: "6px solid blue",
-      borderBottom: "6px solid blue"
+      background: " #eee6ff",
+      borderRadius: "40px",
+      borderLeft: "6px solid  #9666ff"
     }
   }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
     style: {
@@ -43175,8 +43179,9 @@ function AddNoticefile() {
   }, "Submit")))), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _dfs.default,
     style: {
-      width: "700px",
-      height: "500px"
+      width: "600px",
+      height: "400px",
+      paddingLeft: "30px"
     }
   }))))), /*#__PURE__*/_react.default.createElement("br", null));
 }
@@ -43311,14 +43316,13 @@ var AddMark = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
         style: {
           width: "550px",
           padding: "20px",
-          border: "2px solid #4d94ff",
-          borderRadius: "10px",
-          borderLeft: "6px solid blue",
-          borderBottom: "6px solid blue"
+          background: "#eee6ff",
+          borderRadius: "40px",
+          borderLeft: "6px solid  #9666ff"
         }
       }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("h1", {
         style: {
@@ -43383,7 +43387,7 @@ var AddMark = /*#__PURE__*/function (_Component) {
         type: "submit",
         class: "btn btn-primary",
         onClick: this.onSubmit
-      }, "Submit")))));
+      }, "Submit")))), /*#__PURE__*/_react.default.createElement("br", null));
     }
   }]);
 
@@ -43524,14 +43528,13 @@ var EditMark = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
         style: {
           width: "550px",
           padding: "20px",
-          border: "2px solid #00ff00",
-          borderRadius: "10px",
-          borderLeft: "6px solid #00ff00",
-          borderBottom: "6px solid #00ff00"
+          background: " #eee6ff",
+          borderRadius: "40px",
+          borderLeft: "6px solid  #9666ff"
         }
       }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
         style: {
@@ -43596,7 +43599,7 @@ var EditMark = /*#__PURE__*/function (_Component) {
         type: "submit",
         onClick: this.onSubmit,
         class: "btn btn-primary"
-      }, "Submit")))));
+      }, "Submit")))), /*#__PURE__*/_react.default.createElement("br", null));
     }
   }]);
 
@@ -44184,20 +44187,19 @@ var EditMark = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
         style: {
           width: "550px",
           padding: "20px",
-          border: "2px solid #00ff00",
-          borderRadius: "10px",
-          borderLeft: "6px solid #00ff00",
-          borderBottom: "6px solid #00ff00"
+          background: " #eee6ff",
+          borderRadius: "40px",
+          borderLeft: "5px solid #9666ff"
         }
       }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
         style: {
           fontFamily: "Abel"
         }
-      }, "Add panelMembers")), /*#__PURE__*/_react.default.createElement("label", {
+      }, "Add PanelMembers")), /*#__PURE__*/_react.default.createElement("label", {
         style: {
           fontSize: "20px"
         }
@@ -44234,7 +44236,7 @@ var EditMark = /*#__PURE__*/function (_Component) {
         type: "submit",
         onClick: this.onSubmit,
         class: "btn btn-primary"
-      }, "Submit")))));
+      }, "Submit")))), /*#__PURE__*/_react.default.createElement("br", null));
     }
   }]);
 
@@ -44338,8 +44340,9 @@ var GetMark = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
         className: "table",
         style: {
-          background: "#f3d8f3",
-          width: "1100px"
+          background: "#ccffcc",
+          width: "1100px",
+          borderRadius: "30px"
         }
       }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
@@ -45714,6 +45717,14 @@ var App = /*#__PURE__*/function (_Component) {
         path: "/feedbackadd",
         exact: true,
         component: _AdminFeedback.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/studentsubmit",
+        exact: true,
+        component: _AdminSubmition.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/studentnotice",
+        exact: true,
+        component: _UserNoticeView.default
       }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         path: "/Student",
         exact: true,

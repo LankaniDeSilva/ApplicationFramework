@@ -38,7 +38,7 @@ export default class GetMark extends Component {
         <center>
         <table
           className="table"
-          style={{ background: "#f3d8f3", width: "1100px" }}
+          style={{ background: "#ccffcc", width: "1100px", borderRadius:"30px" }}
         >
           <thead>
             <tr>

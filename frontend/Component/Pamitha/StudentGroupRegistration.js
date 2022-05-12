@@ -33,7 +33,7 @@ function Registration(){
         <div>
           <br/>
             <center>
-            <form onSubmit={sendData} style={{width:"800px", border:"2px solid black", padding:"30px"}}>
+            <form onSubmit={sendData} style={{width:"800px", borderRadius:"40px", padding:"30px", background:" #eee6ff", borderLeft:"5px solid #a880ff"}}>
                 <h2>Group Registration</h2><br/>
             <label style={{ fontSize: "17px" }}>Enter Name of the Group : </label>
               <br />
@@ -50,7 +50,7 @@ function Registration(){
               <textarea
                 class="form-control"
                 id="details"
-                placeholder=" 1. Name             --------------           ID Number               -------------            Email"        
+                placeholder=" Member one (Leader)         --------------           ID Number               -------------            Email"        
                 onChange={(e) => {
                   setleader(e.target.value);
                 }}
@@ -58,7 +58,7 @@ function Registration(){
                <textarea
                 class="form-control"
                 id="details"
-                placeholder=" 2. Name             --------------           ID Number               -------------            Email"        
+                placeholder=" member two             --------------           ID Number               -------------            Email"        
                 onChange={(e) => {
                   setmember2(e.target.value);
                 }}
@@ -66,7 +66,7 @@ function Registration(){
                <textarea
                 class="form-control"
                 id="details"
-                placeholder=" 3. Name             --------------           ID Number               -------------            Email"        
+                placeholder=" Member three            --------------           ID Number               -------------            Email"        
                 onChange={(e) => {
                   setmember3(e.target.value);
                 }}
@@ -74,7 +74,7 @@ function Registration(){
                <textarea
                 class="form-control"
                 id="details"
-                placeholder=" 4. Name             --------------           ID Number               -------------            Email"        
+                placeholder=" Member four             --------------           ID Number               -------------            Email"        
                 onChange={(e) => {
                   setmember4(e.target.value);
                 }}

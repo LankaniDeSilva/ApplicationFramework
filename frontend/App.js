@@ -57,6 +57,8 @@ export default class App extends Component{
              <Route path="/paneladd/:id"  exact component={AddPanelMembers}></Route>
              <Route path="/viewPanel"  exact component={ViewPanelMembers}></Route>
              <Route path="/feedbackadd"  exact component={AdminFeedback}></Route>
+             <Route path="/studentsubmit"  exact component={AdminSubmition}></Route>
+             <Route path="/studentnotice"  exact component={UserNoticeView}></Route>
     
          
 

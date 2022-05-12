@@ -44,11 +44,13 @@ function AddNotice() {
             <td style={{ padding: "50px" }}>
               <div className="icone">
                 <center>
+                  <a href="/viewstudent">
                   <img
                     src={feedback}
                     style={{ width: "200px", height: "200px", padding: "10px" }}
                   />
                   <h3>Members</h3>
+                  </a>
                 </center>
               </div>
               <br />

@@ -50,11 +50,10 @@ function AddNoticefile() {
                 style={{
                   margin: "0%",
                   padding: "50px",
-                  backgroundColor: "",
-                  border: "2px solid blue",
-                  borderRadius: "10px",
-                  borderLeft:"6px solid blue",
-                  borderBottom:"6px solid blue"
+                  background: " #eee6ff",
+                  borderRadius: "40px",
+                  borderLeft:"6px solid  #9666ff"
+                  
                 }}
               >
                 <center>
@@ -131,7 +130,7 @@ function AddNoticefile() {
               </form>
             </td>
             <td>
-              <img src={dfs} style={{ width: "700px", height: "500px" }} />
+              <img src={dfs} style={{ width: "600px", height: "400px", paddingLeft:"30px" }} />
             </td>
           </tr>
         </table>

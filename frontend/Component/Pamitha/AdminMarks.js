@@ -70,16 +70,17 @@ export default class AddMark extends Component {
 render(){
   return (
     <div>
+      <br/>
       <center>
         <form
          
           style={{
             width: "550px",
             padding: "20px",
-            border: "2px solid #4d94ff",
-            borderRadius: "10px",
-            borderLeft: "6px solid blue",
-            borderBottom: "6px solid blue",
+            background:"#eee6ff",
+            borderRadius: "40px",
+            borderLeft: "6px solid  #9666ff"
+           
           }}
         >
           <table>
@@ -163,6 +164,7 @@ render(){
           </center>
         </form>
       </center>
+      <br/>
     </div>
   );
 }
