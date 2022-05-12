@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
 export default class EditStudent extends Component {
+  
   constructor(props) {
     super(props);
+    
     this.state = {
       sitNumber: '',
       sname: '',
@@ -11,6 +14,7 @@ export default class EditStudent extends Component {
       sphoneNumber: '',
 
     };
+    
   }
 
   handleInputChange = (e) => {
@@ -24,6 +28,7 @@ export default class EditStudent extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    
     const id = this.props.match.params.id;
     const { sitNumber, sname, semail, sphoneNumber } = this.state;
 
@@ -46,6 +51,9 @@ export default class EditStudent extends Component {
         });
       }
     }); 
+
+    // this.props.history.push("/viewstudent");
+    this.props.history.push("/viewstudent");
   };
 
   componentDidMount(){

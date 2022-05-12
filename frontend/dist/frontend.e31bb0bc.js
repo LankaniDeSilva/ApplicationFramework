@@ -45648,7 +45648,10 @@ var EditStudent = /*#__PURE__*/function (_Component) {
             sphoneNumber: ""
           });
         }
-      });
+      }); // this.props.history.push("/viewstudent");
+
+
+      _this.props.history.push("/viewstudent");
     });
 
     _this.state = {
@@ -46005,7 +46008,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59980" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61539" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
