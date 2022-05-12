@@ -43,6 +43,7 @@ function AddNoticefile() {
         <table>
           <tr>
             <td>
+              <br/>
               <form
                 onSubmit={sendData}
                 encType="multipart/form-data"
@@ -135,6 +136,7 @@ function AddNoticefile() {
           </tr>
         </table>
       </center>
+      <br/>
     </div>
   );
 }

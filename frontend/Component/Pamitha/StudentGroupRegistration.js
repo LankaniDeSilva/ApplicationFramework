@@ -31,6 +31,7 @@ function Registration(){
 
     return(
         <div>
+          <br/>
             <center>
             <form onSubmit={sendData} style={{width:"800px", border:"2px solid black", padding:"30px"}}>
                 <h2>Group Registration</h2><br/>
@@ -81,6 +82,7 @@ function Registration(){
               <button className="btn btn-success">Register</button>
             </form>
             </center>
+            <br/>
         </div>
     )
 }

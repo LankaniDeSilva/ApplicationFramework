@@ -41933,7 +41933,7 @@ function Registration() {
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: sendData,
     style: {
       width: "800px",
@@ -41985,7 +41985,7 @@ function Registration() {
     }
   }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
     className: "btn btn-success"
-  }, "Register"))));
+  }, "Register"))), /*#__PURE__*/_react.default.createElement("br", null));
 }
 
 var _default = Registration;
@@ -43096,7 +43096,7 @@ function AddNoticefile() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: sendData,
     encType: "multipart/form-data",
     style: {
@@ -43178,7 +43178,7 @@ function AddNoticefile() {
       width: "700px",
       height: "500px"
     }
-  }))))));
+  }))))), /*#__PURE__*/_react.default.createElement("br", null));
 }
 
 var _default = AddNoticefile;
@@ -44369,7 +44369,1190 @@ var GetMark = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = GetMark;
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/StudentAdd.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = AddStudent;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function AddStudent() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      itNumber = _useState2[0],
+      setItNumber = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      name = _useState4[0],
+      setName = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      email = _useState6[0],
+      setEmail = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(""),
+      _useState8 = _slicedToArray(_useState7, 2),
+      phoneNumber = _useState8[0],
+      setPhoneNumber = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(""),
+      _useState10 = _slicedToArray(_useState9, 2),
+      password = _useState10[0],
+      setPassword = _useState10[1];
+
+  function sendData(e) {
+    e.preventDefault();
+    var newStudent = {
+      itNumber: itNumber,
+      name: name,
+      email: email,
+      phoneNumber: phoneNumber,
+      password: password
+    };
+
+    _axios.default.post("http://localhost:8001/Student/save", newStudent).then(function () {
+      alert("Add Student");
+    }).catch(function (e) {
+      alert(e);
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "orange",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Registration Form"), /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: sendData
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "itnumber"
+  }, "ITNumber : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "itnumber",
+    placeholder: "Enter ITNumber",
+    onChange: function onChange(e) {
+      setItNumber(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "name"
+  }, "Name : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "name",
+    placeholder: "Enter Name",
+    onChange: function onChange(e) {
+      setName(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "email"
+  }, "Email address : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "email",
+    className: "form-control",
+    id: "email",
+    placeholder: "Enter email",
+    onChange: function onChange(e) {
+      setEmail(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "phone"
+  }, "Phone Number : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "tel",
+    className: "form-control",
+    id: "phone",
+    placeholder: "Enter Phone Number",
+    onChange: function onChange(e) {
+      setPhoneNumber(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "password"
+  }, "Password : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "password",
+    className: "form-control",
+    id: "password",
+    placeholder: "Enter Password",
+    onChange: function onChange(e) {
+      setPassword(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/StudentList.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = ViewStudents;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ViewStudents() {
+  var _useState = (0, _react.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      Student = _useState2[0],
+      setStudent = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    function getAllStudents() {
+      _axios.default.get("http://localhost:8001/student").then(function (res) {
+        setStudent(res.data);
+      }).catch(function (err) {
+        alert(err.message);
+      });
+    }
+
+    getAllStudents();
+  }, []);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/_react.default.createElement("thead", {
+    className: "thead-dark"
+  }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "ITNumber"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Email"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Phone Number"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Edit"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Delete"))), Student.map(function (json) {
+    var itNumber = json.itNumber,
+        name = json.name,
+        email = json.email,
+        phoneNumber = json.phoneNumber,
+        _id = json._id;
+    return /*#__PURE__*/_react.default.createElement("tbody", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, itNumber), /*#__PURE__*/_react.default.createElement("td", null, name), /*#__PURE__*/_react.default.createElement("td", null, email), /*#__PURE__*/_react.default.createElement("td", null, phoneNumber), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+      className: "btn btn-warning btn-block"
+    }, "Update")), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+      className: "btn btn-warning btn-block"
+    }, "Delete"))));
+  })));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/ViewStudents.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var GetStudents = /*#__PURE__*/function (_Component) {
+  _inherits(GetStudents, _Component);
+
+  var _super = _createSuper(GetStudents);
+
+  function GetStudents(props) {
+    var _this;
+
+    _classCallCheck(this, GetStudents);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "onDelete", function (id) {
+      _axios.default.delete("http://localhost:8001/student/delete/".concat(id)).then(function (res) {
+        alert("Delete Successfully");
+
+        _this.retrieveStudents();
+      });
+    });
+
+    _this.state = {
+      students: []
+    };
+    return _this;
+  }
+
+  _createClass(GetStudents, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.retrieveStudents();
+    }
+  }, {
+    key: "retrieveStudents",
+    value: function retrieveStudents() {
+      var _this2 = this;
+
+      _axios.default.get("http://localhost:8001/student").then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            students: res.data.existingStudents
+          });
+
+          console.log(_this2.state.students);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table",
+        style: {
+          background: "#f3d8f3",
+          width: "1100px"
+        }
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "#"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "ITNumber"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Email"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Phone Number"), /*#__PURE__*/_react.default.createElement("th", null, "Update"), /*#__PURE__*/_react.default.createElement("th", null, "Delete"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.students.map(function (students, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+          scope: "row"
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, students._id), /*#__PURE__*/_react.default.createElement("td", null, students.itNumber), /*#__PURE__*/_react.default.createElement("td", null, students.name), /*#__PURE__*/_react.default.createElement("td", null, students.email), /*#__PURE__*/_react.default.createElement("td", null, students.phoneNumber), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
+          href: "#"
+        }, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-warning"
+        }, "Update"))), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-danger",
+          onClick: function onClick() {
+            return _this3.onDelete(students._id);
+          }
+        }, "Delete")));
+      })))));
+    }
+  }]);
+
+  return GetStudents;
+}(_react.Component);
+
+exports.default = GetStudents;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/CSS/StudentHome.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Component/Lankani/AdminNoticeDisplay.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var GetNotices = /*#__PURE__*/function (_Component) {
+  _inherits(GetNotices, _Component);
+
+  var _super = _createSuper(GetNotices);
+
+  function GetNotices(props) {
+    var _this;
+
+    _classCallCheck(this, GetNotices);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      notices: []
+    };
+    return _this;
+  }
+
+  _createClass(GetNotices, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.retrievenotices();
+    }
+  }, {
+    key: "retrievenotices",
+    value: function retrievenotices() {
+      var _this2 = this;
+
+      _axios.default.get("http://localhost:8001/notice/" + this.props.data).then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            notices: res.data.existingNotices
+          });
+
+          console.log(_this2.state.notices);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        class: "jumbotron1 jumbotron-fluid"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        class: "container"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "Notices"), this.state.notices.map(function (notices, index) {
+        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h3", {
+          class: "display-4"
+        }, notices.topic), /*#__PURE__*/_react.default.createElement("p", null, notices.description), /*#__PURE__*/_react.default.createElement("p", null, notices.pdf));
+      })))));
+    }
+  }]);
+
+  return GetNotices;
+}(_react.Component);
+
+exports.default = GetNotices;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/StudentHome.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = StudentHome;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _SLIIT = _interopRequireDefault(require("../Pamitha/images/SLIIT.png"));
+
+require("./CSS/StudentHome.css");
+
+var _AdminNoticeDisplay = _interopRequireDefault(require("./AdminNoticeDisplay"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function StudentHome() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _SLIIT.default,
+    style: {
+      width: "300px",
+      height: "90px",
+      marginLeft: "70px",
+      marginTop: "20px",
+      marginBottom: "20px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn btn-outline-primary"
+  }, "Sign Out"), "\xA0")))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'main'
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Group Registration"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'groupreg'
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Register Research Topic"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'researchtopic'
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/researchtopic"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Request Supervisor"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'supervisor'
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/requestsupervisor"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Request Co-Supervisor"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'cosupervisor'
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/requestcosupervisor"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Download Document"))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'document'
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Submit Document"))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'submitdoc'
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/studentsub"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Evaluation Panel Feedback"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Download Template"))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'template'
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Submit Presentation"))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'submitpresentation'
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/studentpresentation"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Submit Final Thesis"))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'submitthesis'
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/thesis"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null)));
+}
+},{"react":"node_modules/react/index.js","../Pamitha/images/SLIIT.png":"Component/Pamitha/images/SLIIT.png","./CSS/StudentHome.css":"Component/Lankani/CSS/StudentHome.css","./AdminNoticeDisplay":"Component/Lankani/AdminNoticeDisplay.js"}],"Component/Lankani/ResearchTopicAdd.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = ResearchTopic;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ResearchTopic() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      groupNumber = _useState2[0],
+      setGroupNumber = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      topic = _useState4[0],
+      setTopic = _useState4[1];
+
+  function sendData(e) {
+    e.preventDefault();
+    var newResearchTopic = {
+      groupNumber: groupNumber,
+      topic: topic
+    };
+
+    _axios.default.post("http://localhost:8001/ResearchTopic/save", newResearchTopic).then(function () {
+      alert("Add Topic");
+      console.log(newResearchTopic);
+    }).catch(function (err) {
+      alert(err);
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Research Topic Registration Form"), /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: sendData
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "gnumber"
+  }, "Group Number : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "gnumber",
+    placeholder: "Enter Group Number",
+    onChange: function onChange(e) {
+      setGroupNumber(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "topic"
+  }, "Topic : "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "topic",
+    placeholder: "Enter Topic",
+    onChange: function onChange(e) {
+      setTopic(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/SubmissionForm.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SubmissionForm;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function SubmissionForm(props) {
+  var label = props.label,
+      _props$type = props.type,
+      type = _props$type === void 0 ? "text" : _props$type,
+      name = props.name,
+      onChange = props.onChange;
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "FormInput"
+  }, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
+    type: type,
+    name: name,
+    onChange: onChange
+  }));
+}
+},{"react":"node_modules/react/index.js"}],"Component/Lankani/StudentFileAdd.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = StudentFileSubmission;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function StudentFileSubmission() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      groupid = _useState2[0],
+      setgroupid = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      file = _useState4[0],
+      setfile = _useState4[1];
+
+  var onChangeGroupId = function onChangeGroupId(e) {
+    setgroupid(e.target.value);
+  };
+
+  var onChangeFile = function onChangeFile(e) {
+    setfile(e.target.files[0]);
+  };
+
+  var onChangeClick = function onChangeClick(e) {
+    e.preventDefault();
+    var formdata = new FormData();
+    formdata.append("groupid", groupid);
+    formdata.append("file", file);
+    setgroupid("");
+    setfile("");
+
+    _axios.default.post("http://localhost:8001/file/save", formdata).then(function () {
+      alert("File is uploaded successfully");
+    }).catch(function (err) {
+      alert(err);
+    });
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Document Submission Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "groupid",
+    type: "text",
+    onChange: onChangeGroupId
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "File Submission : ",
+    name: "filesub",
+    type: "file",
+    onChange: onChangeFile
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    onClick: onChangeClick,
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentPresentation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = StudentPresentationSubmission;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function StudentPresentationSubmission() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      groupid = _useState2[0],
+      setgroupid = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      file = _useState4[0],
+      setfile = _useState4[1];
+
+  var onChangeGroupId = function onChangeGroupId(e) {
+    setgroupid(e.target.value);
+  };
+
+  var onChangeFile = function onChangeFile(e) {
+    setfile(e.target.files[0]);
+  };
+
+  var onChangeClick = function onChangeClick(e) {
+    e.preventDefault();
+    var formdata = new FormData();
+    formdata.append("groupid", groupid);
+    formdata.append("file", file);
+    setgroupid("");
+    setfile("");
+
+    _axios.default.post("http://localhost:8001/presentation/save", formdata).then(function () {
+      alert("File is uploaded successfully");
+    }).catch(function (err) {
+      alert(err);
+    });
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Presentation Submission Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "groupid",
+    type: "text",
+    onChange: onChangeGroupId
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "File Submission : ",
+    name: "filesub",
+    type: "file",
+    onChange: onChangeFile
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    onClick: onChangeClick,
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentThesisSubmission.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = StudentThesisSubmission;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function StudentThesisSubmission() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      groupid = _useState2[0],
+      setgroupid = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      file = _useState4[0],
+      setfile = _useState4[1];
+
+  var onChangeGroupId = function onChangeGroupId(e) {
+    setgroupid(e.target.value);
+  };
+
+  var onChangeFile = function onChangeFile(e) {
+    setfile(e.target.files[0]);
+  };
+
+  var onChangeClick = function onChangeClick(e) {
+    e.preventDefault();
+    var formdata = new FormData();
+    formdata.append("groupid", groupid);
+    formdata.append("file", file);
+
+    _axios.default.post("http://localhost:8001/thesis/save", formdata).then(function () {
+      alert("File is uploaded successfully");
+    }).catch(function (err) {
+      alert(err);
+    });
+
+    setgroupid("");
+    setfile("");
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Thesis Submission Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "groupid",
+    type: "text",
+    onChange: onChangeGroupId
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "File Submission : ",
+    name: "filesub",
+    type: "file",
+    onChange: onChangeFile
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    onClick: onChangeClick,
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestSupervisor.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = RequestSepervisor;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function RequestSepervisor() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      studentgroup = _useState2[0],
+      setstudentgroup = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      supervisor = _useState4[0],
+      setSupervisor = _useState4[1];
+
+  var onChangestudentgroup = function onChangestudentgroup(e) {
+    setstudentgroup(e.target.value);
+  };
+
+  var onChangeSupervisor = function onChangeSupervisor(e) {
+    setSupervisor(e.target.value);
+  };
+
+  var onChangeClick = function onChangeClick(e) {
+    e.preventDefault();
+    var newRequest = {
+      studentgroup: studentgroup,
+      supervisor: supervisor
+    };
+
+    _axios.default.post("http://localhost:8001/Supervisor/save", newRequest).then(function () {
+      alert("Request inserted successfully");
+    }).catch(function (err) {
+      alert(err);
+    });
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "studentgroup",
+    type: "text",
+    onChange: onChangestudentgroup
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Supervisor Name : ",
+    name: "supervisor",
+    type: "text",
+    onChange: onChangeSupervisor
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    onClick: onChangeClick,
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestCoSupervisor.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = RequestSepervisor;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _SubmissionForm = _interopRequireDefault(require("./SubmissionForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function RequestSepervisor() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      studentgroup = _useState2[0],
+      setstudentgroup = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      supervisor = _useState4[0],
+      setSupervisor = _useState4[1];
+
+  var onChangestudentgroup = function onChangestudentgroup(e) {
+    setstudentgroup(e.target.value);
+  };
+
+  var onChangeSupervisor = function onChangeSupervisor(e) {
+    setSupervisor(e.target.value);
+  };
+
+  var onChangeClick = function onChangeClick(e) {
+    e.preventDefault();
+    var newRequest = {
+      studentgroup: studentgroup,
+      supervisor: supervisor
+    };
+
+    _axios.default.post("http://localhost:8001/CoSupervisor/save", newRequest).then(function () {
+      alert("Request inserted successfully");
+    }).catch(function (err) {
+      alert(err);
+    });
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "lightgrey",
+      borderColor: " solid"
+    }
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Group ID : ",
+    name: "studentgroup",
+    type: "text",
+    onChange: onChangestudentgroup
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
+    label: "Co-Supervisor Name : ",
+    name: "supervisor",
+    type: "text",
+    onChange: onChangeSupervisor
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    onClick: onChangeClick,
+    className: "btn btn-primary"
+  }, "Submit"))));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44416,6 +45599,26 @@ var _AdminFeedback = _interopRequireDefault(require("./Component/Pamitha/AdminFe
 var _AddPanelMembers = _interopRequireDefault(require("./Component/Pamitha/AddPanelMembers"));
 
 var _ViewPanelMembers = _interopRequireDefault(require("./Component/Pamitha/ViewPanelMembers"));
+
+var _StudentAdd = _interopRequireDefault(require("./Component/Lankani/StudentAdd"));
+
+var _StudentList = _interopRequireDefault(require("./Component/Lankani/StudentList"));
+
+var _ViewStudents = _interopRequireDefault(require("./Component/Lankani/ViewStudents"));
+
+var _StudentHome = _interopRequireDefault(require("./Component/Lankani/StudentHome"));
+
+var _ResearchTopicAdd = _interopRequireDefault(require("./Component/Lankani/ResearchTopicAdd"));
+
+var _StudentFileAdd = _interopRequireDefault(require("./Component/Lankani/StudentFileAdd"));
+
+var _StudentPresentation = _interopRequireDefault(require("./Component/Lankani/StudentPresentation"));
+
+var _StudentThesisSubmission = _interopRequireDefault(require("./Component/Lankani/StudentThesisSubmission"));
+
+var _RequestSupervisor = _interopRequireDefault(require("./Component/Lankani/RequestSupervisor"));
+
+var _RequestCoSupervisor = _interopRequireDefault(require("./Component/Lankani/RequestCoSupervisor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44511,6 +45714,42 @@ var App = /*#__PURE__*/function (_Component) {
         path: "/feedbackadd",
         exact: true,
         component: _AdminFeedback.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/Student",
+        exact: true,
+        component: _StudentAdd.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/viewstudent",
+        exact: true,
+        component: _ViewStudents.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/studenthome",
+        exact: true,
+        component: _StudentHome.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/researchtopic",
+        exact: true,
+        component: _ResearchTopicAdd.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/studentsub",
+        exact: true,
+        component: _StudentFileAdd.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/studentpresentation",
+        exact: true,
+        component: _StudentPresentation.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/thesis",
+        exact: true,
+        component: _StudentThesisSubmission.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/requestsupervisor",
+        exact: true,
+        component: _RequestSupervisor.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/requestcosupervisor",
+        exact: true,
+        component: _RequestCoSupervisor.default
       }), /*#__PURE__*/_react.default.createElement(_footer.default, null)));
     }
   }]);
@@ -44519,7 +45758,7 @@ var App = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Header":"Component/Pamitha/Header.js","./Component/Pamitha/footer":"Component/Pamitha/footer.js","./Component/Pamitha/StudentGroupRegistration":"Component/Pamitha/StudentGroupRegistration.js","./Component/Pamitha/GroupDetails":"Component/Pamitha/GroupDetails.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Pamitha/AddPanelMembers":"Component/Pamitha/AddPanelMembers.js","./Component/Pamitha/ViewPanelMembers":"Component/Pamitha/ViewPanelMembers.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Header":"Component/Pamitha/Header.js","./Component/Pamitha/footer":"Component/Pamitha/footer.js","./Component/Pamitha/StudentGroupRegistration":"Component/Pamitha/StudentGroupRegistration.js","./Component/Pamitha/GroupDetails":"Component/Pamitha/GroupDetails.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Pamitha/AddPanelMembers":"Component/Pamitha/AddPanelMembers.js","./Component/Pamitha/ViewPanelMembers":"Component/Pamitha/ViewPanelMembers.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js","./Component/Lankani/StudentFileAdd":"Component/Lankani/StudentFileAdd.js","./Component/Lankani/StudentPresentation":"Component/Lankani/StudentPresentation.js","./Component/Lankani/StudentThesisSubmission":"Component/Lankani/StudentThesisSubmission.js","./Component/Lankani/RequestSupervisor":"Component/Lankani/RequestSupervisor.js","./Component/Lankani/RequestCoSupervisor":"Component/Lankani/RequestCoSupervisor.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

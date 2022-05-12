@@ -79,6 +79,7 @@ router.route("/deletenotice/:id").delete(async (req, res) =>{
 
     let userId = req.params.id;
 
+
     await Notices.findByIdAndDelete(userId).then(()=>{
         res.status(200).send({status: "User Delete"});
     }).catch((err)=>{
@@ -86,6 +87,24 @@ router.route("/deletenotice/:id").delete(async (req, res) =>{
         res.status(500).send({status: "Error with delete user", error: err.message});
     })
 })
+
+router.get("/notice/:topic", (req,res)=>{
+    let topic = req.params.topic;
+
+    Notices.find({topic: topic}).exec((err,Notices) =>{
+      if(err){
+        return res.status(400).json({
+          error:err
+      });
+    }
+    return res.status(200).json({
+      success:true,
+      existingNotices:Notices
+    });
+  });
+});
+
+
 
 
 

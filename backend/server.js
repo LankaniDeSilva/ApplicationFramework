@@ -14,6 +14,15 @@ const MarksRoutes = require('./Routes/AdminMark');
 const FeedbackRoutes = require('./Routes/AdminFeedback');
 const GroupRoutes = require('./Routes/GroupRegister');
 const PanelRoutes = require('./Routes/PanelMember');
+const StudentRoute = require('./Routes/StudentRoute');
+const ResearchTopic = require('./Routes/ResearchTopicRouter');
+const StudentFileSubmission = require("./Routes/StudentFileSubmission");
+const StudentPresentationSubmission = require("./Routes/StudentPresentationRoutes");
+const StudentThesisSubmission = require("./Routes/StudentThesisSubmission");
+const RequestSupervisor = require("./Routes/RequestSupervisorRouter");
+const RequestCoSupervisor = require("./Routes/RequestCoSupervisor");
+
+
 
 //app middleware
 app.use(bodyParser.json());
@@ -26,6 +35,15 @@ app.use(MarksRoutes);
 app.use(FeedbackRoutes);
 app.use(GroupRoutes);
 app.use(PanelRoutes);
+
+
+app.use(StudentRoute);
+app.use(ResearchTopic);
+app.use(StudentFileSubmission);
+app.use(StudentPresentationSubmission);
+app.use(StudentThesisSubmission);
+app.use(RequestSupervisor);
+app.use(RequestCoSupervisor);
 
 
 

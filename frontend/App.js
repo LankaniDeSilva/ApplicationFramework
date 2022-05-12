@@ -20,6 +20,18 @@ import {BrowserRouter,Route } from "react-router-dom";
   import AdminFeedback from "./Component/Pamitha/AdminFeedback";
   import AddPanelMembers from "./Component/Pamitha/AddPanelMembers";
   import ViewPanelMembers from "./Component/Pamitha/ViewPanelMembers";
+  import StudentAdd from "./Component/Lankani/StudentAdd";
+  import StudentList from "./Component/Lankani/StudentList";
+  import ViewStudents from "./Component/Lankani/ViewStudents";
+  import StudentHome from "./Component/Lankani/StudentHome";
+  import ResarchTopicAdd from "./Component/Lankani/ResearchTopicAdd";
+  import StudentFileAdd from "./Component/Lankani/StudentFileAdd";
+  import StudentPresentationSubmission from "./Component/Lankani/StudentPresentation";
+  import StudentThesisSubmission from "./Component/Lankani/StudentThesisSubmission";
+  import RequestSupervisor from "./Component/Lankani/RequestSupervisor";
+  import RequestCoSupervisor from "./Component/Lankani/RequestCoSupervisor";
+
+
   
 
 
@@ -48,11 +60,25 @@ export default class App extends Component{
     
          
 
+             
+
+
+
+
             {/*Lankani */}
 
+            <Route path="/Student" exact component={StudentAdd}></Route>          
+            <Route path="/viewstudent" exact component={ViewStudents}></Route>
+            <Route path="/studenthome" exact component={StudentHome}></Route>
+            <Route path="/researchtopic" exact component={ResarchTopicAdd}></Route>
+            <Route path="/studentsub" exact component={StudentFileAdd}></Route>
+            <Route path="/studentpresentation" exact component={StudentPresentationSubmission}></Route>
+            <Route path="/thesis" exact component={StudentThesisSubmission}></Route>
+            <Route path="/requestsupervisor" exact component={RequestSupervisor}></Route>
+            <Route path="/requestcosupervisor" exact component={RequestCoSupervisor}></Route>
 
 
-
+            
 
 
             {/*Ayeshi */}

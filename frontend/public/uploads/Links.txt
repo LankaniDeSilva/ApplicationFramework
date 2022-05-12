@@ -1,0 +1,37 @@
+Client server architecture used by Dropbox and its Scalability & security
+by IT19031026 Kumbukage D. T. - Thursday, 22 April 2021, 10:25 PM
+ 
+Sir, we suggest dropbox finally, because Wechat does not come under any category.
+
+Team Members:
+
+1. Kumbukage D.T. --- IT19031026  (Leader)
+
+2. Shaman M.A.M --- IT19029900
+
+3. Anjana W.W.M --- IT19051376
+
+4. Wickramasinghe A.Y.S.W --- IT19038292
+
+
+
+Resources for System/Architectural Documentation:
+
+1 -- https://www.dropbox.com/business/trust/security/architecture#:~:text=Under%20the%20hood%3A%20Architecture%20overview,across%20a%20scalable%2C%20secure%20infrastructure.
+
+2 -- https://aem.dropbox.com/cms/content/dam/dropbox/www/en-us/business/solutions/solutions/white_paper/dfb_security_whitepaper.pdf
+3 -- https://learnsystemdesign.blogspot.com/p/design-dropbox.html
+
+4 -- https://conservancy.umn.edu/bitstream/handle/11299/182704/Bommana_umn_0130M_17405.pdf?sequence=1
+
+5 -- https://www.researchgate.net/publication/272666526_New_Proposed_Robust_Scalable_and_Secure_Network_Cloud_Computing_Storage_Architecture
+
+6 -- https://www.slideshare.net/ChiaraCilardo/dropbox-architecture-and-business-prospective
+
+7 -- https://assets.dropbox.com/documents/en/legal/security-measures.pdf
+
+8 -- https://dropbox.tech/security/security-at-scale-the-dropbox-approach
+
+9 -- https://www.dropbox.com/
+
+10 -- https://en.wikipedia.org/wiki/Dropbox_(service)
