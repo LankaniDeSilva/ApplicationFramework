@@ -66,6 +66,39 @@ srouter.route("/student/update/:id").put(async (req, res)=> {
   })  
 })
 
+srouter.put('/studentupdate/:id',(req,res)=>{
+  Student.findByIdAndUpdate(
+      req.params.id,
+      {
+          $set:req.body
+      },
+      (err,post)=>{
+          if(err){
+              return res.status(400).json({error:err});
+          }
+          return res.status(200).json({
+              success:"Update Successfully"
+          });
+      }
+  );
+});
+
+srouter.get("/student/:id",(req,res) =>{
+  let studentId = req.params.id;
+
+  Mark.findById(studentId,(err,post)=>{
+      if(err){
+          return res.status(400).json({success:false, err});
+      }
+      return res.status(200).json({
+          success:true,
+          student
+      });
+  });
+});
+
+
+
 
 
 module.exports = srouter;

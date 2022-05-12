@@ -78,7 +78,7 @@ export default class App extends Component{
             <Route path="/thesis" exact component={StudentThesisSubmission}></Route>
             <Route path="/requestsupervisor" exact component={RequestSupervisor}></Route>
             <Route path="/requestcosupervisor" exact component={RequestCoSupervisor}></Route>
-
+            
 
             
 
