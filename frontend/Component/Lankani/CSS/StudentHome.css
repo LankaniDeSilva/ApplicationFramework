@@ -11,3 +11,16 @@
       color: black;
   }
 
+  .jumbotron1{
+    background-color: lightcyan;
+    margin-left: 70px;
+    margin-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 0.3px;
+
+  }
+
+  .jumbotron1 h2{
+      color: red;
+  }

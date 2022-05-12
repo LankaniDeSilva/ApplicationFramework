@@ -88,6 +88,23 @@ router.delete('/notice/delete/:id',(req,res)=>{
 });
 
 
+router.get("/notice/:topic", (req,res)=>{
+    let topic = req.params.topic;
+
+    Notices.find({topic: topic}).exec((err,Notices) =>{
+      if(err){
+        return res.status(400).json({
+          error:err
+      });
+    }
+    return res.status(200).json({
+      success:true,
+      existingNotices:Notices
+    });
+  });
+});
+
+
 
 
 module.exports = router;

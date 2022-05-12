@@ -2,6 +2,7 @@ import React from "react"
 
 import sliit from "../Pamitha/images/SLIIT.png";
 import "./CSS/StudentHome.css";
+import AdminNoticeDisplay from "./AdminNoticeDisplay";
 
 export default function StudentHome(){
     return(
@@ -23,24 +24,48 @@ export default function StudentHome(){
              </table>
 
              <div>
+                <AdminNoticeDisplay data={'lakshan'} />
+             </div>
+                <br/>
+             <div>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Group Registration</h3>
                     </div>
-                </div>
+                    </div>
+                    <br/>
+                    <div class="jumbotron1">
+                    <AdminNoticeDisplay data={'friday'} />
+                    </div>
+                
+                <br/>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Register Research Topic</h3>
                     </div>
-                    <p><a href="/researchtopic">Click Here</a></p>
-                </div>
+                   
+                    </div>
+                    <br/>
+                    <div class="jumbotron1">
+                    <AdminNoticeDisplay data={'friday'} />
+                    <p>Register your researchtopic<a href="/researchtopic"> Click Here</a></p>
+                    </div>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Request Supervisor</h3>
                     </div>
-                </div>
+                   
+                    </div>
+                    <br/>
+                    <div class="jumbotron1">
+                    <AdminNoticeDisplay data={'friday'} />
+                    <p>Request Supervisor<a href="#"> Click Here</a></p>
+                    </div>
+    
+                <br/>
+ 
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
