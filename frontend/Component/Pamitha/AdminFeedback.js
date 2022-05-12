@@ -33,10 +33,11 @@ function Feedback(){
         <div>
            
             <br/>
-             <form onSubmit={passData} style={{width:"900px", marginLeft:"20%", border:"2px solid #4d94ff",
-                                              borderRadius:"10px", padding:"50px",
-                                              borderLeft:"6px solid blue",
-                                              borderBottom:"6px solid blue"}}>
+             <form onSubmit={passData} style={{width:"900px", marginLeft:"20%",
+                                              borderRadius:"40px", padding:"50px",
+                                              background:"#e6ccff",
+                                              borderLeft:"6px solid  #b366ff",
+                                              borderBottom:"6px solid  #b366ff"}}>
               <center>
                     <h1>Add Your Feedback</h1>
               </center>

@@ -43974,11 +43974,11 @@ function Feedback() {
     style: {
       width: "900px",
       marginLeft: "20%",
-      border: "2px solid #4d94ff",
-      borderRadius: "10px",
+      borderRadius: "40px",
       padding: "50px",
-      borderLeft: "6px solid blue",
-      borderBottom: "6px solid blue"
+      background: "#e6ccff",
+      borderLeft: "6px solid  #b366ff",
+      borderBottom: "6px solid  #b366ff"
     }
   }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", null, "Add Your Feedback")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("select", {
     class: "form-select",
@@ -45648,6 +45648,8 @@ var EditStudent = /*#__PURE__*/function (_Component) {
             sphoneNumber: ""
           });
         }
+      }).catch(function (error) {
+        console.log(error);
       }); // this.props.history.push("/viewstudent");
 
 
@@ -46008,7 +46010,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61539" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62749" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
