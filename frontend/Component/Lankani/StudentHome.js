@@ -39,6 +39,7 @@ export default function StudentHome(){
                 <br/>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'groupreg'} />
+                    <p><a href="/register">Click Here</a></p>
                     </div>             
                 <br/>
                 <br/>

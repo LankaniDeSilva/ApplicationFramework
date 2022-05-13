@@ -44874,7 +44874,9 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'groupreg'
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/register"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"

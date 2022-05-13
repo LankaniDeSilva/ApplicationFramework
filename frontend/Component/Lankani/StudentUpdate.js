@@ -50,6 +50,8 @@ export default class EditStudent extends Component {
           sphoneNumber: "",
         });
       }
+    }).catch((error) =>{
+      console.log(error);
     }); 
 
     // this.props.history.push("/viewstudent");
