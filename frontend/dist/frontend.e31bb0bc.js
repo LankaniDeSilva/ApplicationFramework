@@ -45088,6 +45088,11 @@ function SubmissionForm(props) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "FormInput"
   }, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
+    style: {
+      borderRadius: "15px",
+      width: "400px",
+      height: "40px"
+    },
     type: type,
     name: name,
     onChange: onChange
@@ -45256,8 +45261,11 @@ function StudentPresentationSubmission() {
     style: {
       margin: "10%",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: " solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -45350,8 +45358,11 @@ function StudentThesisSubmission() {
     style: {
       margin: "10%",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: " solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46012,7 +46023,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62749" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58688" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

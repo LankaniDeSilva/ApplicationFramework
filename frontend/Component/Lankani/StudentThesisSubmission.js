@@ -42,8 +42,11 @@ export default function StudentThesisSubmission() {
       style={{
         margin: "10%",
         padding: "50px",
-        backgroundColor: "lightgrey",
+        backgroundColor: "#cce6ff",
         borderColor: " solid",
+        borderRadius: "40px",
+        width: "600px",
+        alignContent:"center"
       }}
     >
       <div className="container">
