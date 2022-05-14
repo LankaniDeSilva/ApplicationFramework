@@ -6,7 +6,12 @@ export default function SubmissionForm(props) {
   return (
     <div className="FormInput">
       <label>{label}</label>
-      <input type={type} name={name} onChange={onChange} />
+      <input style={{
+          borderRadius: "15px",
+          width: "400px",
+          height: "40px",
+           }}
+          type={type} name={name} onChange={onChange} />
     </div>
   );
 }
