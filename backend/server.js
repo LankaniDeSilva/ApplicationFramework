@@ -13,6 +13,7 @@ const PDFRoutes = require('./Routes/AdminPDF');
 const MarksRoutes = require('./Routes/AdminMark');
 const FeedbackRoutes = require('./Routes/AdminFeedback');
 const GroupRoutes = require('./Routes/GroupRegister');
+const RegisterDRoutes = require("./Routes/RegisterDetails");
 const PanelRoutes = require('./Routes/PanelMember');
 const StudentRoute = require('./Routes/StudentRoute');
 const ResearchTopic = require('./Routes/ResearchTopicRouter');
@@ -21,6 +22,7 @@ const StudentPresentationSubmission = require("./Routes/StudentPresentationRoute
 const StudentThesisSubmission = require("./Routes/StudentThesisSubmission");
 const RequestSupervisor = require("./Routes/RequestSupervisorRouter");
 const RequestCoSupervisor = require("./Routes/RequestCoSupervisor");
+
 
 
 
@@ -35,6 +37,7 @@ app.use(MarksRoutes);
 app.use(FeedbackRoutes);
 app.use(GroupRoutes);
 app.use(PanelRoutes);
+app.use(RegisterDRoutes);
 
 
 app.use(StudentRoute);

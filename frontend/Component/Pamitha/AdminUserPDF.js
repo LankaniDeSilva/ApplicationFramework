@@ -83,10 +83,11 @@ import axios from "axios";
                     name="searchQuary"
                     onChange={this.handleSearchArea}
                   >
-                    <option selected>Select Document Type</option>
-                    <option value="one">One</option>
-                    <option value="two">Two</option>
-                    <option value="3">Three</option>
+                   <option selected>Open this select menu</option>
+                    <option value="Project Proposal report(draft)">Project Proposal report(draft)</option>
+                    <option value="Project Status Document">Project Status Document</option>
+                    <option value="Research Paper ">Research Paper</option>
+                    <option value="Final Report ">Final Report</option>
                   </select>
                   <br/>
         
@@ -127,7 +128,7 @@ import axios from "axios";
                          type="button"
                         className="btn btn-primary"
                   >
-                    <i className="fas fa-trash-alt"></i> Add Marks
+                   <i class="fa-solid fa-marker"></i> Add Marks
                   </button>
                   </a>
                     </td>  

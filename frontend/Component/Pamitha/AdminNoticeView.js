@@ -53,6 +53,12 @@ function AdminNoticeView() {
   return (
     <div>
       <center>
+        <br/>
+      <div class="alert alert-success alert-dismissible fade show" role="alert" style={{width:"1200px"}}>
+        <strong>Notice Added Successfully.</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <br/>
         <h2>Admin Notice View</h2><br/>
         <table>
           {Notice.map((json) => {

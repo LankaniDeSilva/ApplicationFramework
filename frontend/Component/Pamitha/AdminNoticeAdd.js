@@ -39,32 +39,52 @@ function AddNotice() {
   return (
     <div>
       <center>
+        <br />
+        <div
+          class="alert alert-success alert-dismissible fade show"
+          role="alert"
+          style={{ width: "1000px" }}
+        >
+          <strong>Welcome Admin!</strong> Have a nice day........
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
         <table>
           <tr>
             <td style={{ padding: "50px" }}>
               <div className="icone">
                 <center>
                   <a href="/viewstudent">
-                  <img
-                    src={feedback}
-                    style={{ width: "200px", height: "200px", padding: "10px" }}
-                  />
-                  <h3>Members</h3>
+                    <img
+                      src={feedback}
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        padding: "10px",
+                      }}
+                    />
+                    <h3>Members</h3>
                   </a>
                 </center>
               </div>
               <br />
               <div className="icone">
                 <center>
-                
-              <a href="/mark">
-                  <img
-                    src={mark}
-                    style={{ width: "200px", height: "200px", padding: "10px" }}
-                  />
-                 <h3>Add Mark</h3>
-             </a>  
-                  
+                  <a href="/mark">
+                    <img
+                      src={mark}
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        padding: "10px",
+                      }}
+                    />
+                    <h3>Add Mark</h3>
+                  </a>
                 </center>
               </div>
             </td>
@@ -136,75 +156,75 @@ function AddNotice() {
                           <center>
                             <button type="submit" class="btn btn-primary">
                               Submit
-                            </button><br/>
-                           
+                            </button>
+                            <br />
                           </center>
-                        </form><br/>
+                        </form>
+                        <br />
                         <center>
                           <table>
                             <tr>
-                            <td>
-                        <a href="/group">
-                           <button type="submit" class="btn btn-success" >
-                              View Groups
-                            </button>
-                            </a>
-                            </td>
                               <td>
-                        <a href="/noticepdf">
-                           <button type="submit" class="btn btn-success" >
-                              Add Notice With PDF
-                            </button>
-                            </a>
-                            </td>
-                            <td>
-                        <a href="/viewnotice">
-                           <button type="submit" class="btn btn-success" >
-                           <i class="fa-solid fa-eye"></i> Notice View
-                            </button>
-                            </a>
-                            </td>
-                            <td>
-                        <a href="/viewpanel">
-                           <button type="submit" class="btn btn-success" >
-                           <i class="fa-solid fa-eye"></i> Panel View
-                            </button>
-                            </a>
-                            </td>
+                                <a href="/group">
+                                  <button type="submit" class="btn btn-success">
+                                    View Groups
+                                  </button>
+                                </a>
+                              </td>
+                              <td>
+                                <a href="/noticepdf">
+                                  <button type="submit" class="btn btn-success">
+                                    Add Notice With PDF
+                                  </button>
+                                </a>
+                              </td>
+                              <td>
+                                <a href="/viewnotice">
+                                  <button type="submit" class="btn btn-success">
+                                    <i class="fa-solid fa-eye"></i> Notice View
+                                  </button>
+                                </a>
+                              </td>
+                              <td>
+                                <a href="/viewpanel">
+                                  <button type="submit" class="btn btn-success">
+                                    <i class="fa-solid fa-eye"></i> Panel View
+                                  </button>
+                                </a>
+                              </td>
                             </tr>
-                        </table>
+                          </table>
                         </center>
-                       
                       </td>
                       <td style={{ padding: "50px" }}>
-                        <div className="icone" >
+                        <div className="icone">
                           <center>
-                         <a href="/admindocument">
-                            <img
-                              src={document}
-                              style={{
-                                width: "200px",
-                                height: "170px",
-                                padding: "10px",
-                              }}
-                            />
-                            <h3>Document</h3>
+                            <a href="/admindocument">
+                              <img
+                                src={document}
+                                style={{
+                                  width: "200px",
+                                  height: "170px",
+                                  padding: "10px",
+                                }}
+                              />
+                              <h3>Document</h3>
                             </a>
                           </center>
                         </div>
                         <br />
-                        <div className="icone" >
+                        <div className="icone">
                           <center>
                             <a href="/feedback">
-                            <img
-                              src={feedback}
-                              style={{
-                                width: "200px",
-                                height: "200px",
-                                padding: "10px",
-                              }}
-                            />
-                            <h3>Feedback</h3>
+                              <img
+                                src={feedback}
+                                style={{
+                                  width: "200px",
+                                  height: "200px",
+                                  padding: "10px",
+                                }}
+                              />
+                              <h3>Feedback</h3>
                             </a>
                           </center>
                         </div>

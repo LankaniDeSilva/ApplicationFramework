@@ -3,6 +3,7 @@ const Mark = require("../Models/AdminMark");
 const router = express.Router();
 const multer = require("multer");
 const files = require("../Models/AdminPDF");
+const User = require("../Models/Register");
 
 
 
@@ -21,7 +22,24 @@ router.post("/savemark", (req,res) =>{
         });
     });
 }); 
+
 /*
+router.post("/register/save", (req,res) =>{
+
+    let newUser = new User(req.body);
+
+    newUser.save((err) =>{
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        return res.status(200).json({
+            success:"Mark saved successfully"
+        });
+    });
+}); 
+
 router.post("/marksave", (req, res) => {
     const mark = new Mark({
         groupid: req.body.id,
