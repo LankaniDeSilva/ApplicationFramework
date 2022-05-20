@@ -45634,7 +45634,9 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'groupreg'
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/register"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -45846,6 +45848,11 @@ function SubmissionForm(props) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "FormInput"
   }, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
+    style: {
+      borderRadius: "15px",
+      width: "400px",
+      height: "40px"
+    },
     type: type,
     name: name,
     onChange: onChange
@@ -46014,8 +46021,11 @@ function StudentPresentationSubmission() {
     style: {
       margin: "10%",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: " solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46108,8 +46118,11 @@ function StudentThesisSubmission() {
     style: {
       margin: "10%",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: " solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46408,7 +46421,12 @@ var EditStudent = /*#__PURE__*/function (_Component) {
             sphoneNumber: ""
           });
         }
-      });
+      }).catch(function (error) {
+        console.log(error);
+      }); // this.props.history.push("/viewstudent");
+
+
+      _this.props.history.push("/viewstudent");
     });
 
     _this.state = {
@@ -47128,7 +47146,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "53193" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58688" + '/');
+>>>>>>> 595f9d26f8f0e34eda39c385cded33a18d534bde
 
   ws.onmessage = function (event) {
     checkedAssets = {};

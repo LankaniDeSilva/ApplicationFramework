@@ -37,12 +37,15 @@ export default function StudentPresentationSubmission() {
 
   return (
     <div
-      style={{
-        margin: "10%",
-        padding: "50px",
-        backgroundColor: "lightgrey",
-        borderColor: " solid",
-      }}
+    style={{
+      margin: "10%",
+      padding: "50px",
+      backgroundColor: "#cce6ff",
+      borderColor: " solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent:"center"
+    }}
     >
       <div className="container">
         <h2>Presentation Submission Form</h2>

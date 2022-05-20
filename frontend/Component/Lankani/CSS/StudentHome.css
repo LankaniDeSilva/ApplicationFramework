@@ -1,18 +1,19 @@
 .jumbotron {
-    background-color: grey;
+    background-color: #0d3565; 
     margin-left: 70px;
     margin-right: 60px;
     height: 50px;
+    
     
   }
 
   .jumbotron h3{
       font-size: 2rem;
-      color: black;
+      color: white;
   }
 
   .jumbotron1{
-    background-color: lightcyan;
+    background-color: #c7e1ff;
     margin-left: 70px;
     margin-right: 60px;
     padding-top: 20px;
