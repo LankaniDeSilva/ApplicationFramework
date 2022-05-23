@@ -45183,19 +45183,13 @@ function AddStudent() {
       phoneNumber = _useState8[0],
       setPhoneNumber = _useState8[1];
 
-  var _useState9 = (0, _react.useState)(""),
-      _useState10 = _slicedToArray(_useState9, 2),
-      password = _useState10[0],
-      setPassword = _useState10[1];
-
   function sendData(e) {
     e.preventDefault();
     var newStudent = {
       itNumber: itNumber,
       name: name,
       email: email,
-      phoneNumber: phoneNumber,
-      password: password
+      phoneNumber: phoneNumber
     };
 
     _axios.default.post("http://localhost:8001/Student/save", newStudent).then(function () {
@@ -45267,18 +45261,6 @@ function AddStudent() {
     placeholder: "Enter Phone Number",
     onChange: function onChange(e) {
       setPhoneNumber(e.target.value);
-    }
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/_react.default.createElement("label", {
-    for: "password"
-  }, "Password : "), /*#__PURE__*/_react.default.createElement("input", {
-    type: "password",
-    className: "form-control",
-    id: "password",
-    placeholder: "Enter Password",
-    onChange: function onChange(e) {
-      setPassword(e.target.value);
     }
   })), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
