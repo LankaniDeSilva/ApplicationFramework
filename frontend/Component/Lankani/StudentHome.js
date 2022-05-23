@@ -8,29 +8,26 @@ import AdminNoticeDisplay from "./AdminNoticeDisplay";
 export default function StudentHome(){
     return(
         <div>
-            <table>
-             <tr>
-               <td>
-             <img src={sliit} style={{width:"300px", height:"90px", marginLeft:"70px",marginTop:"20px", marginBottom:"20px"}}/>
-             </td>
-             <td>
-             <div >
-             
-             <button class="btn btn-outline-primary">Sign Out</button >&nbsp; 
-             
-           
-             </div>
-             </td>
-             </tr>
-             </table>
-
-             <br/>
+    
              <div>
                 <AdminNoticeDisplay data={'main'} />
              </div>
              <br/>
 
              <div>
+
+             <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h3 class="display-4">Student Registration</h3>
+                    </div>
+                </div>
+                <br/>
+                <div class="jumbotron1">
+                    <AdminNoticeDisplay data={'streg'} />
+                    <p><a href="/Student">Click Here</a></p>
+                    </div>             
+                <br/>
+                <br/>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Group Registration</h3>

@@ -12,7 +12,7 @@ function Header(){
                  
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                     <li class="nav-item">
+                     {/* <li class="nav-item">
                        <a class="nav-link active" aria-current="page" href="/Admin">Admin Home</a>
                      </li>
                      <li class="nav-item">
@@ -39,14 +39,14 @@ function Header(){
                         <li><a class="dropdown-item" href="#">Link</a></li>
                     </ul>
                     </li>
-                   
+                    */}
                     </ul>
-                     <a href="/rlogin"><button class="btn btn-outline-primary">Sign Out</button></a>&nbsp;
-                   <form class="d-flex">
+                     <a href="/slogin"><button class="btn btn-outline-primary">Sign Out</button></a>&nbsp;
+                   {/* <form class="d-flex">
                        
                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                        <button class="btn btn-outline-success" type="submit">Search</button>
-                   </form>
+                   </form> */}
              </div>
           </div>
        </nav>

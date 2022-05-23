@@ -45124,7 +45124,7 @@ var Login = /*#__PURE__*/function (_Component) {
         type: "submit",
         className: "btn btn-success",
         onClick: this.onSubmit
-      }, "Register")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+      }, "Login")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
     }
   }]);
 
@@ -45205,12 +45205,16 @@ function AddStudent() {
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "orange",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -45279,7 +45283,7 @@ function AddStudent() {
   })), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/StudentList.js":[function(require,module,exports) {
 "use strict";
@@ -45581,9 +45585,7 @@ var GetNotices = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         class: "container"
       }, /*#__PURE__*/_react.default.createElement("h2", null, "Notices"), this.state.notices.map(function (notices, index) {
-        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h3", {
-          class: "display-4"
-        }, notices.topic), /*#__PURE__*/_react.default.createElement("p", null, notices.description), /*#__PURE__*/_react.default.createElement("p", null, notices.pdf));
+        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, notices.description), /*#__PURE__*/_react.default.createElement("p", null, notices.pdf));
       })))));
     }
   }]);
@@ -45611,20 +45613,21 @@ var _AdminNoticeDisplay = _interopRequireDefault(require("./AdminNoticeDisplay")
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function StudentHome() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: _SLIIT.default,
-    style: {
-      width: "300px",
-      height: "90px",
-      marginLeft: "70px",
-      marginTop: "20px",
-      marginBottom: "20px"
-    }
-  })), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-outline-primary"
-  }, "Sign Out"), "\xA0")))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'main'
   })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Student Registration"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'streg'
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/Student"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -45792,8 +45795,17 @@ function ResearchTopic() {
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "50px",
+      padding: "50px",
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
+    }
   }, /*#__PURE__*/_react.default.createElement("h1", null, "Research Topic Registration Form"), /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: sendData
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -45823,7 +45835,7 @@ function ResearchTopic() {
   })), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/SubmissionForm.js":[function(require,module,exports) {
 "use strict";
@@ -45924,12 +45936,16 @@ function StudentFileSubmission() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -45949,7 +45965,7 @@ function StudentFileSubmission() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentPresentation.js":[function(require,module,exports) {
 "use strict";
@@ -46017,15 +46033,16 @@ function StudentPresentationSubmission() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
       backgroundColor: "#cce6ff",
       borderColor: " solid",
       borderRadius: "40px",
       width: "600px",
-      alignContent: "center"
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46045,7 +46062,7 @@ function StudentPresentationSubmission() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentThesisSubmission.js":[function(require,module,exports) {
 "use strict";
@@ -46114,15 +46131,16 @@ function StudentThesisSubmission() {
     setfile("");
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
       backgroundColor: "#cce6ff",
       borderColor: " solid",
       borderRadius: "40px",
       width: "600px",
-      alignContent: "center"
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46142,7 +46160,7 @@ function StudentThesisSubmission() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestSupervisor.js":[function(require,module,exports) {
 "use strict";
@@ -46209,12 +46227,16 @@ function RequestSepervisor() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46234,7 +46256,7 @@ function RequestSepervisor() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestCoSupervisor.js":[function(require,module,exports) {
 "use strict";
@@ -46301,12 +46323,16 @@ function RequestSepervisor() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46326,7 +46352,7 @@ function RequestSepervisor() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentUpdate.js":[function(require,module,exports) {
 "use strict";
@@ -46708,65 +46734,11 @@ function Header() {
     id: "navbarSupportedContent"
   }, /*#__PURE__*/_react.default.createElement("ul", {
     class: "navbar-nav me-auto mb-2 mb-lg-0"
-  }, /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link active",
-    "aria-current": "page",
-    href: "/Admin"
-  }, "Admin Home")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link",
-    href: "/studenthome"
-  }, "Student Home")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link",
-    href: ""
-  }, "Staff Home")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link",
-    href: "/register"
-  }, "Group Register")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item dropdown"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link dropdown-toggle",
-    href: "#",
-    id: "navbarDropdown",
-    role: "button",
-    "data-bs-toggle": "dropdown",
-    "aria-expanded": "false"
-  }, "Dropdown"), /*#__PURE__*/_react.default.createElement("ul", {
-    class: "dropdown-menu",
-    "aria-labelledby": "navbarDropdown"
-  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-    class: "dropdown-item",
-    href: ""
-  }, "Link")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-    class: "dropdown-item",
-    href: "#"
-  }, "Link")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("hr", {
-    class: "dropdown-divider"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-    class: "dropdown-item",
-    href: "#"
-  }, "Link"))))), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/rlogin"
+  }), /*#__PURE__*/_react.default.createElement("a", {
+    href: "/slogin"
   }, /*#__PURE__*/_react.default.createElement("button", {
     class: "btn btn-outline-primary"
-  }, "Sign Out")), "\xA0", /*#__PURE__*/_react.default.createElement("form", {
-    class: "d-flex"
-  }, /*#__PURE__*/_react.default.createElement("input", {
-    class: "form-control me-2",
-    type: "search",
-    placeholder: "Search",
-    "aria-label": "Search"
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-outline-success",
-    type: "submit"
-  }, "Search"))))));
+  }, "Sign Out")), "\xA0"))));
 }
 
 var _default = Header;
@@ -47146,11 +47118,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53193" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58688" + '/');
->>>>>>> 595f9d26f8f0e34eda39c385cded33a18d534bde
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61417" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

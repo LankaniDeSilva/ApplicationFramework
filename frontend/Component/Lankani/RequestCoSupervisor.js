@@ -34,12 +34,17 @@ export default function RequestSepervisor() {
   };
 
   return (
+    <center>
     <div
       style={{
-        margin: "10%",
+        margin: "50px",
         padding: "50px",
-        backgroundColor: "lightgrey",
-        borderColor: " solid",
+        backgroundColor: "#cce6ff",
+        borderColor: "solid",
+        borderRadius: "40px",
+        width: "600px",
+        alignContent:"center",
+        borderLeft:"5px solid blue"
       }}
     >
       <div className="container">
@@ -73,5 +78,6 @@ export default function RequestSepervisor() {
         </div>
       </div>
     </div>
+    </center>
   );
 }
