@@ -24,7 +24,7 @@ export default function StudentHome(){
                 <br/>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'streg'} />
-                    <p><a href="/Student">Click Here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Individual Student Registration <a href="/Student">Click Here</a></p>
                     </div>             
                 <br/>
                 <br/>
@@ -36,7 +36,7 @@ export default function StudentHome(){
                 <br/>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'groupreg'} />
-                    <p><a href="/register">Click Here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Group Registration <a href="/register">Click Here</a></p>
                     </div>             
                 <br/>
                 <br/>
@@ -49,7 +49,7 @@ export default function StudentHome(){
                 <br/>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'researchtopic'} />
-                    <p><a href="/researchtopic">Click Here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Research Topic Registration <a href="/researchtopic">Click Here</a></p>
                 </div>             
                 <br/>
                 <br/>
@@ -63,7 +63,7 @@ export default function StudentHome(){
                 <br/>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'supervisor'} />
-                    <p><a href="/requestsupervisor">Click here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Request Supervisor <a href="/requestsupervisor">Click here</a></p>
                     </div>             
                 <br/>
 
@@ -77,11 +77,11 @@ export default function StudentHome(){
                 <br/>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'cosupervisor'} />
-                    <p><a href="/requestcosupervisor">Click Here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Request Co-Supervisor <a href="/requestcosupervisor">Click Here</a></p>
                     </div>             
                 <br/>
                 <br/>
-                <div class="jumbotron jumbotron-fluid">
+                {/* <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Download Document</h3>
                     </div>
@@ -90,7 +90,7 @@ export default function StudentHome(){
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'document'} />
                     </div> 
-                <br/>
+                <br/> */}
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Submit Document</h3>
@@ -99,17 +99,17 @@ export default function StudentHome(){
                 </div>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'submitdoc'} />
-                    <p><a href="/studentsub">Click here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Submit Document <a href="/studentsub">Click here</a></p>
                     </div> 
                 <br/>
-                <div class="jumbotron jumbotron-fluid">
+                {/* <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Evaluation Panel Feedback</h3>
                     </div>
                 </div>
                 
-                <br/>
-                <div class="jumbotron jumbotron-fluid">
+                <br/> */}
+                {/* <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Download Template</h3>
                     </div>
@@ -117,7 +117,7 @@ export default function StudentHome(){
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'template'} />
                     </div>
-                <br/>
+                <br/> */}
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Submit Presentation</h3>
@@ -126,7 +126,7 @@ export default function StudentHome(){
                 </div>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'submitpresentation'} />
-                    <p><a href="/studentpresentation">Click here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Submit Presentation <a href="/studentpresentation">Click here</a></p>
                     </div>
                 <br/>
                 <div class="jumbotron jumbotron-fluid">
@@ -137,7 +137,7 @@ export default function StudentHome(){
                 </div>
                 <div class="jumbotron1">
                     <AdminNoticeDisplay data={'submitthesis'} />
-                    <p><a href="/thesis">Click here</a></p>
+                    <p style={{paddingLeft:"10%"}}>Submit Final Thesis <a href="/thesis">Click here</a></p>
                     </div>
                 <br/>
             </div>

@@ -45607,7 +45607,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'streg'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Individual Student Registration ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/Student"
   }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45619,7 +45623,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'groupreg'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Group Registration ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/register"
   }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45631,7 +45639,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'researchtopic'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Research Topic Registration ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/researchtopic"
   }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45643,7 +45655,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'supervisor'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Request Supervisor ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/requestsupervisor"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45655,19 +45671,13 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'cosupervisor'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Request Co-Supervisor ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/requestcosupervisor"
   }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
-    class: "jumbotron jumbotron-fluid"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    class: "container"
-  }, /*#__PURE__*/_react.default.createElement("h3", {
-    class: "display-4"
-  }, "Download Document"))), /*#__PURE__*/_react.default.createElement("div", {
-    class: "jumbotron1"
-  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
-    data: 'document'
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -45677,25 +45687,13 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'submitdoc'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Submit Document ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/studentsub"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
-    class: "jumbotron jumbotron-fluid"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    class: "container"
-  }, /*#__PURE__*/_react.default.createElement("h3", {
-    class: "display-4"
-  }, "Evaluation Panel Feedback"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
-    class: "jumbotron jumbotron-fluid"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    class: "container"
-  }, /*#__PURE__*/_react.default.createElement("h3", {
-    class: "display-4"
-  }, "Download Template"))), /*#__PURE__*/_react.default.createElement("div", {
-    class: "jumbotron1"
-  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
-    data: 'template'
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -45705,7 +45703,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'submitpresentation'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Submit Presentation ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/studentpresentation"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45717,7 +45719,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'submitthesis'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Submit Final Thesis ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/thesis"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null)));
 }
