@@ -48,7 +48,7 @@ export default function RequestSepervisor() {
       }}
     >
       <div className="container">
-        <h2>Supervisor Request Form</h2>
+        <h2>Co-Supervisor Request Form</h2>
         <br />
         <br />
         <div className="form-group">

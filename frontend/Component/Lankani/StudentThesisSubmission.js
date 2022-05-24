@@ -27,7 +27,7 @@ export default function StudentThesisSubmission() {
     axios
       .post("http://localhost:8001/thesis/save", formdata)
       .then(() => {
-        alert("File is uploaded successfully");
+        alert("Thesis is uploaded successfully");
       })
       .catch((err) => {
         alert(err);

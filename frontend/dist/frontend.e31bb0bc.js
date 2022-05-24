@@ -45446,8 +45446,6 @@ var GetStudents = /*#__PURE__*/function (_Component) {
         scope: "col"
       }, "#"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "ID"), /*#__PURE__*/_react.default.createElement("th", {
-        scope: "col"
       }, "ITNumber"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
       }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
@@ -45457,7 +45455,7 @@ var GetStudents = /*#__PURE__*/function (_Component) {
       }, "Phone Number"), /*#__PURE__*/_react.default.createElement("th", null, "Update"), /*#__PURE__*/_react.default.createElement("th", null, "Delete"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.students.map(function (students, index) {
         return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
           scope: "row"
-        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, students._id), /*#__PURE__*/_react.default.createElement("td", null, students.itNumber), /*#__PURE__*/_react.default.createElement("td", null, students.name), /*#__PURE__*/_react.default.createElement("td", null, students.email), /*#__PURE__*/_react.default.createElement("td", null, students.phoneNumber), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, students.itNumber), /*#__PURE__*/_react.default.createElement("td", null, students.name), /*#__PURE__*/_react.default.createElement("td", null, students.email), /*#__PURE__*/_react.default.createElement("td", null, students.phoneNumber), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
           href: "/studentupdate/".concat(students._id)
         }, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
@@ -46015,7 +46013,7 @@ function StudentPresentationSubmission() {
     setfile("");
 
     _axios.default.post("http://localhost:8001/presentation/save", formdata).then(function () {
-      alert("File is uploaded successfully");
+      alert("Presentation is uploaded successfully");
     }).catch(function (err) {
       alert(err);
     });
@@ -46110,7 +46108,7 @@ function StudentThesisSubmission() {
     formdata.append("file", file);
 
     _axios.default.post("http://localhost:8001/thesis/save", formdata).then(function () {
-      alert("File is uploaded successfully");
+      alert("Thesis is uploaded successfully");
     }).catch(function (err) {
       alert(err);
     });
@@ -46324,7 +46322,7 @@ function RequestSepervisor() {
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Co-Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     className: "form-group"
   }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
     label: "Group ID : ",
@@ -46475,7 +46473,18 @@ var EditStudent = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+      return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          margin: "50px",
+          padding: "50px",
+          backgroundColor: " #eee6ff",
+          borderColor: "solid",
+          borderRadius: "40px",
+          width: "600px",
+          alignContent: "center",
+          borderLeft: "5px solid purple"
+        }
+      }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
         onSubmit: this.onSubmit
       }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
         style: {
@@ -46528,7 +46537,7 @@ var EditStudent = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/_react.default.createElement("br", null)))), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
         class: "btn btn-primary"
-      }, "Submit")))));
+      }, "Submit"))))));
     }
   }]);
 

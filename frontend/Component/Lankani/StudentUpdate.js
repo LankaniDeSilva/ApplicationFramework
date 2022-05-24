@@ -78,7 +78,17 @@ export default class EditStudent extends Component {
 
   render() {
     return (
-      <div>
+      <center>
+      <div   style={{
+        margin: "50px",
+        padding: "50px",
+        backgroundColor: " #eee6ff",
+        borderColor: "solid",
+        borderRadius: "40px",
+        width: "600px",
+        alignContent:"center",
+        borderLeft:"5px solid purple"
+      }}>
         <center>
           <form onSubmit={this.onSubmit}>
             <table>
@@ -159,6 +169,7 @@ export default class EditStudent extends Component {
           </form>
         </center>
       </div>
+      </center>
     );
   }
 }

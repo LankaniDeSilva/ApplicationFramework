@@ -28,7 +28,7 @@ export default function StudentPresentationSubmission() {
     axios
       .post("http://localhost:8001/presentation/save", formdata)
       .then(() => {
-        alert("File is uploaded successfully");
+        alert("Presentation is uploaded successfully");
       })
       .catch((err) => {
         alert(err);
