@@ -102,7 +102,7 @@ render(){
 
             <tr>
               <td>
-                <label style={{ fontSize: "20px" }}>Select date : </label>
+                <label style={{ fontSize: "20px" }}>Enter Mark : </label>
                 <br />
                 <input
                   class="form-control"
@@ -115,7 +115,7 @@ render(){
                 <br />
               </td>
               <td>
-                <label style={{ fontSize: "20px" }}>Enter Notice : </label>
+                <label style={{ fontSize: "20px" }}>Enter Mark : </label>
                 <br />
                 <input
                   class="form-control"
@@ -130,7 +130,7 @@ render(){
             </tr>
             <tr>
               <td>
-                <label style={{ fontSize: "20px" }}>Enter Notice : </label>
+                <label style={{ fontSize: "20px" }}>Enter Mark : </label>
                 <br />
                 <input
                   class="form-control"
@@ -143,7 +143,7 @@ render(){
                 <br />
               </td>
               <td>
-                <label style={{ fontSize: "20px" }}>Enter Notice : </label>
+                <label style={{ fontSize: "20px" }}>Enter Mark : </label>
                 <br />
                 <input
                   class="form-control"

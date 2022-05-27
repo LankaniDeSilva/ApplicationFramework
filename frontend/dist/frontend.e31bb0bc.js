@@ -42324,6 +42324,11 @@ function Header() {
     class: "nav-item"
   }, /*#__PURE__*/_react.default.createElement("a", {
     class: "nav-link",
+    href: "/document"
+  }, "document")), /*#__PURE__*/_react.default.createElement("li", {
+    class: "nav-item"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    class: "nav-link",
     href: ""
   }, "Staff Home")), /*#__PURE__*/_react.default.createElement("li", {
     class: "nav-item"
@@ -42680,7 +42685,7 @@ var GetMark = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h2", null, "Group Register Details")), /*#__PURE__*/_react.default.createElement("div", {
         className: "search",
         style: {
           width: "400px",
@@ -43178,7 +43183,7 @@ function AdminNoticeView() {
         height: "50px",
         padding: "10px"
       }
-    }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("b", null, topic))), /*#__PURE__*/_react.default.createElement("tr", null, "Date : ", date), /*#__PURE__*/_react.default.createElement("tr", null, description), /*#__PURE__*/_react.default.createElement("tr", null, pdf), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("button", {
+    }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("b", null, topic))), "\xA0", /*#__PURE__*/_react.default.createElement("tr", null, "Date : ", date), "\xA0", /*#__PURE__*/_react.default.createElement("tr", null, description), "\xA0", /*#__PURE__*/_react.default.createElement("tr", null, pdf), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("button", {
       className: "btn btn-warning btn-block",
       onClick: function onClick() {
         return deleteDoctor(_id);
@@ -43493,7 +43498,7 @@ function AddNotice() {
       padding: "50px"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "icone"
+    className: "icone "
   }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("a", {
     href: "/viewstudent"
   }, /*#__PURE__*/_react.default.createElement("img", {
@@ -43516,12 +43521,12 @@ function AddNotice() {
     }
   }), /*#__PURE__*/_react.default.createElement("h3", null, "Add Mark"))))), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: sendData,
-    className: "form"
+    className: "form shadow-lg p-4 mb-5 "
   }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
     style: {
       fontFamily: "Abel"
     }
-  }, "Add Notice")), /*#__PURE__*/_react.default.createElement("label", {
+  }, "Add Notice"), /*#__PURE__*/_react.default.createElement("label", {
     style: {
       fontSize: "20px"
     }
@@ -43567,7 +43572,7 @@ function AddNotice() {
     onChange: function onChange(e) {
       setdescription(e.target.value);
     }
-  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("button", {
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     class: "btn btn-primary"
   }, "Submit"), /*#__PURE__*/_react.default.createElement("br", null))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
@@ -43942,7 +43947,7 @@ var AddMark = /*#__PURE__*/function (_Component) {
         style: {
           fontSize: "20px"
         }
-      }, "Select date : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+      }, "Enter Mark : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
         class: "form-control",
         id: "mark1",
         type: "text",
@@ -43953,7 +43958,7 @@ var AddMark = /*#__PURE__*/function (_Component) {
         style: {
           fontSize: "20px"
         }
-      }, "Enter Notice : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+      }, "Enter Mark : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
         class: "form-control",
         id: "mark2",
         type: "text",
@@ -43964,7 +43969,7 @@ var AddMark = /*#__PURE__*/function (_Component) {
         style: {
           fontSize: "20px"
         }
-      }, "Enter Notice : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+      }, "Enter Mark : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
         class: "form-control",
         id: "mark3",
         type: "text",
@@ -43975,7 +43980,7 @@ var AddMark = /*#__PURE__*/function (_Component) {
         style: {
           fontSize: "20px"
         }
-      }, "Enter Notice : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+      }, "Enter Mark : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
         class: "form-control",
         id: "mark4",
         type: "text",
@@ -44143,7 +44148,7 @@ var EditMark = /*#__PURE__*/function (_Component) {
         style: {
           fontSize: "20px"
         }
-      }, "Enter Topic : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+      }, "Group Name : "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
         class: "form-control",
         id: "gid",
         type: "text",
@@ -44299,11 +44304,12 @@ var GetMark = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h2", null, "Student Marks"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", {
         className: "table",
         style: {
           background: "#f3d8f3",
-          width: "1100px"
+          width: "1100px",
+          borderRadius: "40px"
         }
       }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
@@ -44936,7 +44942,7 @@ var GetMark = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h2", null, "Panel Members Assign to Groups"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", {
         className: "table",
         style: {
           background: "#ccffcc",
@@ -46902,6 +46908,10 @@ var App = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_home.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/document",
+        exact: true,
+        component: _AdminSubmition.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         path: "/",
         exact: true,
         component: _Main.default
@@ -47028,6 +47038,10 @@ var App = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         path: "/feedbackadd",
         exact: true,
+        component: _Main.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/feedbackadd",
+        exact: true,
         component: _AdminFeedback.default
       }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         path: "/studentsubmit",
@@ -47146,11 +47160,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53193" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58688" + '/');
->>>>>>> 595f9d26f8f0e34eda39c385cded33a18d534bde
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63497" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

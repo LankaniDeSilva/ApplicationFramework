@@ -36,6 +36,7 @@ export default class GetMark extends Component {
       <div >
         <br />
         <center>
+          <h2>Panel Members Assign to Groups</h2><br/>
         <table
           className="table"
           style={{ background: "#ccffcc", width: "1100px", borderRadius:"30px" }}

@@ -21,6 +21,11 @@ function Header(){
                      
                      </li>
                      <li class="nav-item">
+                 
+                    <a class="nav-link" href="/document" >document</a>
+               
+                    </li>
+                     <li class="nav-item">
                        <a class="nav-link" href="">Staff Home</a>
                      </li>
                    

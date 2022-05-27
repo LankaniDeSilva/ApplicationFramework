@@ -53,7 +53,9 @@ export default class GetMark extends Component {
     return (
       <div>
         <br />
-        
+          <center>
+          <h2>Group Register Details</h2>
+          </center>
           <div className="search" style={{ width: "400px",paddingLeft:"50px" }}>
             <lable>Search :</lable>
             <input

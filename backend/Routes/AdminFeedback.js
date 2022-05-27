@@ -3,24 +3,6 @@ const Feedback = require("../Models/AdminFeedback");
 const router = express.Router();
 const multer = require("multer");
 
-
-
-/*router.post("/marksave", (req,res) =>{
-
-    let newMark = new Mark(req.body);
-
-    newMark.save((err) =>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:"Mark saved successfully"
-        });
-    });
-}); */
-
 router.post("/feedbacksave", (req, res) => {
     const feedback = new Feedback({
         center: req.body.center,
@@ -37,21 +19,6 @@ router.post("/feedbacksave", (req, res) => {
      .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
-//get 
-
-/*router.get('/getmark', (req,res) =>{
-    Mark.find().exec((err,Mark)=>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:true,
-            existingPosts:Mark
-        });
-    });
-});  */
 
 router.route("/getfeedback").get((req,res)=>{
 

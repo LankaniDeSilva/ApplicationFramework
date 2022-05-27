@@ -31,8 +31,6 @@ router.post("/save/noticepdf", upload.single("file"), (req, res) => {
      .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
-//save Notice
-
 router.post('/Notice/save', (req,res) =>{
 
     let newNotice = new Notices(req.body);
@@ -48,22 +46,6 @@ router.post('/Notice/save', (req,res) =>{
         });
     });
 });
-
-//get posts
-
-/*router.get('/notice', (req,res) =>{
-    Notices.find().exec((err,Notices)=>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:true,
-            existingPosts:Notices
-        });
-    });
-}); */
 
 router.route("/notice").get((req,res)=>{
 
@@ -103,9 +85,5 @@ router.get("/notice/:topic", (req,res)=>{
     });
   });
 });
-
-
-
-
 
 module.exports = router;

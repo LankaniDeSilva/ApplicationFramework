@@ -2,9 +2,6 @@ const express = require('express');
 const Group = require("../Models/GroupRegister");
 const Panel = require("../Models/PanelMember");
 const router = express.Router();
-
-
-
 //save posts
 
 router.post('/savepanel',(req,res)=>{
@@ -21,10 +18,6 @@ router.post('/savepanel',(req,res)=>{
         });
     });
 });
-
-
-
-
 //get a specipic post
 router.get("/getgroupspanel/:id",(req,res) =>{
     let postId = req.params.id;

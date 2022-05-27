@@ -53,6 +53,7 @@ export default class App extends Component{
             <Logo/>
          
             {/*pamitha */}
+            <Route path="/document"  exact component={AdminSubmition}></Route>
             <Route path="/"  exact component={Main}></Route>
              <Route path="/"  exact component={Landing}></Route>
              <Route path="/home"  exact component={Home}></Route>
@@ -84,6 +85,7 @@ export default class App extends Component{
              <Route path="/paneladd/:id"  exact component={AddPanelMembers}></Route>
              <Route path="/viewpanel"  exact component={Nav}></Route>
              <Route path="/viewPanel"  exact component={ViewPanelMembers}></Route>
+             <Route path="/feedbackadd"  exact component={Main}></Route>
              <Route path="/feedbackadd"  exact component={AdminFeedback}></Route>
              <Route path="/studentsubmit"  exact component={Nav}></Route>
              <Route path="/studentsubmit"  exact component={AdminSubmition}></Route>

@@ -1,0 +1,68 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+
+function AdminStudentView() {
+  const [Student, setstudent] = useState([]);
+
+  useEffect(() => {
+    function getStudents() {
+      axios
+        .get("http://localhost:8070/students")
+        .then((res) => {
+          setstudent(res.data);
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+    }
+    getStudents();
+  }, []);
+
+ 
+  return (
+    <div>
+      <center>
+        <br/>
+     
+      <br/>
+        <h2>Admin Notice View</h2><br/>
+        <table>
+          {Student.map((json) => {
+            const { topic, date, description, pdf, _id } = json;
+            return (
+              <tbody>
+                <tr>
+                
+                  <td>{topic}</td>
+                  <td> {date}</td>
+                  <td>{description}</td>
+                  <td>{pdf}</td>
+                  <br />
+
+                  
+                </tr>
+              </tbody>
+            );
+          })}
+        </table>
+      </center>
+    </div>
+  );
+}
+export default AdminStudentView;
+
+
+------------------------backend------------------
+
+router.route("/students").get((req,res)=>{
+
+    Students.find().then((student)=>{
+         res.json(student)
+    }).catch((err)=>{
+         console.log(err)
+    })
+})
+
+
+

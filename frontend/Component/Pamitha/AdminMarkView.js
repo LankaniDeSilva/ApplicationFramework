@@ -36,9 +36,10 @@ export default class GetMark extends Component {
       <div >
         <br />
         <center>
+          <h2>Student Marks</h2><br/>
         <table
           className="table"
-          style={{ background: "#f3d8f3", width: "1100px" }}
+          style={{ background: "#f3d8f3", width: "1100px", borderRadius:"40px"}}
         >
           <thead>
             <tr>

@@ -69,38 +69,6 @@ router.route("/student/pdf").get((req,res)=>{
     })
 })
 
-/*router.post('/select/save', (req,res) =>{
 
-    let select = new files(req.body);
-
-    select.save((err) =>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:"Notice saved successfully"
-        });
-    });
-});
-*/
-
-router.route("/select/pdf/:id").put(async (req, res)=> {
-    let userId = req.params.id;
-
-    const {mark} = req.body.mark;
-
-    const updatestudent = {
-        mark
-    }
-
-    const update = await files.findByIdAndUpdate(userId, updatestudent).then(()=>{
-        res.status(200).send({status: "User Updated"})
-    }).catch((err)=>{
-        console.log(err);
-        res.status(500).send({status: "Error with Updating data", error: err.message});
-    })  
-})
 
 module.exports = router;

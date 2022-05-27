@@ -56,7 +56,7 @@ function AddNotice() {
         <table>
           <tr>
             <td style={{ padding: "50px" }}>
-              <div className="icone">
+              <div className="icone ">
                 <center>
                   <a href="/viewstudent">
                     <img
@@ -94,10 +94,11 @@ function AddNotice() {
                   <table>
                     <tr>
                       <td>
-                        <form onSubmit={sendData} className="form">
+                
+                        <form onSubmit={sendData} className="form shadow-lg p-4 mb-5 ">
                           <center>
                             <h1 style={{ fontFamily: "Abel" }}>Add Notice</h1>
-                          </center>
+                        
                           <label style={{ fontSize: "20px" }}>
                             Enter Topic :{" "}
                           </label>
@@ -151,6 +152,7 @@ function AddNotice() {
                               setdescription(e.target.value);
                             }}
                           />
+                            </center>
                           <br />
                           <br />
                           <center>
@@ -160,6 +162,7 @@ function AddNotice() {
                             <br />
                           </center>
                         </form>
+                        
                         <br />
                         <center>
                           <table>

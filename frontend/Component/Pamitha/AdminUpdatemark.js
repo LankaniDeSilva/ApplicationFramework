@@ -93,7 +93,7 @@ export default class EditMark extends Component {
               <tr>
                
                 <td>
-                  <label style={{ fontSize: "20px" }}>Enter Topic : </label>
+                  <label style={{ fontSize: "20px" }}>Group Name : </label>
                   <br />
                   <input
                     class="form-control"

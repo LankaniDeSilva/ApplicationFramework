@@ -77,9 +77,9 @@ function AdminNoticeView() {
                   >
                     <tr><b>{topic}</b></tr>
                   </div>
-                  <tr>Date : {date}</tr>
-                  <tr>{description}</tr>
-                  <tr>{pdf}</tr>
+                  &nbsp;<tr>Date : {date}</tr>
+                  &nbsp;<tr>{description}</tr>
+                  &nbsp;<tr>{pdf}</tr>
                   <br />
 
                   <center>
