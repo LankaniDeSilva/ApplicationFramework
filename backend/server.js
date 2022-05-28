@@ -22,7 +22,9 @@ const StudentPresentationSubmission = require("./Routes/StudentPresentationRoute
 const StudentThesisSubmission = require("./Routes/StudentThesisSubmission");
 const RequestSupervisor = require("./Routes/RequestSupervisorRouter");
 const RequestCoSupervisor = require("./Routes/RequestCoSupervisor");
-
+const PanelRoute = require('./Routes/PanelRoute');
+const PanelEvaluatePresentaion = require('./Routes/PanelEvaluatePresentation');
+const PanelEvaluateTopic = require('./Routes/PanelEvaluateTopic');
 
 
 
@@ -47,6 +49,10 @@ app.use(StudentPresentationSubmission);
 app.use(StudentThesisSubmission);
 app.use(RequestSupervisor);
 app.use(RequestCoSupervisor);
+
+app.use(PanelRoute);
+app.use(PanelEvaluatePresentaion);
+app.use(PanelEvaluateTopic);
 
 
 
