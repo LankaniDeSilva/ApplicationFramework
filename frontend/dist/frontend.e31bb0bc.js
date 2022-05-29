@@ -46629,7 +46629,7 @@ var Login = /*#__PURE__*/function (_Component) {
       _axios.default.post("http://localhost:8001/Login", data).then(function (res) {
         alert("Staff Login successful!");
 
-        _this.props.history.push("");
+        _this.props.history.push("/panelHome");
 
         window.location.reload();
       }).catch(function (err) {
