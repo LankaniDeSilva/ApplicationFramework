@@ -46,7 +46,7 @@ router.get('/getevaluatetopic', (req,res) =>{
         }
         return res.status(200).json({
             success:true,
-            existingPosts:PanelEvaluateTopic
+            existingPosts:Topic
         });
     });
 }); 
