@@ -49,7 +49,7 @@ router.get('/getevaluatepresentaion', (req,res) =>{
         }
         return res.status(200).json({
             success:true,
-            existingPosts:EvaluatePresentaion
+            existingPosts:Presentaion
         });
     });
 }); 
