@@ -44,7 +44,7 @@ export default class GetMark extends Component {
     return (
       <div className="container">
         <center>
-          <h1>All Document Submition</h1>
+          <h1>Students Marks</h1>
         </center>
         <div className="search" style={{ width: "300px" }}>
           <lable>Search :</lable>

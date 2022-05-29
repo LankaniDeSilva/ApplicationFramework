@@ -28,6 +28,11 @@ router.post("/save", upload.single("file"), (req, res) => {
      .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
+//download file
+router.post("/download",(req,res)=>{
+    let fill = req.body.files;
+    res.download(`../frontend/public/uploads/${fill}`);
+});
 
 //get posts
 

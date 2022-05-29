@@ -91,7 +91,8 @@ export default class App extends Component{
              <Route path="/studentsubmit"  exact component={AdminSubmition}></Route>
              <Route path="/studentnotice"  exact component={Nav}></Route>
              <Route path="/studentnotice"  exact component={UserNoticeView}></Route>
-    
+             <Route path="/stnotice"  exact component={UserNoticeView}></Route>
+             <Route path="/studentmark"  exact component={StudentMark}></Route>
          
 
              

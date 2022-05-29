@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import fileDownload from "js-file-download";
+
 export default class Getnotice extends Component {
   constructor(props) {
     super(props);
@@ -48,6 +50,24 @@ export default class Getnotice extends Component {
       this.retrivePosts();
     });
   };
+
+  downloadFile = (files) => {
+    const data = {
+      files : files,
+    };
+
+    axios({
+      url:"http://localhost:8001/download",
+      data,
+      method:"POST",
+      responseType:"blob"
+    }).then((res) => {
+      console.log(res);
+      fileDownload(res.data, files);
+    });
+  };
+
+
 
   render() {
     return (
@@ -114,11 +134,9 @@ export default class Getnotice extends Component {
                     className="btn btn-success"
                     rel="noreferrer"
                     target="_blank"
-                    href={
-                        process.env.PUBLIC_URL + `/public/uploads/${pdfs.files}`
-                    }
+                    onClick={(e) => this.downloadFile(pdfs.files)}
                   >
-                    <i class="fa-solid fa-eye"></i> View
+                   <i class="fa-solid fa-download"></i> Download
                   </a>
                   &nbsp;
                   <button

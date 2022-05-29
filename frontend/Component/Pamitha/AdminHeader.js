@@ -25,6 +25,9 @@ function Header(){
                     <a class="nav-link" href="/document" >document</a>
                
                     </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="/stnotice">Notice</a>
+                     </li>
                      <li class="nav-item">
                        <a class="nav-link" href="">Staff Home</a>
                      </li>

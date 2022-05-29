@@ -49,13 +49,15 @@ function Feedbackview(){
     return(
         <div>
             <center>
+                <br/>
                 <h2>Feedbacks</h2>
+                <br/>
              <table style={{width:"1000px"}}> 
             {
                     Feedback.map((json) => {
                     const {center, email, date, details, outcome,_id} = json
              return(      
-               
+                
                 <tbody>
                 <tr>
                 <tr><i class="fa-solid fa-note-sticky"></i>   Center : {center}</tr>
@@ -72,7 +74,7 @@ function Feedbackview(){
                </tr>
                <hr style={{border:"2px solid blue"}}/>
               </tbody>
-              
+           
              )
         })
     }     

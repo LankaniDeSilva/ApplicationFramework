@@ -1,113 +1,115 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import axios from "axios";
-//import PDFS from "../public/uploads/"
 
-function AdminNoticeView() {
-  const [Notice, setnotice] = useState([]);
+import fileDownload from "js-file-download";
 
-  useEffect(() => {
-    function getStudents() {
-      axios
-        .get("http://localhost:8001/notice")
-        .then((res) => {
-          setnotice(res.data);
-        })
-        .catch((err) => {
-          alert(err.message);
+export default class Getnotice extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+     notice: [],
+    };
+  }
+
+  componentDidMount() {
+    this.retrivePosts();
+  }
+
+  retrivePosts() {
+    axios.get("http://localhost:8001/getnotice").then((res) => {
+      if (res.data.success) {
+        this.setState({
+         notice: res.data.existingPosts,
         });
-    }
-    getStudents();
-  }, []);
-
-  function deleteDoctor(_id) {
-    swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this data!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        swal("Poof! Your data has been successfully Deleted!", {
-          icon: "success",
-        });
-
-        fetch(`http://localhost:8001/deletenotice/${_id}`, {
-          method: "DELETE",
-        })
-          .then((response) => {
-            response.json();
-            swal(
-              "Good job!",
-              "Your data has been successfully Deleted",
-              "success"
-            );
-          })
-          .catch((error) => {
-            swal("Sorry!", "Something Error...", "error");
-          });
+        console.log(this.state.notice);
       }
     });
   }
 
-  return (
-    <div>
-      <center>
-        <br/>
-      <div class="alert alert-success alert-dismissible fade show" role="alert" style={{width:"1200px"}}>
-        <strong>Notice Added Successfully.</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      <br/>
-        <h2>Admin Notice View</h2><br/>
-        <table>
-          {Notice.map((json) => {
-            const { topic, date, description, pdf, _id } = json;
-            return (
-              <tbody>
-                <tr>
-                  <div
-                    style={{
-                      background: "#ccddff",
-                      borderLeft: "4px solid #1a66ff",
-                      width: "1200px",
-                      height: "50px",
-                      padding: "10px",
-                    }}
-                  >
-                    <tr><b>{topic}</b></tr>
-                  </div>
-                  &nbsp;<tr>Date : {date}</tr>
-                  &nbsp;<tr>{description}</tr>
-                  &nbsp;<tr>{pdf}</tr>
-                  <br />
+ 
 
-                  <center>
-                    <tr>
-                      <button
-                        className="btn btn-warning btn-block"
-                        onClick={() => deleteDoctor(_id)}
-                      >
-                        <i className="fas fa-trash-alt"></i> Delete{" "}
-                      </button>
-                      &nbsp;
-                      <a
-                        className="btn btn-primary"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <i class="fa-solid fa-eye"></i> View{" "}
-                      </a>
-                    </tr>
-                    <br />
-                  </center>
+  onDelete = (id) => {
+    axios.delete(`http://localhost:8001/notice/delete/${id}`).then((res) => {
+      alert("Delete Successfully");
+      this.retrivePosts();
+    });
+  };
+
+  downloadFile = (pdf) => {
+    const data = {
+      pdf : pdf,
+    };
+
+    axios({
+      url:"http://localhost:8001/downloadnotice",
+      data,
+      method:"POST",
+      responseType:"blob"
+    }).then((res) => {
+      console.log(res);
+      fileDownload(res.data, pdf);
+    });
+  };
+
+
+
+  render() {
+    return (
+      <div className="container">
+        <center>
+          <h1>Notice</h1>
+        </center>
+        
+        <br />
+
+        <table style={{marginLeft:"100px"}}>
+        
+          <tbody>
+            {this.state.notice.map((notice) => (
+              <tr>
+              <div style={{background:"#b3d1ff", width:"1100px",height:"50px", borderLeft:"4px solid #3385ff"}}>
+              &nbsp; <tr>&nbsp;<b>{notice.date}</b></tr>
+                </div>
+                &nbsp;<tr>&nbsp;<b>{notice.topic}</b></tr>
+              
+                &nbsp;<tr>&nbsp;{notice.description}</tr>
+                &nbsp;<tr>
+                &nbsp;{notice.pdf}
                 </tr>
-              </tbody>
-            );
-          })}
+                <center>
+              <tr>
+                
+                <td>
+                  <a
+                    className="btn btn-success"
+                    rel="noreferrer"
+                    target="_blank"
+                    onClick={(e) => this.downloadFile(notice.pdf)}
+                  >
+                   <i class="fa-solid fa-download"></i> Download
+                  </a>
+                  &nbsp;
+                  <button
+                    type="button"
+                    className="btn btn-warning"
+                    onClick={() => this.onDelete(notice._id)}
+                  >
+                    <i className="fas fa-trash-alt"></i> Delete
+                  </button>
+                 
+                
+                </td>
+                
+                </tr>
+                </center>
+                <br/>
+              </tr>
+            ))}
+          </tbody>
+        
         </table>
-      </center>
-    </div>
-  );
+      </div>
+    );
+  }
 }
-export default AdminNoticeView;
