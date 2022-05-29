@@ -83,8 +83,10 @@ export default class allPreMark extends Component {
             ))}
           </tbody>
         </table>
+        <br/>
         </center>
       </div>
+      
     );
   }
 }
