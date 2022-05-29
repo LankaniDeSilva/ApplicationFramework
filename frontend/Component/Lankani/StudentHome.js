@@ -102,13 +102,34 @@ export default function StudentHome(){
                     <p style={{paddingLeft:"10%"}}>Submit Document <a href="/studentsub">Click here</a></p>
                     </div> 
                 <br/>
-                {/* <div class="jumbotron jumbotron-fluid">
+                <div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h3 class="display-4">Evaluation Panel Feedback</h3>
+                        <h3 class="display-4">Evaluation Panel Feedback Presentaion</h3>
                     </div>
+                    
                 </div>
                 
-                <br/> */}
+                    <div class="jumbotron1">
+                    <AdminNoticeDisplay data={'presentation'} />
+                    <p style={{paddingLeft:"10%"}}>Evaluation Panel Feedback Presentaion <a href="/StudentPreMark">Click here</a></p>
+                
+                </div>
+                
+                <br/> 
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h3 class="display-4">Panel Topic Evaluation </h3>
+                    </div>
+                    
+                </div>
+                
+                    <div class="jumbotron1">
+                    <AdminNoticeDisplay data={'topic'} />
+                    <p style={{paddingLeft:"10%"}}>Panel Topic Evaluation<a href="/studentTopicEval">Click here</a></p>
+                
+                </div>
+                
+                <br/> 
                 {/* <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h3 class="display-4">Download Template</h3>
