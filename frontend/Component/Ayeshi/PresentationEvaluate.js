@@ -39,7 +39,7 @@ function presentationEvaluate(){
     return(
         <div className="container">
            
-            <form onSubmit={sendData}>
+            <form onSubmit={sendData} style={{ borderRadius:"40px", background:"#cce6ff",padding:"30px"}}>
             <h1 style={{ fontFamily: "Abel" }}>Presentaion Evaluate</h1>
                 <div class="form-group">
 
@@ -95,6 +95,7 @@ function presentationEvaluate(){
                 <br/>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <br/>
            
 
         </div>
