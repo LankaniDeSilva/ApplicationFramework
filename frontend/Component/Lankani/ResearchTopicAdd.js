@@ -1,9 +1,37 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import axios from "axios";
+import $ from 'jquery';
+import 'jquery-validation'
+import './CSS/styles.css';
 
 export default function ResearchTopic(){
     const [groupNumber, setGroupNumber] = useState("");
     const [topic, setTopic] = useState("");
+
+    useEffect(() =>{
+        const topicregister = $("#topic-register");
+
+        topicregister.validate({
+            rules: {
+                group: {
+                    required: true
+                },
+
+                rtopic:{
+                    required: true
+                }
+            },
+            message: {
+                group: {
+                    required: "Please Enter Group ID"
+                },
+                rtopic: {
+                    required: "Please Enter Research Topic"
+                }
+
+            }
+        })
+    })
 
     function sendData(e){
         e.preventDefault();
@@ -34,13 +62,14 @@ export default function ResearchTopic(){
                 borderLeft:"5px solid blue"
             }}>
             <h1>Research Topic Registration Form</h1>
-            <form onSubmit={sendData}>
+            <form onSubmit={sendData} id="topic-register">
                 <div className="form-group">
                     <label for="gnumber">Group Number : </label>
                     <input
                     type="text"
                     className="form-control"
                     id="gnumber"
+                    name="group"
                     placeholder="Enter Group Number"
                     onChange={(e) => {
                         setGroupNumber(e.target.value);
@@ -53,6 +82,7 @@ export default function ResearchTopic(){
                     type="text"
                     className="form-control"
                     id="topic"
+                    name="rtopic"
                     placeholder="Enter Topic"
                     onChange={(e) => {
                         setTopic(e.target.value);

@@ -17,6 +17,8 @@
     "@types/react": "^18.0.9",
     "axios": "^0.27.2",
     "dom": "^0.0.3",
+    "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.4",
     "jspdf": "^2.5.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.3.1",

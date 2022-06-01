@@ -42,7 +42,7 @@ export default class Login extends Component {
         axios.post("http://localhost:8001/Login", data)
         .then(res => {
           alert("Student Login successful!")
-          this.props.history.push(`/studenthome`)
+          this.props.history.push(`/mainstudenthome`)
           window.location.reload();
       }).catch(err => {
           console.log(err);

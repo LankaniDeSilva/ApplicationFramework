@@ -9,7 +9,7 @@ srouter.post("/Student/save", (req, res) => {
   newStudent.save((err) => {
     if (err) {
       return res.status(400).json({
-        error: err,
+        error: err.message,
       });
     }
     return res.status(200).json({
@@ -22,7 +22,7 @@ srouter.get("/student", (req,res)=>{
     Student.find().exec((err,Student) =>{
       if(err){
         return res.status(400).json({
-          error:err
+          error:err.message
       });
     }
     return res.status(200).json({

@@ -4,11 +4,13 @@ const thesisScheme = mongoose.Schema(
   {
     groupid:{
       type:String,
-      required:true
+      required:true,
+      trim: true
   },
   files:{
       type:String,
-      required:true
+      required:true,
+      
   }
   }
 );
