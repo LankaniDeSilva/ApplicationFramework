@@ -6,7 +6,6 @@ export default function AddStudent() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [password, setPassword] = useState("");
 
   function sendData(e) {
     e.preventDefault();
@@ -15,7 +14,7 @@ export default function AddStudent() {
       name,
       email,
       phoneNumber,
-      password,
+      
     };
 
     axios
@@ -26,15 +25,21 @@ export default function AddStudent() {
       .catch((e) => {
         alert(e);
       });
+      
   }
 
   return (
+   <center>
     <div
       style={{
-        margin: "10%",
+        margin: "50px",
         padding: "50px",
-        backgroundColor: "orange",
-        borderColor: " solid",
+        backgroundColor: "#cce6ff",
+        borderColor: "solid",
+        borderRadius: "40px",
+        width: "600px",
+        alignContent:"center",
+        borderLeft:"5px solid blue"
       }}
     >
       <div className="container">
@@ -88,7 +93,7 @@ export default function AddStudent() {
               }}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label for="password">Password : </label>
             <input
               type="password"
@@ -99,12 +104,14 @@ export default function AddStudent() {
                 setPassword(e.target.value);
               }}
             />
-          </div>
+          </div> */}
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
       </div>
     </div>
+    </center>
+
   );
 }

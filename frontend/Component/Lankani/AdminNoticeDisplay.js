@@ -41,7 +41,7 @@ export default class GetNotices extends Component {
                 <h2>Notices</h2>
                 {this.state.notices.map((notices, index) => (
                     <>
-                  <h3 class="display-4">{notices.topic}</h3>
+                  {/* <h3 class="display-4">{notices.topic}</h3> */}
                   <p>{notices.description}</p>
                   <p>{notices.pdf}</p>
                   </>

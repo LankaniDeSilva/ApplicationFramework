@@ -45130,7 +45130,7 @@ var Login = /*#__PURE__*/function (_Component) {
         type: "submit",
         className: "btn btn-success",
         onClick: this.onSubmit
-      }, "Register")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+      }, "Login")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
     }
   }]);
 
@@ -45189,19 +45189,13 @@ function AddStudent() {
       phoneNumber = _useState8[0],
       setPhoneNumber = _useState8[1];
 
-  var _useState9 = (0, _react.useState)(""),
-      _useState10 = _slicedToArray(_useState9, 2),
-      password = _useState10[0],
-      setPassword = _useState10[1];
-
   function sendData(e) {
     e.preventDefault();
     var newStudent = {
       itNumber: itNumber,
       name: name,
       email: email,
-      phoneNumber: phoneNumber,
-      password: password
+      phoneNumber: phoneNumber
     };
 
     _axios.default.post("http://localhost:8001/Student/save", newStudent).then(function () {
@@ -45211,12 +45205,16 @@ function AddStudent() {
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "orange",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -45270,22 +45268,10 @@ function AddStudent() {
     onChange: function onChange(e) {
       setPhoneNumber(e.target.value);
     }
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/_react.default.createElement("label", {
-    for: "password"
-  }, "Password : "), /*#__PURE__*/_react.default.createElement("input", {
-    type: "password",
-    className: "form-control",
-    id: "password",
-    placeholder: "Enter Password",
-    onChange: function onChange(e) {
-      setPassword(e.target.value);
-    }
   })), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/StudentList.js":[function(require,module,exports) {
 "use strict";
@@ -45466,8 +45452,6 @@ var GetStudents = /*#__PURE__*/function (_Component) {
         scope: "col"
       }, "#"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "ID"), /*#__PURE__*/_react.default.createElement("th", {
-        scope: "col"
       }, "ITNumber"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
       }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
@@ -45477,7 +45461,7 @@ var GetStudents = /*#__PURE__*/function (_Component) {
       }, "Phone Number"), /*#__PURE__*/_react.default.createElement("th", null, "Update"), /*#__PURE__*/_react.default.createElement("th", null, "Delete"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.students.map(function (students, index) {
         return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
           scope: "row"
-        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, students._id), /*#__PURE__*/_react.default.createElement("td", null, students.itNumber), /*#__PURE__*/_react.default.createElement("td", null, students.name), /*#__PURE__*/_react.default.createElement("td", null, students.email), /*#__PURE__*/_react.default.createElement("td", null, students.phoneNumber), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, students.itNumber), /*#__PURE__*/_react.default.createElement("td", null, students.name), /*#__PURE__*/_react.default.createElement("td", null, students.email), /*#__PURE__*/_react.default.createElement("td", null, students.phoneNumber), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
           href: "/studentupdate/".concat(students._id)
         }, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
@@ -45587,9 +45571,7 @@ var GetNotices = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         class: "container"
       }, /*#__PURE__*/_react.default.createElement("h2", null, "Notices"), this.state.notices.map(function (notices, index) {
-        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h3", {
-          class: "display-4"
-        }, notices.topic), /*#__PURE__*/_react.default.createElement("p", null, notices.description), /*#__PURE__*/_react.default.createElement("p", null, notices.pdf));
+        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, notices.description), /*#__PURE__*/_react.default.createElement("p", null, notices.pdf));
       })))));
     }
   }]);
@@ -45617,20 +45599,25 @@ var _AdminNoticeDisplay = _interopRequireDefault(require("./AdminNoticeDisplay")
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function StudentHome() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: _SLIIT.default,
-    style: {
-      width: "300px",
-      height: "90px",
-      marginLeft: "70px",
-      marginTop: "20px",
-      marginBottom: "20px"
-    }
-  })), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-outline-primary"
-  }, "Sign Out"), "\xA0")))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'main'
   })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron jumbotron-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "container"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    class: "display-4"
+  }, "Student Registration"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'streg'
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Individual Student Registration ", /*#__PURE__*/_react.default.createElement("a", {
+    href: "/Student"
+  }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -45640,7 +45627,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'groupreg'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Group Registration ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/register"
   }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45652,7 +45643,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'researchtopic'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Research Topic Registration ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/researchtopic"
   }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45664,7 +45659,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'supervisor'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Request Supervisor ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/requestsupervisor"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45676,19 +45675,13 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'cosupervisor'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Request Co-Supervisor ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/requestcosupervisor"
   }, "Click Here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
-    class: "jumbotron jumbotron-fluid"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    class: "container"
-  }, /*#__PURE__*/_react.default.createElement("h3", {
-    class: "display-4"
-  }, "Download Document"))), /*#__PURE__*/_react.default.createElement("div", {
-    class: "jumbotron1"
-  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
-    data: 'document'
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -45698,7 +45691,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'submitdoc'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Submit Document ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/studentsub"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45706,17 +45703,33 @@ function StudentHome() {
     class: "container"
   }, /*#__PURE__*/_react.default.createElement("h3", {
     class: "display-4"
-  }, "Evaluation Panel Feedback"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Evaluation Panel Feedback Presentaion"))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "jumbotron1"
+  }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
+    data: 'presentation'
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Evaluation Panel Feedback Presentaion ", /*#__PURE__*/_react.default.createElement("a", {
+    href: "/StudentPreMark"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
   }, /*#__PURE__*/_react.default.createElement("h3", {
     class: "display-4"
-  }, "Download Template"))), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Panel Topic Evaluation "))), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
-    data: 'template'
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    data: 'topic'
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Panel Topic Evaluation", /*#__PURE__*/_react.default.createElement("a", {
+    href: "/studentTopicEval"
+  }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "container"
@@ -45726,7 +45739,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'submitpresentation'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Submit Presentation ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/studentpresentation"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     class: "jumbotron jumbotron-fluid"
@@ -45738,7 +45755,11 @@ function StudentHome() {
     class: "jumbotron1"
   }, /*#__PURE__*/_react.default.createElement(_AdminNoticeDisplay.default, {
     data: 'submitthesis'
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
+    style: {
+      paddingLeft: "10%"
+    }
+  }, "Submit Final Thesis ", /*#__PURE__*/_react.default.createElement("a", {
     href: "/thesis"
   }, "Click here"))), /*#__PURE__*/_react.default.createElement("br", null)));
 }
@@ -45798,8 +45819,17 @@ function ResearchTopic() {
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      margin: "50px",
+      padding: "50px",
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
+    }
   }, /*#__PURE__*/_react.default.createElement("h1", null, "Research Topic Registration Form"), /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: sendData
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -45829,7 +45859,7 @@ function ResearchTopic() {
   })), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Lankani/SubmissionForm.js":[function(require,module,exports) {
 "use strict";
@@ -45930,12 +45960,16 @@ function StudentFileSubmission() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -45955,7 +45989,7 @@ function StudentFileSubmission() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentPresentation.js":[function(require,module,exports) {
 "use strict";
@@ -46017,21 +46051,22 @@ function StudentPresentationSubmission() {
     setfile("");
 
     _axios.default.post("http://localhost:8001/presentation/save", formdata).then(function () {
-      alert("File is uploaded successfully");
+      alert("Presentation is uploaded successfully");
     }).catch(function (err) {
       alert(err);
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
       backgroundColor: "#cce6ff",
       borderColor: " solid",
       borderRadius: "40px",
       width: "600px",
-      alignContent: "center"
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46051,7 +46086,7 @@ function StudentPresentationSubmission() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentThesisSubmission.js":[function(require,module,exports) {
 "use strict";
@@ -46111,7 +46146,7 @@ function StudentThesisSubmission() {
     formdata.append("file", file);
 
     _axios.default.post("http://localhost:8001/thesis/save", formdata).then(function () {
-      alert("File is uploaded successfully");
+      alert("Thesis is uploaded successfully");
     }).catch(function (err) {
       alert(err);
     });
@@ -46120,15 +46155,16 @@ function StudentThesisSubmission() {
     setfile("");
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
       backgroundColor: "#cce6ff",
       borderColor: " solid",
       borderRadius: "40px",
       width: "600px",
-      alignContent: "center"
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46148,7 +46184,7 @@ function StudentThesisSubmission() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestSupervisor.js":[function(require,module,exports) {
 "use strict";
@@ -46215,12 +46251,16 @@ function RequestSepervisor() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -46240,7 +46280,7 @@ function RequestSepervisor() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/RequestCoSupervisor.js":[function(require,module,exports) {
 "use strict";
@@ -46307,16 +46347,20 @@ function RequestSepervisor() {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      margin: "10%",
+      margin: "50px",
       padding: "50px",
-      backgroundColor: "lightgrey",
-      borderColor: " solid"
+      backgroundColor: "#cce6ff",
+      borderColor: "solid",
+      borderRadius: "40px",
+      width: "600px",
+      alignContent: "center",
+      borderLeft: "5px solid blue"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Co-Supervisor Request Form"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
     className: "form-group"
   }, /*#__PURE__*/_react.default.createElement(_SubmissionForm.default, {
     label: "Group ID : ",
@@ -46332,7 +46376,7 @@ function RequestSepervisor() {
     type: "submit",
     onClick: onChangeClick,
     className: "btn btn-primary"
-  }, "Submit"))));
+  }, "Submit")))));
 }
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","./SubmissionForm":"Component/Lankani/SubmissionForm.js"}],"Component/Lankani/StudentUpdate.js":[function(require,module,exports) {
 "use strict";
@@ -46467,7 +46511,18 @@ var EditStudent = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+      return /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          margin: "50px",
+          padding: "50px",
+          backgroundColor: " #eee6ff",
+          borderColor: "solid",
+          borderRadius: "40px",
+          width: "600px",
+          alignContent: "center",
+          borderLeft: "5px solid purple"
+        }
+      }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
         onSubmit: this.onSubmit
       }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
         style: {
@@ -46520,7 +46575,7 @@ var EditStudent = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/_react.default.createElement("br", null)))), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
         class: "btn btn-primary"
-      }, "Submit")))));
+      }, "Submit"))))));
     }
   }]);
 
@@ -46612,7 +46667,7 @@ var Login = /*#__PURE__*/function (_Component) {
       _axios.default.post("http://localhost:8001/Login", data).then(function (res) {
         alert("Staff Login successful!");
 
-        _this.props.history.push("");
+        _this.props.history.push("/panelHome");
 
         window.location.reload();
       }).catch(function (err) {
@@ -46714,70 +46769,984 @@ function Header() {
     id: "navbarSupportedContent"
   }, /*#__PURE__*/_react.default.createElement("ul", {
     class: "navbar-nav me-auto mb-2 mb-lg-0"
-  }, /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link active",
-    "aria-current": "page",
-    href: "/Admin"
-  }, "Admin Home")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link",
-    href: "/studenthome"
-  }, "Student Home")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link",
-    href: ""
-  }, "Staff Home")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link",
-    href: "/register"
-  }, "Group Register")), /*#__PURE__*/_react.default.createElement("li", {
-    class: "nav-item dropdown"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    class: "nav-link dropdown-toggle",
-    href: "#",
-    id: "navbarDropdown",
-    role: "button",
-    "data-bs-toggle": "dropdown",
-    "aria-expanded": "false"
-  }, "Dropdown"), /*#__PURE__*/_react.default.createElement("ul", {
-    class: "dropdown-menu",
-    "aria-labelledby": "navbarDropdown"
-  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-    class: "dropdown-item",
-    href: ""
-  }, "Link")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-    class: "dropdown-item",
-    href: "#"
-  }, "Link")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("hr", {
-    class: "dropdown-divider"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-    class: "dropdown-item",
-    href: "#"
-  }, "Link"))))), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/rlogin"
+  }), /*#__PURE__*/_react.default.createElement("a", {
+    href: "/slogin"
   }, /*#__PURE__*/_react.default.createElement("button", {
     class: "btn btn-outline-primary"
-  }, "Sign Out")), "\xA0", /*#__PURE__*/_react.default.createElement("form", {
-    class: "d-flex"
-  }, /*#__PURE__*/_react.default.createElement("input", {
-    class: "form-control me-2",
-    type: "search",
-    placeholder: "Search",
-    "aria-label": "Search"
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-outline-success",
-    type: "submit"
-  }, "Search"))))));
+  }, "Sign Out")), "\xA0"))));
 }
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"Component/Ayeshi/PanelList.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = ViewPanel;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ViewPanel() {
+  var _useState = (0, _react.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      Panel = _useState2[0],
+      setPanel = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    function getAllPanelMembers() {
+      _axios.default.get("http://localhost:8001/panel").then(function (res) {
+        setPanel(res.data);
+      }).catch(function (err) {
+        alert(err.message);
+      });
+    }
+
+    getAllPanelMembers();
+  }, []);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/_react.default.createElement("thead", {
+    className: "thead-dark"
+  }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "IDNumber"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Email"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Phone Number"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Edit"), /*#__PURE__*/_react.default.createElement("th", {
+    scope: "col"
+  }, "Delete"))), Panel.map(function (json) {
+    var idNumber = json.idNumber,
+        name = json.name,
+        email = json.email,
+        phoneNumber = json.phoneNumber,
+        _id = json._id;
+    return /*#__PURE__*/_react.default.createElement("tbody", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, idNumber), /*#__PURE__*/_react.default.createElement("td", null, name), /*#__PURE__*/_react.default.createElement("td", null, email), /*#__PURE__*/_react.default.createElement("td", null, phoneNumber), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+      className: "btn btn-warning btn-block"
+    }, "Update")), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+      className: "btn btn-warning btn-block"
+    }, "Delete"))));
+  })));
+}
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/images/presentationeval.jpg":[function(require,module,exports) {
+module.exports = "/presentationeval.b4a0c810.jpg";
+},{}],"Component/Ayeshi/images/topiceval.png":[function(require,module,exports) {
+module.exports = "/topiceval.3e7e2ba9.png";
+},{}],"Component/Ayeshi/images/panel1.jpg":[function(require,module,exports) {
+module.exports = "/panel1.da26e433.jpg";
+},{}],"Component/Ayeshi/images/panel2.png":[function(require,module,exports) {
+module.exports = "/panel2.306bbdf3.png";
+},{}],"Component/Ayeshi/PanelHome.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _presentationeval = _interopRequireDefault(require("./images/presentationeval.jpg"));
+
+var _topiceval = _interopRequireDefault(require("./images/topiceval.png"));
+
+var _panel = _interopRequireDefault(require("./images/panel1.jpg"));
+
+var _panel2 = _interopRequireDefault(require("./images/panel2.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var set = {};
+
+function panelHome() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("hr", {
+    style: {
+      width: "1200px"
+    }
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
+    style: {
+      borderRadius: "40px",
+      background: "#cce6ff",
+      padding: "30px"
+    }
+  }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _presentationeval.default,
+    style: {
+      width: "200px",
+      height: "100px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/presentationEvaluate"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn btn-primary",
+    style: {
+      width: "200px",
+      height: "40px"
+    }
+  }, "Evaluate Presentation"))))), "\xA0 \xA0", /*#__PURE__*/_react.default.createElement("td", {
+    style: {
+      background: "#cce6ff",
+      borderRadius: "40px",
+      padding: "30px"
+    }
+  }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _topiceval.default,
+    style: {
+      width: "200px",
+      height: "100px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
+    href: "/topicEvaluate"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn btn-primary",
+    style: {
+      width: "200px",
+      height: "40px"
+    }
+  }, "Evaluate Topic"))))), "\xA0 \xA0", /*#__PURE__*/_react.default.createElement("td", {
+    style: {
+      background: "#cce6ff",
+      borderRadius: "40px",
+      padding: "30px"
+    }
+  }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _panel.default,
+    style: {
+      width: "200px",
+      height: "100px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/allPreMark"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn btn-primary",
+    style: {
+      width: "200px",
+      height: "40px"
+    }
+  }, "All Presentation Marks"))))), "\xA0 \xA0", /*#__PURE__*/_react.default.createElement("td", {
+    style: {
+      background: "#cce6ff",
+      borderRadius: "40px",
+      padding: "30px"
+    }
+  }, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _panel2.default,
+    style: {
+      width: "200px",
+      height: "100px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/allTopicEval"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn btn-primary",
+    style: {
+      width: "200px",
+      height: "40px"
+    }
+  }, "All Topics Evaluate"))))))), /*#__PURE__*/_react.default.createElement("br", null)));
+}
+
+var _default = panelHome;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./images/presentationeval.jpg":"Component/Ayeshi/images/presentationeval.jpg","./images/topiceval.png":"Component/Ayeshi/images/topiceval.png","./images/panel1.jpg":"Component/Ayeshi/images/panel1.jpg","./images/panel2.png":"Component/Ayeshi/images/panel2.png"}],"Component/Ayeshi/PresentationEvaluate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function presentationEvaluate() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      groupid = _useState2[0],
+      setGroupid = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      studentid = _useState4[0],
+      setStudentid = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      mark1 = _useState6[0],
+      setMark1 = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(""),
+      _useState8 = _slicedToArray(_useState7, 2),
+      mark2 = _useState8[0],
+      setMark2 = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(""),
+      _useState10 = _slicedToArray(_useState9, 2),
+      mark3 = _useState10[0],
+      setMark3 = _useState10[1];
+
+  function sendData(e) {
+    e.preventDefault();
+    var newMarks = {
+      groupid: groupid,
+      studentid: studentid,
+      mark1: mark1,
+      mark2: mark2,
+      mark3: mark3
+    };
+
+    _axios.default.post("http://localhost:8001/evaluatepresentaionsave", newMarks).then(function () {
+      alert("Marks Added");
+      setGroupid("");
+      setStudentid("");
+      setMark1("");
+      setMark2("");
+      setMark3("");
+    }).catch(function (err) {
+      alert(err);
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: sendData,
+    style: {
+      borderRadius: "40px",
+      background: "#cce6ff",
+      padding: "30px"
+    }
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    style: {
+      fontFamily: "Abel"
+    }
+  }, "Presentaion Evaluate"), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "groupid"
+  }, "Group ID"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "groupid",
+    placeholder: "Enter Group ID",
+    onChange: function onChange(e) {
+      setGroupid(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "studentid"
+  }, "Student ID"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "studentid",
+    placeholder: "Enter Student ID",
+    onChange: function onChange(e) {
+      setStudentid(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "mark1"
+  }, "Q&A"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "mark1",
+    placeholder: "Enter marks for Q&A",
+    onChange: function onChange(e) {
+      setMark1(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "mark2"
+  }, "Presenting"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "mark2",
+    placeholder: "Enter marks for Presenting",
+    onChange: function onChange(e) {
+      setMark2(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "mark3"
+  }, "Details"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "mark3",
+    placeholder: "Enter marks for Details",
+    onChange: function onChange(e) {
+      setMark3(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    class: "btn btn-primary"
+  }, "Submit")), /*#__PURE__*/_react.default.createElement("br", null));
+}
+
+var _default = presentationEvaluate;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/TopicEvaluate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function topicEvaluate() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      groupid = _useState2[0],
+      setGroupid = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      topic = _useState4[0],
+      setTopic = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      comments = _useState6[0],
+      setComments = _useState6[1];
+
+  function sendData(e) {
+    e.preventDefault();
+    var newEvaluate = {
+      groupid: groupid,
+      topic: topic,
+      comments: comments
+    };
+
+    _axios.default.post("http://localhost:8001/evaluatetopicsave", newEvaluate).then(function () {
+      alert("Evaluate Done");
+      setGroupid("");
+      setTopic("");
+      setComments("");
+    }).catch(function (err) {
+      alert(err);
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: sendData,
+    style: {
+      borderRadius: "40px",
+      background: "#cce6ff",
+      padding: "30px"
+    }
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    style: {
+      fontFamily: "Abel"
+    }
+  }, "Topic Evaluate"), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "groupid"
+  }, "Group ID"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "groupid",
+    placeholder: "Enter Group ID",
+    onChange: function onChange(e) {
+      setGroupid(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "topic"
+  }, "Topic"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "topic",
+    placeholder: "Enter Topic",
+    onChange: function onChange(e) {
+      setTopic(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    class: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    for: "comments"
+  }, "Comments"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    class: "form-control",
+    id: "comments",
+    placeholder: "Enter Comments",
+    onChange: function onChange(e) {
+      setComments(e.target.value);
+    }
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    class: "btn btn-primary"
+  }, "Submit")), /*#__PURE__*/_react.default.createElement("br", null));
+}
+
+var _default = topicEvaluate;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/AllTopicsEvaluate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var allTopicEval = /*#__PURE__*/function (_Component) {
+  _inherits(allTopicEval, _Component);
+
+  var _super = _createSuper(allTopicEval);
+
+  function allTopicEval(props) {
+    var _this;
+
+    _classCallCheck(this, allTopicEval);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "onDelete", function (id) {
+      _axios.default.delete("http://localhost:8001/deleteevaluatetopic/".concat(id)).then(function (res) {
+        alert("Delete Successfully");
+
+        _this.retrivePosts();
+      });
+    });
+
+    _this.state = {
+      allTopicEval: []
+    };
+    return _this;
+  }
+
+  _createClass(allTopicEval, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.retrivePosts();
+    }
+  }, {
+    key: "retrivePosts",
+    value: function retrivePosts() {
+      var _this2 = this;
+
+      _axios.default.get("http://localhost:8001/getevaluatetopic").then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            allTopicEval: res.data.existingPosts
+          });
+
+          console.log(_this2.state.allTopicEval);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table",
+        style: {
+          background: "#f3d8f3",
+          width: "1100px"
+        }
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "#"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, " ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "GROUP ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "TOPIC"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "COMMENTS"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.allTopicEval.map(function (_allTopicEval, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+          scope: "row"
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval._id), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.topic), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.comments), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-success"
+        }, /*#__PURE__*/_react.default.createElement("i", {
+          className: "fas fa-edit"
+        }), " Update"), "\xA0", /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-warning",
+          onClick: function onClick() {
+            return _this3.onDelete(_allTopicEval._id);
+          }
+        }, /*#__PURE__*/_react.default.createElement("i", {
+          className: "fas fa-trash-alt"
+        }), " Delete")));
+      })))));
+    }
+  }]);
+
+  return allTopicEval;
+}(_react.Component);
+
+exports.default = allTopicEval;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/AllPresentationMarks.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var allPreMark = /*#__PURE__*/function (_Component) {
+  _inherits(allPreMark, _Component);
+
+  var _super = _createSuper(allPreMark);
+
+  function allPreMark(props) {
+    var _this;
+
+    _classCallCheck(this, allPreMark);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "onDelete", function (id) {
+      _axios.default.delete("http://localhost:8001/deleteevaluatepresentaio/".concat(id)).then(function (res) {
+        alert("Delete Successfully");
+
+        _this.retrivePosts();
+      });
+    });
+
+    _this.state = {
+      allPreMark: []
+    };
+    return _this;
+  }
+
+  _createClass(allPreMark, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.retrivePosts();
+    }
+  }, {
+    key: "retrivePosts",
+    value: function retrivePosts() {
+      var _this2 = this;
+
+      _axios.default.get("http://localhost:8001/getevaluatepresentaion").then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            allPreMark: res.data.existingPosts
+          });
+
+          console.log(_this2.state.allPreMark);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table",
+        style: {
+          background: "#f3d8f3",
+          width: "1100px"
+        }
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "#"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, " ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "GROUP ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "STUDENT ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Q&A"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "PRESENTING"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "DETAILS"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "TOTAL"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.allPreMark.map(function (_allPreMark, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+          scope: "row"
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark._id), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.studentid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark2), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1 + _allPreMark.mark2 + _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-success"
+        }, /*#__PURE__*/_react.default.createElement("i", {
+          className: "fas fa-edit"
+        }), " Update"), "\xA0", /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-warning",
+          onClick: function onClick() {
+            return _this3.onDelete(_allPreMark._id);
+          }
+        }, /*#__PURE__*/_react.default.createElement("i", {
+          className: "fas fa-trash-alt"
+        }), " Delete")));
+      }))), /*#__PURE__*/_react.default.createElement("br", null)));
+    }
+  }]);
+
+  return allPreMark;
+}(_react.Component);
+
+exports.default = allPreMark;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/StudentViewPresentation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var StudentPreMark = /*#__PURE__*/function (_Component) {
+  _inherits(StudentPreMark, _Component);
+
+  var _super = _createSuper(StudentPreMark);
+
+  function StudentPreMark(props) {
+    var _this;
+
+    _classCallCheck(this, StudentPreMark);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      StudentPreMark: []
+    };
+    return _this;
+  }
+
+  _createClass(StudentPreMark, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.retrivePosts();
+    }
+  }, {
+    key: "retrivePosts",
+    value: function retrivePosts() {
+      var _this2 = this;
+
+      _axios.default.get("http://localhost:8001/getevaluatepresentaion").then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            StudentPreMark: res.data.existingPosts
+          });
+
+          console.log(_this2.state.StudentPreMark);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table",
+        style: {
+          background: "#f3d8f3",
+          width: "1100px"
+        }
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "#"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "GROUP ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "STUDENT ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Q&A"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "PRESENTING"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "DETAILS"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "TOTAL"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.StudentPreMark.map(function (_StudentPreMark, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+          scope: "row"
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _StudentPreMark.groupid), /*#__PURE__*/_react.default.createElement("td", null, _StudentPreMark.studentid), /*#__PURE__*/_react.default.createElement("td", null, _StudentPreMark.mark1), /*#__PURE__*/_react.default.createElement("td", null, _StudentPreMark.mark2), /*#__PURE__*/_react.default.createElement("td", null, _StudentPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, _StudentPreMark.mark1 + _StudentPreMark.mark2 + _StudentPreMark.mark3));
+      }))), /*#__PURE__*/_react.default.createElement("br", null)));
+    }
+  }]);
+
+  return StudentPreMark;
+}(_react.Component);
+
+exports.default = StudentPreMark;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/StudentViewTopic.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var studentTopicEval = /*#__PURE__*/function (_Component) {
+  _inherits(studentTopicEval, _Component);
+
+  var _super = _createSuper(studentTopicEval);
+
+  function studentTopicEval(props) {
+    var _this;
+
+    _classCallCheck(this, studentTopicEval);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      studentTopicEval: []
+    };
+    return _this;
+  }
+
+  _createClass(studentTopicEval, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.retrivePosts();
+    }
+  }, {
+    key: "retrivePosts",
+    value: function retrivePosts() {
+      var _this2 = this;
+
+      _axios.default.get("http://localhost:8001/getevaluatetopic").then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            studentTopicEval: res.data.existingPosts
+          });
+
+          console.log(_this2.state.studentTopicEval);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table",
+        style: {
+          background: "#f3d8f3",
+          width: "1100px"
+        }
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "#"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "GROUP ID"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "TOPIC"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "COMMENTS"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.studentTopicEval.map(function (_studentTopicEval, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+          scope: "row"
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _studentTopicEval.groupid), /*#__PURE__*/_react.default.createElement("td", null, _studentTopicEval.topic), /*#__PURE__*/_react.default.createElement("td", null, _studentTopicEval.comments));
+      })))));
+    }
+  }]);
+
+  return studentTopicEval;
+}(_react.Component);
+
+exports.default = studentTopicEval;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46864,6 +47833,22 @@ var _StudentUpdate = _interopRequireDefault(require("./Component/Lankani/Student
 var _StaffLogin = _interopRequireDefault(require("./Component/Ayeshi/StaffLogin"));
 
 var _StudentHeader = _interopRequireDefault(require("./Component/Lankani/StudentHeader"));
+
+var _PanelList = _interopRequireDefault(require("./Component/Ayeshi/PanelList"));
+
+var _PanelHome = _interopRequireDefault(require("./Component/Ayeshi/PanelHome"));
+
+var _PresentationEvaluate = _interopRequireDefault(require("./Component/Ayeshi/PresentationEvaluate"));
+
+var _TopicEvaluate = _interopRequireDefault(require("./Component/Ayeshi/TopicEvaluate"));
+
+var _AllTopicsEvaluate = _interopRequireDefault(require("./Component/Ayeshi/AllTopicsEvaluate"));
+
+var _AllPresentationMarks = _interopRequireDefault(require("./Component/Ayeshi/AllPresentationMarks"));
+
+var _StudentViewPresentation = _interopRequireDefault(require("./Component/Ayeshi/StudentViewPresentation"));
+
+var _StudentViewTopic = _interopRequireDefault(require("./Component/Ayeshi/StudentViewTopic"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47111,6 +48096,34 @@ var App = /*#__PURE__*/function (_Component) {
         path: "/stafflogin",
         exact: true,
         component: _StaffLogin.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/panelHome",
+        exact: true,
+        component: _PanelHome.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/presentationEvaluate",
+        exact: true,
+        component: _PresentationEvaluate.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/topicEvaluate",
+        exact: true,
+        component: _TopicEvaluate.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/AllTopicEval",
+        exact: true,
+        component: _AllTopicsEvaluate.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/allPreMark",
+        exact: true,
+        component: _AllPresentationMarks.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/StudentPreMark",
+        exact: true,
+        component: _StudentViewPresentation.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/studentTopicEval",
+        exact: true,
+        component: _StudentViewTopic.default
       }), /*#__PURE__*/_react.default.createElement(_footer.default, null)));
     }
   }]);
@@ -47119,7 +48132,7 @@ var App = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Landingpage":"Component/Pamitha/Landingpage.js","./Component/Pamitha/Main":"Component/Pamitha/Main.js","./Component/Pamitha/Home":"Component/Pamitha/Home.js","./Component/Pamitha/home":"Component/Pamitha/home.js","./Component/Pamitha/Register":"Component/Pamitha/Register.js","./Component/Pamitha/AdminLogin":"Component/Pamitha/AdminLogin.js","./Component/Pamitha/AdminHeader":"Component/Pamitha/AdminHeader.js","./Component/Pamitha/footer":"Component/Pamitha/footer.js","./Component/Pamitha/StudentGroupRegistration":"Component/Pamitha/StudentGroupRegistration.js","./Component/Pamitha/GroupDetails":"Component/Pamitha/GroupDetails.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Pamitha/AddPanelMembers":"Component/Pamitha/AddPanelMembers.js","./Component/Pamitha/ViewPanelMembers":"Component/Pamitha/ViewPanelMembers.js","./Component/Lankani/StudentLogin":"Component/Lankani/StudentLogin.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js","./Component/Lankani/StudentFileAdd":"Component/Lankani/StudentFileAdd.js","./Component/Lankani/StudentPresentation":"Component/Lankani/StudentPresentation.js","./Component/Lankani/StudentThesisSubmission":"Component/Lankani/StudentThesisSubmission.js","./Component/Lankani/RequestSupervisor":"Component/Lankani/RequestSupervisor.js","./Component/Lankani/RequestCoSupervisor":"Component/Lankani/RequestCoSupervisor.js","./Component/Lankani/StudentUpdate":"Component/Lankani/StudentUpdate.js","./Component/Ayeshi/StaffLogin":"Component/Ayeshi/StaffLogin.js","./Component/Lankani/StudentHeader":"Component/Lankani/StudentHeader.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Landingpage":"Component/Pamitha/Landingpage.js","./Component/Pamitha/Main":"Component/Pamitha/Main.js","./Component/Pamitha/Home":"Component/Pamitha/Home.js","./Component/Pamitha/home":"Component/Pamitha/home.js","./Component/Pamitha/Register":"Component/Pamitha/Register.js","./Component/Pamitha/AdminLogin":"Component/Pamitha/AdminLogin.js","./Component/Pamitha/AdminHeader":"Component/Pamitha/AdminHeader.js","./Component/Pamitha/footer":"Component/Pamitha/footer.js","./Component/Pamitha/StudentGroupRegistration":"Component/Pamitha/StudentGroupRegistration.js","./Component/Pamitha/GroupDetails":"Component/Pamitha/GroupDetails.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Pamitha/AddPanelMembers":"Component/Pamitha/AddPanelMembers.js","./Component/Pamitha/ViewPanelMembers":"Component/Pamitha/ViewPanelMembers.js","./Component/Lankani/StudentLogin":"Component/Lankani/StudentLogin.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js","./Component/Lankani/StudentFileAdd":"Component/Lankani/StudentFileAdd.js","./Component/Lankani/StudentPresentation":"Component/Lankani/StudentPresentation.js","./Component/Lankani/StudentThesisSubmission":"Component/Lankani/StudentThesisSubmission.js","./Component/Lankani/RequestSupervisor":"Component/Lankani/RequestSupervisor.js","./Component/Lankani/RequestCoSupervisor":"Component/Lankani/RequestCoSupervisor.js","./Component/Lankani/StudentUpdate":"Component/Lankani/StudentUpdate.js","./Component/Ayeshi/StaffLogin":"Component/Ayeshi/StaffLogin.js","./Component/Lankani/StudentHeader":"Component/Lankani/StudentHeader.js","./Component/Ayeshi/PanelList":"Component/Ayeshi/PanelList.js","./Component/Ayeshi/PanelHome":"Component/Ayeshi/PanelHome.js","./Component/Ayeshi/PresentationEvaluate":"Component/Ayeshi/PresentationEvaluate.js","./Component/Ayeshi/TopicEvaluate":"Component/Ayeshi/TopicEvaluate.js","./Component/Ayeshi/AllTopicsEvaluate":"Component/Ayeshi/AllTopicsEvaluate.js","./Component/Ayeshi/AllPresentationMarks":"Component/Ayeshi/AllPresentationMarks.js","./Component/Ayeshi/StudentViewPresentation":"Component/Ayeshi/StudentViewPresentation.js","./Component/Ayeshi/StudentViewTopic":"Component/Ayeshi/StudentViewTopic.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -47160,7 +48173,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "63497" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57064" + '/');
+>>>>>>> a9c359fedc8b2cff664e9b535e61c819bcf06cc3
 
   ws.onmessage = function (event) {
     checkedAssets = {};

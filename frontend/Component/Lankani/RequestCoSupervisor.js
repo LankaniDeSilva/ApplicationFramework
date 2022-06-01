@@ -34,16 +34,21 @@ export default function RequestSepervisor() {
   };
 
   return (
+    <center>
     <div
       style={{
-        margin: "10%",
+        margin: "50px",
         padding: "50px",
-        backgroundColor: "lightgrey",
-        borderColor: " solid",
+        backgroundColor: "#cce6ff",
+        borderColor: "solid",
+        borderRadius: "40px",
+        width: "600px",
+        alignContent:"center",
+        borderLeft:"5px solid blue"
       }}
     >
       <div className="container">
-        <h2>Supervisor Request Form</h2>
+        <h2>Co-Supervisor Request Form</h2>
         <br />
         <br />
         <div className="form-group">
@@ -73,5 +78,6 @@ export default function RequestSepervisor() {
         </div>
       </div>
     </div>
+    </center>
   );
 }

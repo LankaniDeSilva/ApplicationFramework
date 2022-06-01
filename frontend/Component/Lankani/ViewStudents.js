@@ -43,7 +43,7 @@ export default class GetStudents extends Component {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">ID</th>
+              {/* <th scope="col">ID</th> */}
               <th scope="col">ITNumber</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
@@ -57,7 +57,7 @@ export default class GetStudents extends Component {
             {this.state.students.map((students, index) => (
               <tr>
                 <th scope="row">{index + 1}</th>
-                <td>{students._id}</td>
+                {/* <td>{students._id}</td> */}
                 <td>{students.itNumber}</td>
                 <td>{students.name}</td>
                 <td>{students.email}</td>

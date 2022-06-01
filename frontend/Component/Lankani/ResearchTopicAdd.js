@@ -21,8 +21,18 @@ export default function ResearchTopic(){
     }
 
     return(
+        <center>
         <div>
-            <div className="container">
+            <div style={{
+                margin: "50px",
+                padding: "50px",
+                backgroundColor: "#cce6ff",
+                borderColor: "solid",
+                borderRadius: "40px",
+                width: "600px",
+                alignContent:"center",
+                borderLeft:"5px solid blue"
+            }}>
             <h1>Research Topic Registration Form</h1>
             <form onSubmit={sendData}>
                 <div className="form-group">
@@ -54,6 +64,7 @@ export default function ResearchTopic(){
           </form>
         </div>
         </div>
+        </center>
     
     )
 }

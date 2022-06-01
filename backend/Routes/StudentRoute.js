@@ -97,8 +97,4 @@ srouter.get("/student/:id",(req,res) =>{
   });
 });
 
-
-
-
-
 module.exports = srouter;

@@ -27,7 +27,7 @@ export default function StudentThesisSubmission() {
     axios
       .post("http://localhost:8001/thesis/save", formdata)
       .then(() => {
-        alert("File is uploaded successfully");
+        alert("Thesis is uploaded successfully");
       })
       .catch((err) => {
         alert(err);
@@ -38,15 +38,17 @@ export default function StudentThesisSubmission() {
   };
 
   return (
+    <center>
     <div
       style={{
-        margin: "10%",
+        margin: "50px",
         padding: "50px",
         backgroundColor: "#cce6ff",
         borderColor: " solid",
         borderRadius: "40px",
         width: "600px",
-        alignContent:"center"
+        alignContent:"center",
+        borderLeft:"5px solid blue"
       }}
     >
       <div className="container">
@@ -80,5 +82,6 @@ export default function StudentThesisSubmission() {
         </div>
       </div>
     </div>
+    </center>
   );
 }

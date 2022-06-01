@@ -102,7 +102,7 @@ render(){
                   className="btn btn-success"
                   onClick={this.onSubmit}
                 >
-                  Register
+                  Login
                 </button>
               
                 

@@ -42,6 +42,15 @@ import React, {Component} from "react";
   import StaffLogin from "./Component/Ayeshi/StaffLogin";
   import StudentHeader from "./Component/Lankani/StudentHeader";
 
+  import PanelList from "./Component/Ayeshi/PanelList";
+  import panelHome from "./Component/Ayeshi/PanelHome";
+  import presentationEvaluate from "./Component/Ayeshi/PresentationEvaluate";
+  import topicEvaluate from "./Component/Ayeshi/TopicEvaluate";
+  import allTopicEval from "./Component/Ayeshi/AllTopicsEvaluate";
+  import allPreMark from "./Component/Ayeshi/AllPresentationMarks";
+  import StudentPreMark from "./Component/Ayeshi/StudentViewPresentation";
+  import studentTopicEval from "./Component/Ayeshi/StudentViewTopic";
+
   
 
 
@@ -119,7 +128,13 @@ export default class App extends Component{
 
             {/*Ayeshi */}
             <Route path="/stafflogin"  exact component={StaffLogin}></Route>
-
+            <Route path="/panelHome" exact component={panelHome}></Route>
+            <Route path="/presentationEvaluate" exact component={presentationEvaluate}></Route>
+            <Route path="/topicEvaluate" exact component={topicEvaluate}></Route>
+            <Route path="/AllTopicEval" exact component={allTopicEval}></Route>
+            <Route path="/allPreMark" exact component={allPreMark}></Route>
+            <Route path="/StudentPreMark" exact component={StudentPreMark}></Route>
+            <Route path="/studentTopicEval" exact component={studentTopicEval}></Route>
 
 
 
