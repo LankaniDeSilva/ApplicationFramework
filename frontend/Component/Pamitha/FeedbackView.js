@@ -49,7 +49,9 @@ function Feedbackview(){
     return(
         <div>
             <center>
+                <br/>
                 <h2>Feedbacks</h2>
+                <br/>
              <table style={{width:"1000px"}}> 
             {
                     Feedback.map((json) => {

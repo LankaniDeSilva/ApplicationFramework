@@ -31,6 +31,12 @@ router.post("/save/noticepdf", upload.single("file"), (req, res) => {
      .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
+//download file
+router.post("/downloadnotice",(req,res)=>{
+    let fill = req.body.pdf;
+    res.download(`../frontend/public/uploads/${fill}`);
+});
+
 router.post('/Notice/save', (req,res) =>{
 
     let newNotice = new Notices(req.body);
@@ -47,14 +53,19 @@ router.post('/Notice/save', (req,res) =>{
     });
 });
 
-router.route("/notice").get((req,res)=>{
-
-    Notices.find().then((notice)=>{
-         res.json(notice)
-    }).catch((err)=>{
-         console.log(err)
-    })
-})
+router.get('/getnotice', (req,res) =>{
+    Notices.find().exec((err,notice)=>{
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        return res.status(200).json({
+            success:true,
+            existingPosts:notice
+        });
+    });
+});
 //delete
 
 router.route("/deletenotice/:id").delete(async (req, res) =>{

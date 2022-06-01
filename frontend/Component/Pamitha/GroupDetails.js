@@ -75,10 +75,10 @@ export default class GetMark extends Component {
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">GROUP NAME</th>
-                <th scope="col">GROUP Leader</th>
-                <th scope="col">Member 2</th>
-                <th scope="col">Member 3</th>
-                <th scope="col">Member 4</th>
+                <th scope="col">GROUP LEADER</th>
+                <th scope="col">MEMBER 2</th>
+                <th scope="col">MEMBER 3</th>
+                <th scope="col">MEMBER 4</th>
               </tr>
             </thead>
             <tbody>
