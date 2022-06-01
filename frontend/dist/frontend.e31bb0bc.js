@@ -59080,6 +59080,12 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
+var _jquery = _interopRequireDefault(require("jquery"));
+
+require("jquery-validation");
+
+require("./CSS/styles.css");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -59197,6 +59203,51 @@ var EditStudent = /*#__PURE__*/function (_Component) {
           console.log(_this2.state);
         }
       });
+
+      var updateForm = (0, _jquery.default)("#student-update-form");
+      updateForm.validate({
+        rules: {
+          sitNumber: {
+            required: true,
+            minlength: 10,
+            maxlength: 10
+          },
+          sname: {
+            required: true
+          },
+          semail: {
+            required: true,
+            email: true
+          },
+          sphoneNumber: {
+            required: true,
+            minlength: 10,
+            maxlength: 10,
+            number: true
+          }
+        },
+        messages: {
+          sitNumber: {
+            required: 'Please enter your Student ID Number',
+            minlength: 'Student ID Number not less than 10 characters',
+            maxlength: 'Student ID Number not more than 10 characters'
+          },
+          sname: {
+            required: "Please Enter your Name",
+            lettersonly: "Please enter letters only"
+          },
+          semail: {
+            required: "Please enter your Email",
+            email: "Please Enter a valid Email"
+          },
+          sphoneNumber: {
+            required: "Please Enter Phone Number",
+            minlength: "Phone Number not less than 10 digits",
+            maxlength: "Phone number not more than 10 digits",
+            number: "Phone number must contain only numbers"
+          }
+        }
+      });
     }
   }, {
     key: "render",
@@ -59213,7 +59264,8 @@ var EditStudent = /*#__PURE__*/function (_Component) {
           borderLeft: "5px solid purple"
         }
       }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
-        onSubmit: this.onSubmit
+        onSubmit: this.onSubmit,
+        id: "student-update-form"
       }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
         style: {
           fontFamily: "Abel"
@@ -59273,7 +59325,7 @@ var EditStudent = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = EditStudent;
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/StaffLogin.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","jquery":"node_modules/jquery/dist/jquery.js","jquery-validation":"node_modules/jquery-validation/dist/jquery.validate.js","./CSS/styles.css":"Component/Lankani/CSS/styles.css"}],"Component/Ayeshi/StaffLogin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -60829,7 +60881,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53551" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61414" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
