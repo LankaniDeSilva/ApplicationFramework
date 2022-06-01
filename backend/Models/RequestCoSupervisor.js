@@ -4,11 +4,13 @@ const Student_cosupervisor = new mongoose.Schema({
   studentgroup: {
     type: String,
     required: true,
+    trim: true,
   },
 
   supervisor: {
     type: String,
     required: true,
+    trim: true,
   },
 });
 

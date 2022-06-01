@@ -9,7 +9,7 @@ router.post("/CoSupervisor/save", (req, res) => {
   newrcosupervisor.save((err) => {
     if (err) {
       return res.status(400).json({
-        error: err,
+        error: err.message,
       });
     }
     return res.status(200).json({

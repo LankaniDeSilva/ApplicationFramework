@@ -4,7 +4,8 @@ const fileSchema = mongoose.Schema(
   {
     groupid:{
       type:String,
-      required:true
+      required:true,
+      trim: true,
   },
   files:{
       type:String,

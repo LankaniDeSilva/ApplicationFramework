@@ -3,11 +3,13 @@ import React from "react"
 import sliit from "../Pamitha/images/SLIIT.png";
 import "./CSS/StudentHome.css";
 import AdminNoticeDisplay from "./AdminNoticeDisplay";
+import StudentHeader from './StudentHeader';
 
 
 export default function StudentHome(){
     return(
         <div>
+            <StudentHeader />
     
              <div>
                 <AdminNoticeDisplay data={'main'} />

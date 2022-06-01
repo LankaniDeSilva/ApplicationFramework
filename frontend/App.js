@@ -114,7 +114,7 @@ export default class App extends Component{
             <Route path="/studentupdate/:id" exact component={StudentUpdate}></Route>     
             <Route path="/viewstudent" exact component={ViewStudents}></Route>
             <Route path="/studenthome" exact component={StudentHeader}></Route>
-            <Route path="/studenthome" exact component={StudentHome}></Route>
+            <Route path="/mainstudenthome" exact component={StudentHome}></Route>
             <Route path="/researchtopic" exact component={ResarchTopicAdd}></Route>
             <Route path="/studentsub" exact component={StudentFileAdd}></Route>
             <Route path="/studentpresentation" exact component={StudentPresentationSubmission}></Route>

@@ -4,12 +4,14 @@ const ResearchTopicSchema = new mongoose.Schema({
     
     groupNumber: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
 
     topic: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     }
 })
 

@@ -114,6 +114,9 @@
     background: #cce6ff;
     padding: 50px;
 }
+.error{
+    color: red;
+}
 .jumbotron {
     background-color: #0d3565; 
     margin-left: 70px;
