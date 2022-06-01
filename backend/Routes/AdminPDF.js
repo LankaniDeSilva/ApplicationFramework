@@ -45,6 +45,11 @@ router.get('/getpdf', (req,res) =>{
     });
 });
 
+//download file
+router.post("/downloadpdf",(req,res)=>{
+    let fill = req.body.pdf;
+    res.download(`../frontend/public/uploads/${fill}`);
+});
 
 //delete
 

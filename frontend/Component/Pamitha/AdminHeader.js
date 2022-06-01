@@ -26,7 +26,7 @@ function Header(){
                
                     </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="">Staff Home</a>
+                       <a class="nav-link" href="/panelHome">Panel Home</a>
                      </li>
                    
                      <li class="nav-item">

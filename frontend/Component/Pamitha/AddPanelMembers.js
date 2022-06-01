@@ -131,6 +131,10 @@ export default class EditMark extends Component {
               </button>
             </center>
           </form>
+          <br/>
+          <a href="/viewpanel">
+          <button class="btn btn-success">View Added Panel</button>
+          </a>
         </center>
         <br/>
       </div>
