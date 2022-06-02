@@ -25,7 +25,7 @@ export default class allPreMark extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deleteevaluatepresentaio/${id}`).then((res) => {
+    axios.delete(`http://localhost:8001/deletevaluatepresentation/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });
@@ -38,12 +38,11 @@ export default class allPreMark extends Component {
         <center>
         <table
           className="table"
-          style={{ background: "#f3d8f3", width: "1100px" }}
+          style={{ background: "#cce6ff", width: "1100px" }}
         >
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col"> ID</th>
               <th scope="col">GROUP ID</th>
               <th scope="col">STUDENT ID</th>
               <th scope="col">Q&A</th>
@@ -56,7 +55,6 @@ export default class allPreMark extends Component {
             {this.state.allPreMark.map((allPreMark, index) => (
               <tr>
                 <th scope="row">{index + 1}</th>
-                <td>{allPreMark._id}</td>
                 <td>{allPreMark.groupid}</td>
                 <td>{allPreMark.studentid}</td>
                 <td>{allPreMark.mark1}</td>
@@ -65,11 +63,12 @@ export default class allPreMark extends Component {
                 <td>{allPreMark.mark1 + allPreMark.mark2 + allPreMark.mark3}</td>
 
                 <td>
+                <a href={`/evaluatepresentaionupdate/${allPreMark._id}`}>
               
                   <button type="button" className="btn btn-success">
                     <i className="fas fa-edit"></i> Update
                   </button>
-                  
+                  </a>
                   &nbsp;
                   <button
                     type="button"

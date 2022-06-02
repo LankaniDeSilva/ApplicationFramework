@@ -31,9 +31,11 @@ function topicEvaluate(){
           });
     }
 
-
-    return(
+   
+        return(
         <div className="container">
+
+          
 
            
             <form onSubmit={sendData} style={{ borderRadius:"40px", background:"#cce6ff",padding:"30px"}}>
@@ -72,11 +74,13 @@ function topicEvaluate(){
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <br/>
+            
            
 
         </div>
 
-    )
+        );
+    
 }
      
 export default topicEvaluate;

@@ -33,7 +33,7 @@ export default class studentTopicEval extends Component {
         <center>
         <table
           className="table"
-          style={{ background: "#f3d8f3", width: "1100px" }}
+          style={{ background: "#cce6ff", width: "1100px" }}
         >
           <thead>
             <tr>
