@@ -43253,7 +43253,7 @@ var Getnotice = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "onDelete", function (id) {
-      _axios.default.delete("http://localhost:8001/notice/delete/".concat(id)).then(function (res) {
+      _axios.default.delete("http://localhost:8001/deletenotice/".concat(id)).then(function (res) {
         alert("Delete Successfully");
 
         _this.retrivePosts();
@@ -43478,7 +43478,7 @@ var Getnotice = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
-      }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", null, "All Document Submition")), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "All Document Submission")), /*#__PURE__*/_react.default.createElement("div", {
         className: "search",
         style: {
           width: "300px"
@@ -43940,10 +43940,12 @@ function AddNoticefile() {
     id: "file",
     filename: "file",
     onChange: onChangeFile
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("button", {
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/viewnotice"
+  }, /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     class: "btn btn-primary"
-  }, "Submit")))), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("img", {
+  }, "Submit"))))), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _dfs.default,
     style: {
       width: "600px",
@@ -60996,11 +60998,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60552" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53551" + '/');
->>>>>>> 193375f58ee5ec01ae5e3cc985c49ccd631cb1ac
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50694" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

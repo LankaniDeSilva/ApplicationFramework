@@ -31,6 +31,7 @@ function AddNoticefile() {
       .post("http://localhost:8001/save/noticepdf", formdata)
       .then(() => {
         alert("Add Notice");
+
       })
       .catch((err) => {
         alert(err);
@@ -123,9 +124,11 @@ function AddNoticefile() {
                 <br />
                 <br />
                 <center>
+                  <a href="/viewnotice">
                   <button type="submit" class="btn btn-primary">
                     Submit
                   </button>
+                  </a>
                 </center>
               </form>
             </td>

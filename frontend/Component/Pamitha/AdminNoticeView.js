@@ -32,7 +32,7 @@ export default class Getnotice extends Component {
  
 
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/notice/delete/${id}`).then((res) => {
+    axios.delete(`http://localhost:8001/deletenotice/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });

@@ -71,7 +71,8 @@ export default class Getnotice extends Component {
     return (
       <div className="container">
         <center>
-          <h1>All Document Submition</h1>
+          <br/>
+          <h1>All Document Submission</h1>
         </center>
         <div className="search" style={{ width: "300px" }}>
           <lable>Search :</lable>
