@@ -37,7 +37,6 @@ router.post("/evaluatepresentaionsave", (req, res) => {
      .then(()=> res.json("success"))
      .catch((err) => res.status(400).json(`Error: ${err}`));
 });
-
 //get 
 
 router.get('/getevaluatepresentaion', (req,res) =>{
@@ -64,40 +63,37 @@ router.get('/getevaluatepresentaion', (req,res) =>{
 })*/
 
 
-router.route("/getevaluatepresentaion/:id").get(async (req,res) => {
-    let userId = req.params.id;
-    const user = await Presentaion.findOne(userId)
-    .then(() => {
-        res.status(200).send({status: "User fetched", user: user})
-    }).catch(() => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with get user", error: err.message});
-    })
-})
+router.get("/allPreMark/:id",(req,res) =>{
+    let postId = req.params.id;
 
-router.route("/evaluatepresentaion/update/:id").put(async (req, res)=> {
-    let evalId = req.params.id;
+    Presentation.findById(postId,(err,post)=>{
+        if(err){
+            return res.status(400).json({success:false, err});
+        }
+        return res.status(200).json({
+            success:true,
+            post
+        });
+    });
+});
+router.put('/evaluatepresentaionupdate/:id',(req,res)=>{
+    Presentation.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set:req.body
+        },
+        (err,post)=>{
+            if(err){
+                return res.status(400).json({error:err});
+            }
+            return res.status(200).json({
+                success:"Update Successfully"
+            });
+        }
+    );
+});
 
-    const {groupid, studentid, mark1, mark2, mark3} = req.body;
-
-    const updateevaluatepresentaion = {
-        groupid,
-        studentid,
-        mark1,
-        mark2,
-        mark3,
-        
-    }
-
-    const update = await Presentaion.findByIdAndUpdate(evalId, updateevaluatepresentaion).then(()=>{
-        res.status(200).send({status: "User Updated"})
-    }).catch((err)=>{
-        console.log(err);
-        res.status(500).send({status: "Error with Updating data", error: err.message});
-    })  
-})
-
-router.route("/deletevaluatepresentaion/:id").delete(async (req, res) =>{
+router.route("/deletevaluatepresentation/:id").delete(async (req, res) =>{
 
     let userId = req.params.id;
 
