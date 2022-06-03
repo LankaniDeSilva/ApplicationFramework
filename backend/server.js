@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
+require('dotenv').config();
 
 
 const app = express();
@@ -65,7 +66,7 @@ mongoose.connect(DB_URL)
     console.log('DB connected');
 }).catch((err) => console.log('DB connection error', err));
 
-app.listen(PORT, () =>{
+app.listen(process.env.PORT || PORT, () =>{
     console.log(`App is running on ${PORT}`);
 });
 
