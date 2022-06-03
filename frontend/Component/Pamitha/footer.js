@@ -5,6 +5,10 @@ import sliit from "./images/SLIIT.png";
 function Header() {
   return (
     <div>
+        <br />
+    <br />
+    <br />
+    <br />
       <div class="foot">
         <footer class="footer-distributed">
         <a href="/feedbackadd">

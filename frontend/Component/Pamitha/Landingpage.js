@@ -87,7 +87,31 @@ export default class LandingPage extends Component {
               </a>
             </div>
           </div>
+          <br/>
+          <br/>
+          <div
+            class="col-10"
+            style={{
+              margin: "auto",
+              backgroundColor: "",
+              border: "2px solid black",
+            }}
+          >
+            <div class="p-3 border">
+              <a
+                href="/supervisorLogin"
+                style={{ width: "100%", border: "none" }}
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                {" "}
+                <p class="fw-bold fs-4"> For Supervisor </p>
+              </a>
+            </div>
+          </div>
         </div>
+        <br />
+        <br />
         <br />
         <br />
       </div>
