@@ -66,7 +66,7 @@ router.get('/getevaluatepresentaion', (req,res) =>{
 
 router.route("/getevaluatepresentaion/:id").get(async (req,res) => {
     let userId = req.params.id;
-    const user = await EvaluatePresentaion.findOne(userId)
+    const user = await Presentaion.findOne(userId)
     .then(() => {
         res.status(200).send({status: "User fetched", user: user})
     }).catch(() => {
@@ -89,7 +89,7 @@ router.route("/evaluatepresentaion/update/:id").put(async (req, res)=> {
         
     }
 
-    const update = await EvaluatePresentaion.findByIdAndUpdate(evalId, updateevaluatepresentaion).then(()=>{
+    const update = await Presentaion.findByIdAndUpdate(evalId, updateevaluatepresentaion).then(()=>{
         res.status(200).send({status: "User Updated"})
     }).catch((err)=>{
         console.log(err);
@@ -97,11 +97,11 @@ router.route("/evaluatepresentaion/update/:id").put(async (req, res)=> {
     })  
 })
 
-router.route("/deleteevaluatepresentaion/:id").delete(async (req, res) =>{
+router.route("/deletevaluatepresentaion/:id").delete(async (req, res) =>{
 
-    let evalId = req.params.id;
+    let userId = req.params.id;
 
-    await EvaluatePresentaion.findByIdAndDelete(evalId).then(()=>{
+    await Presentation.findByIdAndDelete(userId).then(()=>{
         res.status(200).send({status: "User Delete"});
     }).catch((err)=>{
         console.log(err.message);

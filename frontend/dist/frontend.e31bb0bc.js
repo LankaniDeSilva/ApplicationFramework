@@ -60186,7 +60186,7 @@ var allTopicEval = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "onDelete", function (id) {
-      _axios.default.delete("http://localhost:8001/deleteevaluatetopic/".concat(id)).then(function (res) {
+      _axios.default.delete("http://localhost:8001/deletevaluatetopic/".concat(id)).then(function (res) {
         alert("Delete Successfully");
 
         _this.retrivePosts();
@@ -60227,14 +60227,12 @@ var allTopicEval = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
         className: "table",
         style: {
-          background: "#f3d8f3",
+          background: "#cce6ff",
           width: "1100px"
         }
       }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
       }, "#"), /*#__PURE__*/_react.default.createElement("th", {
-        scope: "col"
-      }, " ID"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
       }, "GROUP ID"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
@@ -60243,7 +60241,7 @@ var allTopicEval = /*#__PURE__*/function (_Component) {
       }, "COMMENTS"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.allTopicEval.map(function (_allTopicEval, index) {
         return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
           scope: "row"
-        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval._id), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.topic), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.comments), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.topic), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.comments), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-success"
         }, /*#__PURE__*/_react.default.createElement("i", {
@@ -60320,7 +60318,7 @@ var allPreMark = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "onDelete", function (id) {
-      _axios.default.delete("http://localhost:8001/deleteevaluatepresentaio/".concat(id)).then(function (res) {
+      _axios.default.delete("http://localhost:8001/deletevaluatepresentaion/".concat(id)).then(function (res) {
         alert("Delete Successfully");
 
         _this.retrivePosts();
@@ -60361,14 +60359,12 @@ var allPreMark = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("table", {
         className: "table",
         style: {
-          background: "#f3d8f3",
+          background: "#cce6ff",
           width: "1100px"
         }
       }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
       }, "#"), /*#__PURE__*/_react.default.createElement("th", {
-        scope: "col"
-      }, " ID"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
       }, "GROUP ID"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
@@ -60383,7 +60379,7 @@ var allPreMark = /*#__PURE__*/function (_Component) {
       }, "TOTAL"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.allPreMark.map(function (_allPreMark, index) {
         return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
           scope: "row"
-        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark._id), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.studentid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark2), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1 + _allPreMark.mark2 + _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.studentid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark2), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1 + _allPreMark.mark2 + _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-success"
         }, /*#__PURE__*/_react.default.createElement("i", {
@@ -61050,11 +61046,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50694" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61414" + '/');
->>>>>>> 98be9bd8b3f5481da9858781f4831f762efdb73d
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50109" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
