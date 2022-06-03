@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import $ from 'jquery';
+import 'jquery-validation'
+import './CSS/styles.css';
 
 
 export default class EditStudent extends Component {
@@ -74,6 +77,53 @@ export default class EditStudent extends Component {
         console.log(this.state);
       }
     }); 
+
+    const updateForm = $("#student-update-form");
+
+    updateForm.validate({
+      rules: {
+        sitNumber: {
+          required: true, 
+          minlength: 10,
+          maxlength: 10,
+        },
+        sname: {
+          required: true
+        },
+        semail:{
+          required: true,
+          email: true
+        },
+        sphoneNumber: {
+          required: true,
+          minlength: 10,
+          maxlength: 10,
+          number: true
+        }
+
+    },
+    messages: {
+      sitNumber:{
+        required: 'Please enter your Student ID Number',
+        minlength: 'Student ID Number not less than 10 characters',
+        maxlength: 'Student ID Number not more than 10 characters'
+      },
+      sname: {
+        required: "Please Enter your Name",
+        lettersonly: "Please enter letters only"
+      },
+      semail: {
+        required: "Please enter your Email",
+        email: "Please Enter a valid Email"
+      },
+      sphoneNumber: {
+        required: "Please Enter Phone Number",
+        minlength: "Phone Number not less than 10 digits",
+        maxlength: "Phone number not more than 10 digits",
+        number: "Phone number must contain only numbers"
+      }
+    }
+    })
 }
 
   render() {
@@ -90,7 +140,7 @@ export default class EditStudent extends Component {
         borderLeft:"5px solid purple"
       }}>
         <center>
-          <form onSubmit={this.onSubmit}>
+          <form onSubmit={this.onSubmit} id="student-update-form">
             <table>
               <tr>
                 <center>
