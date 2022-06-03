@@ -25,7 +25,7 @@ export default class allTopicEval extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deleteevaluatetopic/${id}`).then((res) => {
+    axios.delete(`http://localhost:8001/deletevaluatetopic/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });
@@ -38,12 +38,11 @@ export default class allTopicEval extends Component {
         <center>
         <table
           className="table"
-          style={{ background: "#f3d8f3", width: "1100px" }}
+          style={{ background: "#cce6ff", width: "1100px" }}
         >
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col"> ID</th>
               <th scope="col">GROUP ID</th>
               <th scope="col">TOPIC</th>
               <th scope="col">COMMENTS</th>
@@ -53,7 +52,6 @@ export default class allTopicEval extends Component {
             {this.state.allTopicEval.map((allTopicEval, index) => (
               <tr>
                 <th scope="row">{index + 1}</th>
-                <td>{allTopicEval._id}</td>
                 <td>{allTopicEval.groupid}</td>
                 <td>{allTopicEval.topic}</td>
                 <td>{allTopicEval.comments}</td>
