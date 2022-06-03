@@ -59647,7 +59647,7 @@ var Login = /*#__PURE__*/function (_Component) {
         type: "submit",
         className: "btn btn-success",
         onClick: this.onSubmit
-      }, "Register")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+      }, "Login")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
     }
   }]);
 
@@ -60241,12 +60241,14 @@ var allTopicEval = /*#__PURE__*/function (_Component) {
       }, "COMMENTS"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.allTopicEval.map(function (_allTopicEval, index) {
         return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
           scope: "row"
-        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.topic), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.comments), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.topic), /*#__PURE__*/_react.default.createElement("td", null, _allTopicEval.comments), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
+          href: "/evaluatetopicupdate/".concat(_allTopicEval._id)
+        }, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-success"
         }, /*#__PURE__*/_react.default.createElement("i", {
           className: "fas fa-edit"
-        }), " Update"), "\xA0", /*#__PURE__*/_react.default.createElement("button", {
+        }), " Update")), "\xA0", /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-warning",
           onClick: function onClick() {
@@ -60318,7 +60320,7 @@ var allPreMark = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "onDelete", function (id) {
-      _axios.default.delete("http://localhost:8001/deletevaluatepresentaion/".concat(id)).then(function (res) {
+      _axios.default.delete("http://localhost:8001/deletevaluatepresentation/".concat(id)).then(function (res) {
         alert("Delete Successfully");
 
         _this.retrivePosts();
@@ -60379,12 +60381,14 @@ var allPreMark = /*#__PURE__*/function (_Component) {
       }, "TOTAL"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.allPreMark.map(function (_allPreMark, index) {
         return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
           scope: "row"
-        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.studentid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark2), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1 + _allPreMark.mark2 + _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+        }, index + 1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.groupid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.studentid), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark2), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, _allPreMark.mark1 + _allPreMark.mark2 + _allPreMark.mark3), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("a", {
+          href: "/evaluatepresentaionupdate/".concat(_allPreMark._id)
+        }, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-success"
         }, /*#__PURE__*/_react.default.createElement("i", {
           className: "fas fa-edit"
-        }), " Update"), "\xA0", /*#__PURE__*/_react.default.createElement("button", {
+        }), " Update")), "\xA0", /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-warning",
           onClick: function onClick() {
@@ -60619,6 +60623,365 @@ var studentTopicEval = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = studentTopicEval;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/UpdatePresentationEvaluate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var EditPresentation = /*#__PURE__*/function (_Component) {
+  _inherits(EditPresentation, _Component);
+
+  var _super = _createSuper(EditPresentation);
+
+  function EditPresentation(props) {
+    var _this;
+
+    _classCallCheck(this, EditPresentation);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "handleInputChange", function (e) {
+      var _e$target = e.target,
+          name = _e$target.name,
+          value = _e$target.value;
+
+      _this.setState(_objectSpread(_objectSpread({}, _this.state), {}, _defineProperty({}, name, value)));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSubmit", function (e) {
+      e.preventDefault();
+      var id = _this.props.match.params.id;
+      var _this$state = _this.state,
+          groupid = _this$state.groupid,
+          studentid = _this$state.studentid,
+          mark1 = _this$state.mark1,
+          mark2 = _this$state.mark2,
+          mark3 = _this$state.mark3;
+      var data = {
+        groupid: groupid,
+        studentid: studentid,
+        mark1: mark1,
+        mark2: mark2,
+        mark3: mark3
+      };
+      console.log(data);
+
+      _axios.default.put("http://localhost:8001/evaluatepresentaionupdate/".concat(id), data).then(function (res) {
+        if (res.data.success) {
+          alert("Marks Updated Successfully");
+
+          _this.setState({
+            groupid: "",
+            studentid: "",
+            mark1: "",
+            mark2: "",
+            mark3: ""
+          });
+        }
+      });
+    });
+
+    _this.state = {
+      groupid: "",
+      studentid: "",
+      mark1: "",
+      mark2: "",
+      mark3: ""
+    };
+    return _this;
+  }
+
+  _createClass(EditPresentation, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var id = this.props.match.params.id;
+
+      _axios.default.get("http://localhost:8001/allPreMark/".concat(id)).then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            groupid: res.data.post.groupid,
+            studentid: res.data.post.studentid,
+            mark1: res.data.post.mark1,
+            mark2: res.data.post.mark2,
+            mark3: res.data.post.mark3
+          });
+
+          console.log(_this2.state);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+        style: {
+          width: "550px",
+          padding: "20px",
+          background: "#cce6ff",
+          borderRadius: "40px"
+        }
+      }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
+        style: {
+          fontFamily: "Abel"
+        }
+      }, "Update Marks"))), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("label", {
+        style: {
+          fontSize: "20px"
+        }
+      }, "Group ID"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+        class: "form-control",
+        id: "gid",
+        type: "text",
+        name: "groupid",
+        value: this.state.groupid,
+        onChange: this.handleInputChange
+      }))), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("label", {
+        style: {
+          fontSize: "20px"
+        }
+      }, "Student ID"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+        class: "form-control",
+        id: "gid",
+        type: "text",
+        name: "studentid",
+        value: this.state.studentid,
+        onChange: this.handleInputChange
+      }))), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("label", {
+        style: {
+          fontSize: "20px"
+        }
+      }, "Q&A"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+        class: "form-control",
+        id: "mark1",
+        type: "number",
+        name: "mark1",
+        value: this.state.mark1,
+        onChange: this.handleInputChange
+      }), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("label", {
+        style: {
+          fontSize: "20px"
+        }
+      }, "Presenting"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+        class: "form-control",
+        id: "mark2",
+        type: "number",
+        name: "mark2",
+        value: this.state.mark2,
+        onChange: this.handleInputChange
+      }), /*#__PURE__*/_react.default.createElement("br", null))), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("label", {
+        style: {
+          fontSize: "20px"
+        }
+      }, "Details"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+        class: "form-control",
+        id: "mark3",
+        type: "number",
+        name: "mark3",
+        value: this.state.mark3,
+        onChange: this.handleInputChange
+      }), /*#__PURE__*/_react.default.createElement("br", null)))), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        onClick: this.onSubmit,
+        class: "btn btn-primary"
+      }, "Submit")))), /*#__PURE__*/_react.default.createElement("br", null));
+    }
+  }]);
+
+  return EditPresentation;
+}(_react.Component);
+
+exports.default = EditPresentation;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"Component/Ayeshi/UpdateTopicEvaluate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var EditTopic = /*#__PURE__*/function (_Component) {
+  _inherits(EditTopic, _Component);
+
+  var _super = _createSuper(EditTopic);
+
+  function EditTopic(props) {
+    var _this;
+
+    _classCallCheck(this, EditTopic);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "handleInputChange", function (e) {
+      var _e$target = e.target,
+          name = _e$target.name,
+          value = _e$target.value;
+
+      _this.setState(_objectSpread(_objectSpread({}, _this.state), {}, _defineProperty({}, name, value)));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSubmit", function (e) {
+      e.preventDefault();
+      var id = _this.props.match.params.id;
+      var comments = _this.state.comments;
+      var data = {
+        comments: comments
+      };
+      console.log(data);
+
+      _axios.default.put("http://localhost:8001/evaluatetopicupdate/".concat(id), data).then(function (res) {
+        if (res.data.success) {
+          alert("Updated Successfully");
+
+          _this.setState({
+            comments: ""
+          });
+        }
+      });
+    });
+
+    _this.state = {
+      groupid: "",
+      topic: "",
+      comments: ""
+    };
+    return _this;
+  }
+
+  _createClass(EditTopic, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var id = this.props.match.params.id;
+
+      _axios.default.get("http://localhost:8001/allTopicEval/".concat(id)).then(function (res) {
+        if (res.data.success) {
+          _this2.setState({
+            comments: res.data.post.comments
+          });
+
+          console.log(_this2.state);
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("form", {
+        style: {
+          width: "550px",
+          padding: "20px",
+          background: "#cce6ff",
+          borderRadius: "40px"
+        }
+      }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", {
+        style: {
+          fontFamily: "Abel"
+        }
+      }, "Update Comments"))), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("label", {
+        style: {
+          fontSize: "20px"
+        }
+      }, "Comments"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+        class: "form-control",
+        id: "comments",
+        type: "text",
+        name: "comments",
+        value: this.state.comments,
+        onChange: this.handleInputChange
+      }), /*#__PURE__*/_react.default.createElement("br", null)))), /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        onClick: this.onSubmit,
+        class: "btn btn-primary"
+      }, "Submit")))), /*#__PURE__*/_react.default.createElement("br", null));
+    }
+  }]);
+
+  return EditTopic;
+}(_react.Component);
+
+exports.default = EditTopic;
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
@@ -60722,6 +61085,10 @@ var _AllPresentationMarks = _interopRequireDefault(require("./Component/Ayeshi/A
 var _StudentViewPresentation = _interopRequireDefault(require("./Component/Ayeshi/StudentViewPresentation"));
 
 var _StudentViewTopic = _interopRequireDefault(require("./Component/Ayeshi/StudentViewTopic"));
+
+var _UpdatePresentationEvaluate = _interopRequireDefault(require("./Component/Ayeshi/UpdatePresentationEvaluate"));
+
+var _UpdateTopicEvaluate = _interopRequireDefault(require("./Component/Ayeshi/UpdateTopicEvaluate"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60997,6 +61364,14 @@ var App = /*#__PURE__*/function (_Component) {
         path: "/studentTopicEval",
         exact: true,
         component: _StudentViewTopic.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/evaluatepresentaionupdate/:id",
+        exact: true,
+        component: _UpdatePresentationEvaluate.default
+      }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+        path: "/evaluatetopicupdate/:id",
+        exact: true,
+        component: _UpdateTopicEvaluate.default
       }), /*#__PURE__*/_react.default.createElement(_footer.default, null)));
     }
   }]);
@@ -61005,7 +61380,7 @@ var App = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Landingpage":"Component/Pamitha/Landingpage.js","./Component/Pamitha/Main":"Component/Pamitha/Main.js","./Component/Pamitha/Home":"Component/Pamitha/Home.js","./Component/Pamitha/home":"Component/Pamitha/home.js","./Component/Pamitha/Register":"Component/Pamitha/Register.js","./Component/Pamitha/AdminLogin":"Component/Pamitha/AdminLogin.js","./Component/Pamitha/AdminHeader":"Component/Pamitha/AdminHeader.js","./Component/Pamitha/footer":"Component/Pamitha/footer.js","./Component/Pamitha/StudentGroupRegistration":"Component/Pamitha/StudentGroupRegistration.js","./Component/Pamitha/GroupDetails":"Component/Pamitha/GroupDetails.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Pamitha/AddPanelMembers":"Component/Pamitha/AddPanelMembers.js","./Component/Pamitha/ViewPanelMembers":"Component/Pamitha/ViewPanelMembers.js","./Component/Lankani/StudentLogin":"Component/Lankani/StudentLogin.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js","./Component/Lankani/StudentFileAdd":"Component/Lankani/StudentFileAdd.js","./Component/Lankani/StudentPresentation":"Component/Lankani/StudentPresentation.js","./Component/Lankani/StudentThesisSubmission":"Component/Lankani/StudentThesisSubmission.js","./Component/Lankani/RequestSupervisor":"Component/Lankani/RequestSupervisor.js","./Component/Lankani/RequestCoSupervisor":"Component/Lankani/RequestCoSupervisor.js","./Component/Lankani/StudentUpdate":"Component/Lankani/StudentUpdate.js","./Component/Ayeshi/StaffLogin":"Component/Ayeshi/StaffLogin.js","./Component/Lankani/StudentHeader":"Component/Lankani/StudentHeader.js","./Component/Ayeshi/PanelList":"Component/Ayeshi/PanelList.js","./Component/Ayeshi/PanelHome":"Component/Ayeshi/PanelHome.js","./Component/Ayeshi/PresentationEvaluate":"Component/Ayeshi/PresentationEvaluate.js","./Component/Ayeshi/TopicEvaluate":"Component/Ayeshi/TopicEvaluate.js","./Component/Ayeshi/AllTopicsEvaluate":"Component/Ayeshi/AllTopicsEvaluate.js","./Component/Ayeshi/AllPresentationMarks":"Component/Ayeshi/AllPresentationMarks.js","./Component/Ayeshi/StudentViewPresentation":"Component/Ayeshi/StudentViewPresentation.js","./Component/Ayeshi/StudentViewTopic":"Component/Ayeshi/StudentViewTopic.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Component/Pamitha/Landingpage":"Component/Pamitha/Landingpage.js","./Component/Pamitha/Main":"Component/Pamitha/Main.js","./Component/Pamitha/Home":"Component/Pamitha/Home.js","./Component/Pamitha/home":"Component/Pamitha/home.js","./Component/Pamitha/Register":"Component/Pamitha/Register.js","./Component/Pamitha/AdminLogin":"Component/Pamitha/AdminLogin.js","./Component/Pamitha/AdminHeader":"Component/Pamitha/AdminHeader.js","./Component/Pamitha/footer":"Component/Pamitha/footer.js","./Component/Pamitha/StudentGroupRegistration":"Component/Pamitha/StudentGroupRegistration.js","./Component/Pamitha/GroupDetails":"Component/Pamitha/GroupDetails.js","./Component/Pamitha/AdminSubmition":"Component/Pamitha/AdminSubmition.js","./Component/Pamitha/UserNoticeView":"Component/Pamitha/UserNoticeView.js","./Component/Pamitha/FeedbackView":"Component/Pamitha/FeedbackView.js","./Component/Pamitha/AdminNoticeView":"Component/Pamitha/AdminNoticeView.js","./Component/Pamitha/AdminUserPDF":"Component/Pamitha/AdminUserPDF.js","./Component/Pamitha/AdminNoticeAdd":"Component/Pamitha/AdminNoticeAdd.js","./Component/Pamitha/AdminNoticePDF":"Component/Pamitha/AdminNoticePDF.js","./Component/Pamitha/AdminMarks":"Component/Pamitha/AdminMarks.js","./Component/Pamitha/AdminUpdatemark":"Component/Pamitha/AdminUpdatemark.js","./Component/Pamitha/AdminMarkView":"Component/Pamitha/AdminMarkView.js","./Component/Pamitha/StudentMark":"Component/Pamitha/StudentMark.js","./Component/Pamitha/AdminFeedback":"Component/Pamitha/AdminFeedback.js","./Component/Pamitha/AddPanelMembers":"Component/Pamitha/AddPanelMembers.js","./Component/Pamitha/ViewPanelMembers":"Component/Pamitha/ViewPanelMembers.js","./Component/Lankani/StudentLogin":"Component/Lankani/StudentLogin.js","./Component/Lankani/StudentAdd":"Component/Lankani/StudentAdd.js","./Component/Lankani/StudentList":"Component/Lankani/StudentList.js","./Component/Lankani/ViewStudents":"Component/Lankani/ViewStudents.js","./Component/Lankani/StudentHome":"Component/Lankani/StudentHome.js","./Component/Lankani/ResearchTopicAdd":"Component/Lankani/ResearchTopicAdd.js","./Component/Lankani/StudentFileAdd":"Component/Lankani/StudentFileAdd.js","./Component/Lankani/StudentPresentation":"Component/Lankani/StudentPresentation.js","./Component/Lankani/StudentThesisSubmission":"Component/Lankani/StudentThesisSubmission.js","./Component/Lankani/RequestSupervisor":"Component/Lankani/RequestSupervisor.js","./Component/Lankani/RequestCoSupervisor":"Component/Lankani/RequestCoSupervisor.js","./Component/Lankani/StudentUpdate":"Component/Lankani/StudentUpdate.js","./Component/Ayeshi/StaffLogin":"Component/Ayeshi/StaffLogin.js","./Component/Lankani/StudentHeader":"Component/Lankani/StudentHeader.js","./Component/Ayeshi/PanelList":"Component/Ayeshi/PanelList.js","./Component/Ayeshi/PanelHome":"Component/Ayeshi/PanelHome.js","./Component/Ayeshi/PresentationEvaluate":"Component/Ayeshi/PresentationEvaluate.js","./Component/Ayeshi/TopicEvaluate":"Component/Ayeshi/TopicEvaluate.js","./Component/Ayeshi/AllTopicsEvaluate":"Component/Ayeshi/AllTopicsEvaluate.js","./Component/Ayeshi/AllPresentationMarks":"Component/Ayeshi/AllPresentationMarks.js","./Component/Ayeshi/StudentViewPresentation":"Component/Ayeshi/StudentViewPresentation.js","./Component/Ayeshi/StudentViewTopic":"Component/Ayeshi/StudentViewTopic.js","./Component/Ayeshi/UpdatePresentationEvaluate":"Component/Ayeshi/UpdatePresentationEvaluate.js","./Component/Ayeshi/UpdateTopicEvaluate":"Component/Ayeshi/UpdateTopicEvaluate.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -61046,7 +61421,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50109" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50883" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -57,10 +57,12 @@ export default class allTopicEval extends Component {
                 <td>{allTopicEval.comments}</td>
 
                 <td>
-                  
+                <a href={`/evaluatetopicupdate/${allTopicEval._id}`}>
+                
                   <button type="button" className="btn btn-success">
                     <i className="fas fa-edit"></i> Update
                   </button>
+                 </a>
                  
                   &nbsp;
                   <button

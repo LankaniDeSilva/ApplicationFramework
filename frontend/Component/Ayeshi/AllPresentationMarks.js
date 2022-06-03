@@ -25,7 +25,7 @@ export default class allPreMark extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deletevaluatepresentaion/${id}`).then((res) => {
+    axios.delete(`http://localhost:8001/deletevaluatepresentation/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });
@@ -63,11 +63,12 @@ export default class allPreMark extends Component {
                 <td>{allPreMark.mark1 + allPreMark.mark2 + allPreMark.mark3}</td>
 
                 <td>
+                <a href={`/evaluatepresentaionupdate/${allPreMark._id}`}>
               
                   <button type="button" className="btn btn-success">
                     <i className="fas fa-edit"></i> Update
                   </button>
-                  
+                  </a>
                   &nbsp;
                   <button
                     type="button"

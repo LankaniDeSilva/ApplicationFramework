@@ -50,6 +50,8 @@ import React, {Component} from "react";
   import allPreMark from "./Component/Ayeshi/AllPresentationMarks";
   import StudentPreMark from "./Component/Ayeshi/StudentViewPresentation";
   import studentTopicEval from "./Component/Ayeshi/StudentViewTopic";
+  import EditPresentation from "./Component/Ayeshi/UpdatePresentationEvaluate";
+  import EditTopic from "./Component/Ayeshi/UpdateTopicEvaluate";
 
   
 
@@ -135,6 +137,8 @@ export default class App extends Component{
             <Route path="/allPreMark" exact component={allPreMark}></Route>
             <Route path="/StudentPreMark" exact component={StudentPreMark}></Route>
             <Route path="/studentTopicEval" exact component={studentTopicEval}></Route>
+            <Route path="/evaluatepresentaionupdate/:id"  exact component={EditPresentation}></Route>
+            <Route path="/evaluatetopicupdate/:id"  exact component={EditTopic}></Route>
 
 
 
