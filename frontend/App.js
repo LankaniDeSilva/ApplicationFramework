@@ -51,6 +51,17 @@ import React, {Component} from "react";
   import StudentPreMark from "./Component/Ayeshi/StudentViewPresentation";
   import studentTopicEval from "./Component/Ayeshi/StudentViewTopic";
 
+
+  import SupervisorLogin from "./Component/akeel/SupervisorLogin";
+import SupervisorHome from "./Component/akeel/SupervisorHome";
+import SupervisorEval from "./Component/akeel/SupervisorEval";
+import TopicView from "./Component/akeel/TopicView";
+import SelectChat from "./Component/akeel/ChatMenu";
+import AddMarks from "./Component/akeel/AddMarks";
+import AllMarks from "./Component/akeel/ViewMarks";
+import UpdateMark from "./Component/akeel/updateMark";
+
+
   
 
 
@@ -140,7 +151,19 @@ export default class App extends Component{
 
 
             {/*Akeel */}
-         
+            <Route path="/supervisorLogin"  exact component={SupervisorLogin}></Route>
+            <Route path="/supervisorHome"  exact component={SupervisorHome}></Route>
+            
+            <Route path="/supervisor-eval"  exact component={SupervisorEval}></Route>
+            <Route path="/supervisor-topic"  exact component={TopicView}></Route>
+            <Route path="/supervisor-chat"  exact component={SelectChat}></Route>
+            <Route path="/add-mark"  exact component={AddMarks}></Route>
+            <Route path="/view-mark"  exact component={AllMarks}></Route>
+
+            <Route path="/update-mark/:id"  exact component={UpdateMark}></Route>
+
+
+
       
 
         

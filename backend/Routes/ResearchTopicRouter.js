@@ -20,4 +20,18 @@ trouter.post("/ResearchTopic/save", (req, res) => {
     });
   });
 
+  //akeel
+  trouter.get('/ResearchTopic', (req,res) =>{
+    ResearchTopic.find().exec((err,Topic)=>{
+      if(err){
+          return res.status(400).json({
+              error:err
+          });
+      }
+      return res.status(200).json({
+          success:true,
+          existingPosts:Topic
+      });
+  });
+}); 
 module.exports = trouter;
