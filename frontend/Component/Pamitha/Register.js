@@ -36,7 +36,7 @@ export default class Register extends Component {
         };
         console.log(data);
     
-        axios.post("http://localhost:8001/register", data) 
+        axios.post("https://researchtool.herokuapp.com/register", data) 
         .then(res=>{alert(res.data.message)
        
            })
