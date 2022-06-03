@@ -25,7 +25,7 @@ const RequestCoSupervisor = require("./Routes/RequestCoSupervisor");
 const PanelRoute = require('./Routes/PanelRoute');
 const PanelEvaluatePresentaion = require('./Routes/PanelEvaluatePresentation');
 const PanelEvaluateTopic = require('./Routes/PanelEvaluateTopic');
-
+const SupervisorMark= require("./Routes/SupervisorMark");
 
 
 //app middleware
@@ -54,6 +54,7 @@ app.use(PanelRoute);
 app.use(PanelEvaluatePresentaion);
 app.use(PanelEvaluateTopic);
 
+app.use(SupervisorMark);
 
 
 const PORT = 8001;
