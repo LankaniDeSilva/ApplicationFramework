@@ -39,7 +39,7 @@ export default class Login extends Component {
         };
         console.log(data);
     
-        axios.post(" https://researchtool.herokuapp.com/Login", data)
+        axios.post("https://researchtool.herokuapp.com/Login", data)
         .then(res => {
           alert("Admin Login successful!")
           this.props.history.push(`/admin`)
