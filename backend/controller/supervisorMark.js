@@ -1,4 +1,4 @@
-const SupervisorMarks = require("../models/SupervisorMark");
+const SupervisorMarks = require("../Models/SupervisorMark");
 
 //add marks
 const addMarks = (req, res) => {
