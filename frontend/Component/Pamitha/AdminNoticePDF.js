@@ -28,7 +28,7 @@ function AddNoticefile() {
     setfile("");
 
     axios
-      .post("http://localhost:8001/save/noticepdf", formdata)
+      .post("https://researchtool.herokuapp.com/save/noticepdf", formdata)
       .then(() => {
         alert("Add Notice");
 

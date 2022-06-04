@@ -15,7 +15,7 @@ export default class GetMark extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getmark").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getmark").then((res) => {
       if (res.data.success) {
         this.setState({
           marks: res.data.existingPosts,
@@ -25,7 +25,7 @@ export default class GetMark extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deletemark/${id}`).then((res) => {
+    axios.delete(`https://researchtool.herokuapp.com/deletemark/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });

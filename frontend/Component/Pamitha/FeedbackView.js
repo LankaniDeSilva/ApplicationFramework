@@ -10,7 +10,7 @@ function Feedbackview(){
 
    useEffect(()=>{
       function getStudents(){
-          axios.get("http://localhost:8001/getfeedback").then((res)=>{
+          axios.get("https://researchtool.herokuapp.com/getfeedback").then((res)=>{
             setFeedback(res.data)
           }).catch((err)=>{
               alert(err.message);
@@ -32,7 +32,7 @@ function Feedbackview(){
                 swal("Poof! Your data has been successfully Deleted!", {
                     icon: "success",
                 });
-                fetch(`http://localhost:8001/deletefeedback/${_id}`, {
+                fetch(`https://researchtool.herokuapp.com/deletefeedback/${_id}`, {
                     method: 'DELETE'
                 }).then((response) => {
                     

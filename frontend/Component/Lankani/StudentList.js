@@ -6,7 +6,7 @@ export default function ViewStudents(){
 
     useEffect(() =>{
         function getAllStudents(){
-            axios.get("http://localhost:8001/student").then((res) =>{
+            axios.get("https://researchtool.herokuapp.com/student").then((res) =>{
                 setStudent(res.data)
             }).catch((err) =>{
                 alert(err.message);

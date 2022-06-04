@@ -33,7 +33,7 @@ export default class EditTopic extends Component {
     };
     console.log(data);
 
-    axios.put(`http://localhost:8001/evaluatetopicupdate/${id}`, data).then((res) => {
+    axios.put(`https://researchtool.herokuapp.com/evaluatetopicupdate/${id}`, data).then((res) => {
       if (res.data.success) {
         alert("Updated Successfully");
         this.setState({
@@ -49,7 +49,7 @@ export default class EditTopic extends Component {
   
     const id = this.props.match.params.id ;
 
-    axios.get(`http://localhost:8001/allTopicEval/${id}`).then((res) =>{
+    axios.get(`https://researchtool.herokuapp.com/allTopicEval/${id}`).then((res) =>{
       if(res.data.success){
         this.setState({
 

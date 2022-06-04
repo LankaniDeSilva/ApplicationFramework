@@ -20,7 +20,7 @@ function Feedback(){
       outcome
     }
    
-    axios.post("http://localhost:8001/feedbacksave",newfeedback).then(()=>{
+    axios.post("https://researchtool.herokuapp.com/feedbacksave",newfeedback).then(()=>{
          alert("Add Notice")
          console.log(newfeedback);
     }).catch((err)=>{

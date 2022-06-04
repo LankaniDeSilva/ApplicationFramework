@@ -12,7 +12,7 @@ const history=useHistory()
     useEffect(() => {
         function getMarks() {
           axios
-            .get("http://localhost:8001/get-marks")
+            .get("https://researchtool.herokuapp.com/get-marks")
             .then((res) => {
               setmarks(res.data);
             })
@@ -25,7 +25,7 @@ const history=useHistory()
 
       function deleteMarks(_id) {
         axios
-          .delete("http://localhost:8001/mark/" + _id)
+          .delete("https://researchtool.herokuapp.com/mark/" + _id)
           .then((res) => {
             console.log(res.data);
             alert("Details deleted");

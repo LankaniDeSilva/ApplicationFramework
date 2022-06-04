@@ -25,7 +25,7 @@ export default function StudentThesisSubmission() {
    
 
     axios
-      .post("http://localhost:8001/thesis/save", formdata)
+      .post("https://researchtool.herokuapp.com/thesis/save", formdata)
       .then(() => {
         alert("Thesis is uploaded successfully");
       })

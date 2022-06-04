@@ -36,7 +36,7 @@ export default class EditMark extends Component {
     };
     console.log(data);
 
-    axios.put(`http://localhost:8001/markupdate/${id}`, data).then((res) => {
+    axios.put(`https://researchtool.herokuapp.com/markupdate/${id}`, data).then((res) => {
       if (res.data.success) {
         alert("Marks Updated Successfully");
         this.setState({
@@ -54,7 +54,7 @@ export default class EditMark extends Component {
   
     const id = this.props.match.params.id ;
 
-    axios.get(`http://localhost:8001/marks/${id}`).then((res) =>{
+    axios.get(`https://researchtool.herokuapp.com/marks/${id}`).then((res) =>{
       if(res.data.success){
         this.setState({
           groupid:res.data.post.groupid,

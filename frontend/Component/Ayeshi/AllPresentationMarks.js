@@ -15,7 +15,7 @@ export default class allPreMark extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getevaluatepresentaion").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getevaluatepresentaion").then((res) => {
       if (res.data.success) {
         this.setState({
           allPreMark: res.data.existingPosts,
@@ -25,7 +25,7 @@ export default class allPreMark extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deletevaluatepresentation/${id}`).then((res) => {
+    axios.delete(`https://researchtool.herokuapp.com/deletevaluatepresentation/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });

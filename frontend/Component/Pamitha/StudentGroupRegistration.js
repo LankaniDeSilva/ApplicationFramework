@@ -20,7 +20,7 @@ function Registration(){
       };
   
       axios
-        .post("http://localhost:8001/register/save", newNotice)
+        .post("https://researchtool.herokuapp.com/register/save", newNotice)
         .then(() => {
           alert("Group Registered");
         })

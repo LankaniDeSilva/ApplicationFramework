@@ -27,7 +27,7 @@ function AddNotice() {
     };
 
     axios
-      .post("http://localhost:8001/Notice/save", newNotice)
+      .post("https://researchtool.herokuapp.com/Notice/save", newNotice)
       .then(() => {
         alert("Add Notice");
       })

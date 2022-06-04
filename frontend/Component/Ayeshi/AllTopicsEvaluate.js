@@ -15,7 +15,7 @@ export default class allTopicEval extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getevaluatetopic").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getevaluatetopic").then((res) => {
       if (res.data.success) {
         this.setState({
           allTopicEval: res.data.existingPosts,
@@ -25,7 +25,7 @@ export default class allTopicEval extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deletevaluatetopic/${id}`).then((res) => {
+    axios.delete(`https://researchtool.herokuapp.com/deletevaluatetopic/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });

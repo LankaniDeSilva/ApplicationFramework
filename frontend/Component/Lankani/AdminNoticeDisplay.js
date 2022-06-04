@@ -16,7 +16,7 @@ export default class GetNotices extends Component {
   }
 
   retrievenotices() {
-    axios.get("http://localhost:8001/notice/" + this.props.data ).then((res) => {
+    axios.get("https://researchtool.herokuapp.com/notice/" + this.props.data ).then((res) => {
       if (res.data.success) {
         this.setState({
           notices: res.data.existingNotices,

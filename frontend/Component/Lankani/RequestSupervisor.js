@@ -22,7 +22,7 @@ export default function RequestSepervisor() {
       supervisor,
     };
     axios
-      .post("http://localhost:8001/Supervisor/save", newRequest)
+      .post("https://researchtool.herokuapp.com/Supervisor/save", newRequest)
       .then(() => {
         alert("Request inserted successfully");
       })

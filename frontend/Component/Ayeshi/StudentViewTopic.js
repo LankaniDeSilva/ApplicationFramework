@@ -15,7 +15,7 @@ export default class studentTopicEval extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getevaluatetopic").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getevaluatetopic").then((res) => {
       if (res.data.success) {
         this.setState({
           studentTopicEval: res.data.existingPosts,

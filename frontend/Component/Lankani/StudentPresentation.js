@@ -26,7 +26,7 @@ export default function StudentPresentationSubmission() {
     setfile("");
 
     axios
-      .post("http://localhost:8001/presentation/save", formdata)
+      .post("https://researchtool.herokuapp.com/presentation/save", formdata)
       .then(() => {
         alert("Presentation is uploaded successfully");
       })

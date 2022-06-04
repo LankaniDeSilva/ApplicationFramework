@@ -25,7 +25,7 @@ function AddMarks() {
     e.preventDefault()
 
     axios
-      .post("http://localhost:8001/add-marks",mark)
+      .post("https://researchtool.herokuapp.com/add-marks",mark)
       .then(() => {
         alert("Marks  added");
         setValid(true);

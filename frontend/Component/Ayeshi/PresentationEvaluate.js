@@ -21,7 +21,7 @@ function presentationEvaluate(){
         }
 
         axios
-        .post("http://localhost:8001/evaluatepresentaionsave", newMarks)
+        .post("https://researchtool.herokuapp.com/evaluatepresentaionsave", newMarks)
         .then(() => {
             alert("Marks Added");
             setGroupid("");

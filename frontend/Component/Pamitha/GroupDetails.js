@@ -15,7 +15,7 @@ export default class GetMark extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getgroups").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getgroups").then((res) => {
       if (res.data.success) {
         this.setState({
           groups: res.data.existingPosts,
@@ -35,7 +35,7 @@ export default class GetMark extends Component {
   handleSearchArea = (e) => {
     const searchKey = e.currentTarget.value;
 
-    axios.get("http://localhost:8001/getgroups").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getgroups").then((res) => {
       if (res.data.success) {
         this.filterData(res.data.existingPosts, searchKey);
       }
@@ -43,7 +43,7 @@ export default class GetMark extends Component {
   };
 
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deletegroup/${id}`).then((res) => {
+    axios.delete(`https://researchtool.herokuapp.com/deletegroup/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });

@@ -8,7 +8,7 @@ const TopicView = () => {
     const history = useHistory();
 
     const getResearchTopics = () => {
-        axios.get('http://localhost:8001/ResearchTopic').then((data) => {
+        axios.get('https://researchtool.herokuapp.com/ResearchTopic').then((data) => {
             
           setResearchtopics(data.data.existingPosts);
           console.log(data);

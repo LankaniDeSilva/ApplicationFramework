@@ -18,7 +18,7 @@ function Allstudent(){
   
    }
   
-   axios.post(`http://localhost:8001/select/pdf/${_id}`,newNotice).then(()=>{
+   axios.post(`https://researchtool.herokuapp.com/select/pdf/${_id}`,newNotice).then(()=>{
         alert("Add Notice")
    }).catch((err)=>{
         alert(err)
@@ -28,7 +28,7 @@ function Allstudent(){
 
    useEffect(()=>{
       function getpdf(){
-          axios.get("http://localhost:8001/student/pdf").then((res)=>{
+          axios.get("https://researchtool.herokuapp.com/student/pdf").then((res)=>{
             setpdf(res.data)
           }).catch((err)=>{
               alert(err.message);

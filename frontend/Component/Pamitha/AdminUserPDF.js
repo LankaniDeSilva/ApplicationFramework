@@ -16,7 +16,7 @@ export default class Getnotice extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getpdf").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getpdf").then((res) => {
       if (res.data.success) {
         this.setState({
           pdfs: res.data.existingPosts,
@@ -36,7 +36,7 @@ export default class Getnotice extends Component {
   handleSearchArea = (e) => {
     const searchKey = e.currentTarget.value;
 
-    axios.get("http://localhost:8001/getpdf").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getpdf").then((res) => {
       if (res.data.success) {
         this.filterData(res.data.existingPosts, searchKey);
       }
@@ -44,7 +44,7 @@ export default class Getnotice extends Component {
   };
 
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/pdf/delete/${id}`).then((res) => {
+    axios.delete(`https://researchtool.herokuapp.com/pdf/delete/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });
@@ -56,7 +56,7 @@ export default class Getnotice extends Component {
     };
 
     axios({
-      url:"http://localhost:8001/downloadpdf",
+      url:"https://researchtool.herokuapp.com/downloadpdf",
       data,
       method:"POST",
       responseType:"blob"

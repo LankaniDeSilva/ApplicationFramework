@@ -74,7 +74,7 @@ export default function AddStudent() {
     };
 
     axios
-      .post("http://localhost:8001/Student/save", newStudent)
+      .post("https://researchtool.herokuapp.com/Student/save", newStudent)
       .then((res) => {
         setMsg(res.data.success);
         // alert("Add Student");

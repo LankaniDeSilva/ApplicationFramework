@@ -19,7 +19,7 @@ export default class Getnotice extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getnotice").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getnotice").then((res) => {
       if (res.data.success) {
         this.setState({
          notice: res.data.existingPosts,
@@ -32,7 +32,7 @@ export default class Getnotice extends Component {
  
 
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/deletenotice/${id}`).then((res) => {
+    axios.delete(`https://researchtool.herokuapp.com/deletenotice/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrivePosts();
     });
@@ -44,7 +44,7 @@ export default class Getnotice extends Component {
     };
 
     axios({
-      url:"http://localhost:8001/downloadnotice",
+      url:"https://researchtool.herokuapp.com/downloadnotice",
       data,
       method:"POST",
       responseType:"blob"

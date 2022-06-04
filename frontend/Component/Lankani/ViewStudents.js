@@ -15,7 +15,7 @@ export default class GetStudents extends Component {
   }
 
   retrieveStudents() {
-    axios.get("http://localhost:8001/student").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/student").then((res) => {
       if (res.data.success) {
         this.setState({
           students: res.data.existingStudents,
@@ -25,7 +25,7 @@ export default class GetStudents extends Component {
     });
   }
   onDelete = (id) => {
-    axios.delete(`http://localhost:8001/student/delete/${id}`).then((res) => {
+    axios.delete(`https://researchtool.herokuapp.com/student/delete/${id}`).then((res) => {
       alert("Delete Successfully");
       this.retrieveStudents();
     });

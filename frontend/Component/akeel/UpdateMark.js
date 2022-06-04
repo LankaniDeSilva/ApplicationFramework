@@ -25,7 +25,7 @@ import { useParams } from "react-router";
     useEffect(() => {
         function getMark() {
           axios
-            .get(`http://localhost:8001/mark/${id}`,)
+            .get(`https://researchtool.herokuapp.com/mark/${id}`,)
             .then((res) => {
               setmarks(res.data);
             })
@@ -40,7 +40,7 @@ import { useParams } from "react-router";
         e.preventDefault();
     
         axios
-          .put(`http://localhost:8001/update-marks/${id}`, mark)
+          .put(`https://researchtool.herokuapp.com/update-marks/${id}`, mark)
           .then(() => {
             alert("marks updated");
             navigate.push("/view-mark");

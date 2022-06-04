@@ -36,7 +36,7 @@ export default class EditPresentation extends Component {
     };
     console.log(data);
 
-    axios.put(`http://localhost:8001/evaluatepresentaionupdate/${id}`, data).then((res) => {
+    axios.put(`https://researchtool.herokuapp.com/evaluatepresentaionupdate/${id}`, data).then((res) => {
       if (res.data.success) {
         alert("Marks Updated Successfully");
         this.setState({

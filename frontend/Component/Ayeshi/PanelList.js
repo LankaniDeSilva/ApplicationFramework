@@ -6,7 +6,7 @@ export default function ViewPanel(){
 
     useEffect(() =>{
         function getAllPanelMembers(){
-            axios.get("http://localhost:8001/panel").then((res) =>{
+            axios.get("https://researchtool.herokuapp.com/panel").then((res) =>{
                 setPanel(res.data)
             }).catch((err) =>{
                 alert(err.message);

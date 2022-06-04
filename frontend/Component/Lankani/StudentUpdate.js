@@ -43,7 +43,7 @@ export default class EditStudent extends Component {
     };
     console.log(data);
 
-    axios.put(`http://localhost:8001/studentupdate/${id}`, data).then((res) => {
+    axios.put(`https://researchtool.herokuapp.com/studentupdate/${id}`, data).then((res) => {
       if (res.data.success) {
         alert("Student Updated Successfully");
         this.setState({
@@ -65,7 +65,7 @@ export default class EditStudent extends Component {
   
     const id = this.props.match.params.id ;
 
-    axios.get(`http://localhost:8001/student/${id}`).then((res) =>{
+    axios.get(`https://researchtool.herokuapp.com/student/${id}`).then((res) =>{
       if(res.data.success){
         this.setState({
             sitNumber: res.data.student.itNumber,

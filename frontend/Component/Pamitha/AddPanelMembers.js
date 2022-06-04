@@ -33,7 +33,7 @@ export default class EditMark extends Component {
         };
         console.log(data);
     
-        axios.post("http://localhost:8001/savepanel", data).then((res) => {
+        axios.post("https://researchtool.herokuapp.com/savepanel", data).then((res) => {
           if (res.data.success) {
             alert("Add PanelMember Successfully");
             this.setState({
@@ -50,7 +50,7 @@ export default class EditMark extends Component {
   
     const id = this.props.match.params.id ;
 
-    axios.get(`http://localhost:8001/getgroupspanel/${id}`).then((res) =>{
+    axios.get(`https://researchtool.herokuapp.com/getgroupspanel/${id}`).then((res) =>{
       if(res.data.success){
         this.setState({
           name:res.data.post.name,

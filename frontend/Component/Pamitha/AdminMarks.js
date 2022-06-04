@@ -37,7 +37,7 @@ export default class AddMark extends Component {
         };
         console.log(data);
     
-        axios.post("http://localhost:8001/savemark", data).then((res) => {
+        axios.post("https://researchtool.herokuapp.com/savemark", data).then((res) => {
           if (res.data.success) {
             alert("Save Marks Successfully");
             this.setState({

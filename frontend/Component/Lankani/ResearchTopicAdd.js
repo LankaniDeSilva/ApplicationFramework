@@ -40,7 +40,7 @@ export default function ResearchTopic(){
             topic
         }
 
-        axios.post("http://localhost:8001/ResearchTopic/save", newResearchTopic).then(() =>{
+        axios.post("https://researchtool.herokuapp.com/ResearchTopic/save", newResearchTopic).then(() =>{
             alert("Add Topic");
             console.log(newResearchTopic);
         }).catch((err) =>{

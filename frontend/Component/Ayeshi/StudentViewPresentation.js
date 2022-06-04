@@ -15,7 +15,7 @@ export default class StudentPreMark extends Component {
   }
 
   retrivePosts() {
-    axios.get("http://localhost:8001/getevaluatepresentaion").then((res) => {
+    axios.get("https://researchtool.herokuapp.com/getevaluatepresentaion").then((res) => {
       if (res.data.success) {
         this.setState({
           StudentPreMark: res.data.existingPosts,
